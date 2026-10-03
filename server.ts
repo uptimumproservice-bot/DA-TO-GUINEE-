@@ -126,14 +126,23 @@ app.post('/api/video-download', async (req, res) => {
 });
 
 async function startServer() {
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: 'spa',
-  });
-
-  app.use(vite.middlewares);
-
+  const isProd = process.env.NODE_ENV === 'production';
   const port = process.env.PORT || 3000;
+
+  if (!isProd) {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.resolve(import.meta.dirname, 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(distPath, 'index.html'));
+    });
+  }
+
   app.listen(Number(port), '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${port}`);
   });
