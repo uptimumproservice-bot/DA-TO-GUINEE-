@@ -1,0 +1,1252 @@
+{
+  "pages": {
+    "about": {
+      "banner": {
+        "titre": "À Propos",
+        "sousTitre": "Qui sommes-nous ?"
+      },
+      "vision": {
+        "eyebrow": "Notre Vision",
+        "texte": "Nous voulons participer à la construction d'une Guinée où les infrastructures, les espaces urbains et les projets immobiliers sont pensés pour répondre aux besoins réels des populations et de l'économie. Un projet réussi ne se limite pas à ce qui est construit. Il se mesure à la valeur qu'il crée et à sa capacité à durer."
+      },
+      "mission": {
+        "eyebrow": "Notre Mission",
+        "texte": "Concevoir, aménager, construire et valoriser des projets et infrastructures adaptés aux besoins de nos clients et aux réalités de leur environnement."
+      },
+      "domaines": {
+        "eyebrow": "Nos Domaines d'Intervention",
+        "items": [
+          {
+            "id": "d1",
+            "texte": "Développer et aménager des terrains"
+          },
+          {
+            "id": "d2",
+            "texte": "Réaliser des opérations de lotissement et de viabilisation"
+          },
+          {
+            "id": "d3",
+            "texte": "Construire des bâtiments et infrastructures"
+          },
+          {
+            "id": "d4",
+            "texte": "Réaliser des travaux d'aménagement et de Voirie et Réseaux Divers (VRD)"
+          },
+          {
+            "id": "d5",
+            "texte": "Rénover et réhabiliter des ouvrages existants"
+          },
+          {
+            "id": "d6",
+            "texte": "Développer des projets immobiliers"
+          },
+          {
+            "id": "d7",
+            "texte": "Commercialiser et valoriser des actifs immobiliers"
+          },
+          {
+            "id": "d8",
+            "texte": "Accompagner nos clients dans la réalisation de leurs projets"
+          }
+        ]
+      },
+      "approche": {
+        "eyebrow": "Notre Approche Intégrée",
+        "titre": "De la terre au projet livré",
+        "etapes": [
+          {
+            "id": "e1",
+            "label": "Foncier"
+          },
+          {
+            "id": "e2",
+            "label": "Aménagement"
+          },
+          {
+            "id": "e3",
+            "label": "Viabilisation"
+          },
+          {
+            "id": "e4",
+            "label": "Construction"
+          },
+          {
+            "id": "e5",
+            "label": "Promotion"
+          },
+          {
+            "id": "e6",
+            "label": "Gestion"
+          },
+          {
+            "id": "e7",
+            "label": "Valorisation"
+          }
+        ]
+      },
+      "philosophie": {
+        "eyebrow": "Notre Philosophie",
+        "lignes": [
+          {
+            "id": "p1",
+            "texte": "Construire avec davantage de préparation."
+          },
+          {
+            "id": "p2",
+            "texte": "Construire avec davantage de maîtrise."
+          },
+          {
+            "id": "p3",
+            "texte": "Construire avec davantage de transparence."
+          },
+          {
+            "id": "p4",
+            "texte": "Construire avec davantage de responsabilité."
+          }
+        ],
+        "conclusion": "Pour DA-TO, le développement immobilier ne doit pas uniquement produire des bâtiments ou des terrains. Il doit produire de l'utilité, de la durabilité et de la valeur."
+      }
+    },
+    "activites": {
+      "banner": {
+        "titre": "Nos Activités",
+        "sousTitre": "Trois pôles d'expertise au service de vos projets"
+      },
+      "btp": {
+        "eyebrow": "Pôle 1",
+        "titre": "BTP & Infrastructures",
+        "intro": "Le BTP constitue l'un des principaux domaines d'intervention de DA-TO. Nous développons et réalisons des projets de construction et d'infrastructures en recherchant un équilibre entre qualité, fonctionnalité, coût, délai et durabilité.",
+        "objectif": "Faire de chaque chantier un projet maîtrisé, depuis sa préparation jusqu'à sa livraison.",
+        "services": [
+          {
+            "id": "btp1",
+            "titre": "Construction de bâtiments",
+            "desc": "Résidentiels, commerciaux, administratifs, professionnels, ouvrages et infrastructures diverses."
+          },
+          {
+            "id": "btp2",
+            "titre": "Travaux publics",
+            "desc": "Terrassement, préparation et aménagement des sites, voiries, réseaux divers, ouvrages d'assainissement, aménagements extérieurs, infrastructures associées aux projets."
+          },
+          {
+            "id": "btp3",
+            "titre": "Rénovation et réhabilitation",
+            "desc": "Remise en état, modernisation, transformation, réhabilitation de bâtiments et ouvrages existants."
+          },
+          {
+            "id": "btp4",
+            "titre": "Gestion de projets de construction",
+            "desc": "Planification, coordination des intervenants, suivi des travaux, contrôle de la qualité, suivi des coûts, suivi des délais, réception des ouvrages."
+          }
+        ]
+      },
+      "foncier": {
+        "eyebrow": "Pôle 2",
+        "titre": "Développement Foncier & Aménagement",
+        "intro": "Le foncier constitue une composante essentielle de notre activité. DA-TO intervient dans la transformation et la valorisation des terrains à travers des opérations structurées d'aménagement et de développement.",
+        "conclusion": "Nous considérons le foncier comme une base de développement qui doit être organisée, sécurisée et valorisée dans une perspective durable.",
+        "services": [
+          {
+            "id": "f1",
+            "texte": "Identification et analyse des opportunités foncières"
+          },
+          {
+            "id": "f2",
+            "texte": "Structuration des projets"
+          },
+          {
+            "id": "f3",
+            "texte": "Lotissement"
+          },
+          {
+            "id": "f4",
+            "texte": "Aménagement des terrains"
+          },
+          {
+            "id": "f5",
+            "texte": "Viabilisation"
+          },
+          {
+            "id": "f6",
+            "texte": "Création et organisation des espaces"
+          },
+          {
+            "id": "f7",
+            "texte": "Préparation des terrains à la construction"
+          },
+          {
+            "id": "f8",
+            "texte": "Développement de projets fonciers"
+          }
+        ]
+      },
+      "immobilier": {
+        "eyebrow": "Pôle 3",
+        "titre": "Immobilier & Valorisation",
+        "intro": "DA-TO développe également des activités liées à la promotion, à la commercialisation et à la gestion immobilière.",
+        "conclusion": "Notre approche vise à établir une cohérence entre emplacement, conception, qualité, fonctionnalité, coût et potentiel de valorisation.",
+        "services": [
+          {
+            "id": "i1",
+            "texte": "Promotion immobilière"
+          },
+          {
+            "id": "i2",
+            "texte": "Développement de programmes immobiliers"
+          },
+          {
+            "id": "i3",
+            "texte": "Vente de parcelles"
+          },
+          {
+            "id": "i4",
+            "texte": "Vente de bâtiments et biens immobiliers"
+          },
+          {
+            "id": "i5",
+            "texte": "Gestion immobilière"
+          },
+          {
+            "id": "i6",
+            "texte": "Valorisation d'actifs"
+          },
+          {
+            "id": "i7",
+            "texte": "Accompagnement des investisseurs"
+          },
+          {
+            "id": "i8",
+            "texte": "Accompagnement des particuliers dans leurs projets immobiliers"
+          }
+        ]
+      }
+    },
+    "actualites": {
+      "banner": {
+        "titre": "Actualités",
+        "sousTitre": "Nos projets, réalisations et annonces"
+      },
+      "articles": [
+        {
+          "id": "art1",
+          "date": "15 septembre 2026",
+          "titre": "DA-TO GUINEE SA lance un nouveau programme immobilier en Guinée",
+          "resume": "DA-TO GUINEE SA annonce le lancement d'un nouveau programme immobilier destiné à répondre à la demande croissante de logements modernes et accessibles en Guinée.",
+          "slug": "programme-immobilier-guinee"
+        },
+        {
+          "id": "art2",
+          "date": "2 septembre 2026",
+          "titre": "Nos équipes mobilisées sur un chantier de viabilisation",
+          "resume": "Les équipes de DA-TO sont pleinement engagées sur un important chantier de viabilisation, contribuant à la préparation de nouveaux espaces constructibles.",
+          "slug": "chantier-viabilisation"
+        },
+        {
+          "id": "art3",
+          "date": "20 août 2026",
+          "titre": "DA-TO renforce ses partenariats avec les acteurs locaux",
+          "resume": "Dans le cadre de sa stratégie de développement, DA-TO GUINEE SA consolide ses relations avec les entreprises, prestataires et institutions guinéens.",
+          "slug": "partenariats-acteurs-locaux"
+        }
+      ]
+    },
+    "contact": {
+      "banner": {
+        "titre": "Contact",
+        "sousTitre": "Parlons de votre projet"
+      },
+      "coordonnees": {
+        "adresse": "Conakry, Lambanyi, Carrefour TMI",
+        "telephone": "+224 600 00 00 00",
+        "email": "contact@datoguinee.com",
+        "horaires": "Lundi – Vendredi : 8h00 – 17h00"
+      },
+      "clients": {
+        "eyebrow": "Nos Clients & Partenaires",
+        "titre": "Avec qui nous travaillons",
+        "clients": {
+          "label": "Nos clients",
+          "items": [
+            {
+              "id": "c1",
+              "texte": "Particuliers"
+            },
+            {
+              "id": "c2",
+              "texte": "Entreprises"
+            },
+            {
+              "id": "c3",
+              "texte": "Investisseurs"
+            },
+            {
+              "id": "c4",
+              "texte": "Propriétaires fonciers"
+            },
+            {
+              "id": "c5",
+              "texte": "Promoteurs"
+            },
+            {
+              "id": "c6",
+              "texte": "Institutions et organisations"
+            }
+          ]
+        },
+        "partenaires": {
+          "label": "Nos partenaires",
+          "items": [
+            {
+              "id": "p1",
+              "texte": "Architectes & ingénieurs"
+            },
+            {
+              "id": "p2",
+              "texte": "Bureaux d'études & géomètres"
+            },
+            {
+              "id": "p3",
+              "texte": "Entreprises spécialisées"
+            },
+            {
+              "id": "p4",
+              "texte": "Fournisseurs & prestataires techniques"
+            },
+            {
+              "id": "p5",
+              "texte": "Investisseurs & établissements financiers"
+            },
+            {
+              "id": "p6",
+              "texte": "Partenaires institutionnels"
+            }
+          ]
+        }
+      },
+      "contribution": {
+        "eyebrow": "Notre Contribution au Développement de la Guinée",
+        "items": [
+          {
+            "id": "con1",
+            "texte": "Création d'infrastructures"
+          },
+          {
+            "id": "con2",
+            "texte": "Développement de logements et d'espaces professionnels"
+          },
+          {
+            "id": "con3",
+            "texte": "Aménagement des territoires"
+          },
+          {
+            "id": "con4",
+            "texte": "Valorisation du foncier"
+          },
+          {
+            "id": "con5",
+            "texte": "Création d'emplois directs et indirects"
+          },
+          {
+            "id": "con6",
+            "texte": "Développement des compétences locales"
+          },
+          {
+            "id": "con7",
+            "texte": "Collaboration avec les entreprises guinéennes"
+          },
+          {
+            "id": "con8",
+            "texte": "Création de valeur économique durable"
+          }
+        ]
+      }
+    },
+    "engagements": {
+      "banner": {
+        "titre": "Engagements & HSE",
+        "sousTitre": "Notre responsabilité envers nos projets, nos équipes et notre territoire"
+      },
+      "engagements": {
+        "eyebrow": "Nos Engagements",
+        "titre": "Ce qui guide chacun de nos projets",
+        "items": [
+          {
+            "id": "eng1",
+            "titre": "Construire durablement",
+            "desc": "Solutions pensées pour durer et répondre aux conditions réelles de leur environnement."
+          },
+          {
+            "id": "eng2",
+            "titre": "Maîtriser les coûts",
+            "desc": "Efficience à chaque étape pour éviter les dépenses inutiles et préserver l'équilibre économique des projets."
+          },
+          {
+            "id": "eng3",
+            "titre": "Garantir la qualité",
+            "desc": "Attention particulière à la conception, aux matériaux, à l'exécution et au contrôle des travaux."
+          },
+          {
+            "id": "eng4",
+            "titre": "Respecter les délais",
+            "desc": "La planification et le suivi sont essentiels à notre gestion de projet."
+          },
+          {
+            "id": "eng5",
+            "titre": "Travailler avec transparence",
+            "desc": "Relations claires avec clients, partenaires, fournisseurs et collaborateurs."
+          },
+          {
+            "id": "eng6",
+            "titre": "Préserver la valeur",
+            "desc": "Un ouvrage ou un actif immobilier doit conserver son utilité et sa valeur aussi longtemps que possible."
+          },
+          {
+            "id": "eng7",
+            "titre": "Agir avec responsabilité",
+            "desc": "Chaque projet doit tenir compte de son environnement, de ses utilisateurs et de son impact sur le territoire."
+          }
+        ]
+      },
+      "hse": {
+        "eyebrow": "Qualité, Sécurité & HSE",
+        "titre": "Une culture de chantier responsable",
+        "pratiques": [
+          {
+            "id": "h1",
+            "texte": "Sécurité des travailleurs"
+          },
+          {
+            "id": "h2",
+            "texte": "Prévention des risques"
+          },
+          {
+            "id": "h3",
+            "texte": "Protection des personnes et des biens"
+          },
+          {
+            "id": "h4",
+            "texte": "Organisation des chantiers"
+          },
+          {
+            "id": "h5",
+            "texte": "Qualité des travaux"
+          },
+          {
+            "id": "h6",
+            "texte": "Gestion des matériaux et équipements"
+          },
+          {
+            "id": "h7",
+            "texte": "Protection de l'environnement"
+          }
+        ],
+        "objectif": "Développer une culture de chantier où la performance ne se fait pas au détriment de la sécurité ou de la qualité."
+      },
+      "technologie": {
+        "eyebrow": "Notre Rapport à la Technologie",
+        "titre": "Nous Intégrons la technologie et solutions numeriques",
+        "domaines": [
+          {
+            "id": "t1",
+            "texte": "Gestion des projets"
+          },
+          {
+            "id": "t2",
+            "texte": "Planification des travaux"
+          },
+          {
+            "id": "t3",
+            "texte": "Suivi des chantiers"
+          },
+          {
+            "id": "t4",
+            "texte": "Gestion documentaire"
+          },
+          {
+            "id": "t5",
+            "texte": "Gestion financière"
+          },
+          {
+            "id": "t6",
+            "texte": "Relation client"
+          },
+          {
+            "id": "t7",
+            "texte": "Gestion immobilière"
+          },
+          {
+            "id": "t8",
+            "texte": "Reporting & prise de décision"
+          }
+        ]
+      }
+    },
+    "home": {
+      "hero": {
+        "tagline": "BTP • Développement Foncier • Immobilier",
+        "titre": "Construire durablement.",
+        "titreAccent": "Créer de la valeur.",
+        "sousTitre": "Votre partenaire de confiance pour tous vos projets de construction, d’aménagement et d’immobilier en Guinée.",
+        "cta": "Découvrir nos activités",
+        "scrollLabel": "Défiler"
+      },
+      "carousel": [
+        {
+          "id": "slide-btp",
+          "titre": "BTP & Infrastructures",
+          "description": "Nous réalisons des ouvrages de qualité — bâtiments, routes, ponts et infrastructures — qui structurent le développement de la Guinée."
+        },
+        {
+          "id": "slide-foncier",
+          "titre": "Développement Foncier & Aménagement",
+          "description": "Nous valorisons le foncier guinéen à travers des opérations d’aménagement, de lotissement et de viabilisation durables."
+        },
+        {
+          "id": "slide-immobilier",
+          "titre": "Immobilier & Valorisation",
+          "description": "Nous concevons et commercialisons des programmes immobiliers modernes, adaptés aux besoins du marché africain."
+        }
+      ],
+      "accroche": {
+        "ligne1": "DA-TO GUINEE SA est une entreprise guinéenne spécialisée dans le BTP, le développement foncier et l’immobilier.",
+        "ligne2": "Nous concevons, développons et réalisons des projets qui créent de la valeur durable."
+      },
+      "poles": {
+        "eyebrow": "Expertise",
+        "titre": "Nos 3 Pôles d’Activité",
+        "items": [
+          {
+            "id": "pole-btp",
+            "titre": "BTP & Infrastructures"
+          },
+          {
+            "id": "pole-foncier",
+            "titre": "Développement Foncier & Aménagement"
+          },
+          {
+            "id": "pole-immobilier",
+            "titre": "Immobilier & Valorisation"
+          }
+        ]
+      },
+      "atouts": {
+        "eyebrow": "Notre différence",
+        "titre": "Pourquoi nous choisir ?",
+        "items": [
+          {
+            "id": "qualite",
+            "titre": "Qualité",
+            "desc": "Des standards rigoureux à chaque étape de nos projets."
+          },
+          {
+            "id": "durabilite",
+            "titre": "Durabilité",
+            "desc": "Des solutions pensées pour durer et respecter l’environnement."
+          },
+          {
+            "id": "maitrise",
+            "titre": "Maîtrise",
+            "desc": "Une expertise technique et managériale reconnue."
+          },
+          {
+            "id": "valeur",
+            "titre": "Valeur",
+            "desc": "Chaque projet crée une valeur tangible et durable."
+          }
+        ]
+      },
+      "contribution": {
+        "eyebrow": "",
+        "titre": "Notre contribution au développement de la Guinée",
+        "para1": "DA-TO GUINEE SA s’engage à bâtir une Guinée moderne, en contribuant activement à la création d’infrastructures solides, de logements accessibles et d’espaces aménagés qui améliorent le cadre de vie des populations.",
+        "para2": "Chaque projet que nous réalisons est une pierre posée sur le chemin du développement durable de notre pays.",
+        "cta": "En savoir plus"
+      },
+      "ctaContact": {
+        "eyebrow": "Passez à l’action",
+        "titre": "Prêt à concrétiser votre projet ?",
+        "desc": "Notre équipe est à votre disposition pour étudier votre projet et vous proposer les meilleures solutions.",
+        "cta": "Contactez-nous",
+        "slogan": "“Construire durablement. Créer de la valeur.”"
+      }
+    },
+    "methode": {
+      "banner": {
+        "titre": "Notre Méthode",
+        "sousTitre": "Un processus rigoureux, du besoin à la livraison"
+      },
+      "intro": {
+        "eyebrow": "Notre Approche",
+        "texte": "Chaque projet que nous réalisons suit une méthodologie structurée qui garantit la qualité, la maîtrise des délais et la satisfaction de nos clients."
+      },
+      "etapes": [
+        {
+          "id": "m1",
+          "num": "01",
+          "titre": "Comprendre",
+          "desc": "Nous analysons le besoin, le contexte, les contraintes et les objectifs du projet."
+        },
+        {
+          "id": "m2",
+          "num": "02",
+          "titre": "Étudier",
+          "desc": "Nous examinons les caractéristiques du terrain, les contraintes techniques, les exigences réglementaires et les différentes options envisageables."
+        },
+        {
+          "id": "m3",
+          "num": "03",
+          "titre": "Concevoir",
+          "desc": "Nous recherchons des solutions adaptées à la destination du projet, à son environnement et aux moyens disponibles."
+        },
+        {
+          "id": "m4",
+          "num": "04",
+          "titre": "Planifier",
+          "desc": "Nous définissons les différentes étapes du projet, les ressources nécessaires, les délais et les modalités de suivi."
+        },
+        {
+          "id": "m5",
+          "num": "05",
+          "titre": "Exécuter",
+          "desc": "Nous coordonnons la réalisation des travaux dans le respect des exigences définies."
+        },
+        {
+          "id": "m6",
+          "num": "06",
+          "titre": "Contrôler",
+          "desc": "Nous suivons l'avancement, la qualité, les coûts, les délais et les éventuelles difficultés rencontrées."
+        },
+        {
+          "id": "m7",
+          "num": "07",
+          "titre": "Livrer",
+          "desc": "Nous veillons à ce que le résultat final corresponde aux exigences convenues et aux objectifs du projet."
+        }
+      ]
+    }
+  },
+  "about": {
+    "banner": {
+      "titre": "À Propos",
+      "sousTitre": "Qui sommes-nous ?"
+    },
+    "vision": {
+      "eyebrow": "Notre Vision",
+      "texte": "Nous voulons participer à la construction d'une Guinée où les infrastructures, les espaces urbains et les projets immobiliers sont pensés pour répondre aux besoins réels des populations et de l'économie. Un projet réussi ne se limite pas à ce qui est construit. Il se mesure à la valeur qu'il crée et à sa capacité à durer."
+    },
+    "mission": {
+      "eyebrow": "Notre Mission",
+      "texte": "Concevoir, aménager, construire et valoriser des projets et infrastructures adaptés aux besoins de nos clients et aux réalités de leur environnement."
+    },
+    "domaines": {
+      "eyebrow": "Nos Domaines d'Intervention",
+      "items": [
+        {
+          "id": "d1",
+          "texte": "Développer et aménager des terrains"
+        },
+        {
+          "id": "d2",
+          "texte": "Réaliser des opérations de lotissement et de viabilisation"
+        },
+        {
+          "id": "d3",
+          "texte": "Construire des bâtiments et infrastructures"
+        },
+        {
+          "id": "d4",
+          "texte": "Réaliser des travaux d'aménagement et de Voirie et Réseaux Divers (VRD)"
+        },
+        {
+          "id": "d5",
+          "texte": "Rénover et réhabiliter des ouvrages existants"
+        },
+        {
+          "id": "d6",
+          "texte": "Développer des projets immobiliers"
+        },
+        {
+          "id": "d7",
+          "texte": "Commercialiser et valoriser des actifs immobiliers"
+        },
+        {
+          "id": "d8",
+          "texte": "Accompagner nos clients dans la réalisation de leurs projets"
+        }
+      ]
+    },
+    "approche": {
+      "eyebrow": "Notre Approche Intégrée",
+      "titre": "De la terre au projet livré",
+      "etapes": [
+        {
+          "id": "e1",
+          "label": "Foncier"
+        },
+        {
+          "id": "e2",
+          "label": "Aménagement"
+        },
+        {
+          "id": "e3",
+          "label": "Viabilisation"
+        },
+        {
+          "id": "e4",
+          "label": "Construction"
+        },
+        {
+          "id": "e5",
+          "label": "Promotion"
+        },
+        {
+          "id": "e6",
+          "label": "Gestion"
+        },
+        {
+          "id": "e7",
+          "label": "Valorisation"
+        }
+      ]
+    },
+    "philosophie": {
+      "eyebrow": "Notre Philosophie",
+      "lignes": [
+        {
+          "id": "p1",
+          "texte": "Construire avec davantage de préparation."
+        },
+        {
+          "id": "p2",
+          "texte": "Construire avec davantage de maîtrise."
+        },
+        {
+          "id": "p3",
+          "texte": "Construire avec davantage de transparence."
+        },
+        {
+          "id": "p4",
+          "texte": "Construire avec davantage de responsabilité."
+        }
+      ],
+      "conclusion": "Pour DA-TO, le développement immobilier ne doit pas uniquement produire des bâtiments ou des terrains. Il doit produire de l'utilité, de la durabilité et de la valeur."
+    }
+  },
+  "activites": {
+    "banner": {
+      "titre": "Nos Activités",
+      "sousTitre": "Trois pôles d'expertise au service de vos projets"
+    },
+    "btp": {
+      "eyebrow": "Pôle 1",
+      "titre": "BTP & Infrastructures",
+      "intro": "Le BTP constitue l'un des principaux domaines d'intervention de DA-TO. Nous développons et réalisons des projets de construction et d'infrastructures en recherchant un équilibre entre qualité, fonctionnalité, coût, délai et durabilité.",
+      "objectif": "Faire de chaque chantier un projet maîtrisé, depuis sa préparation jusqu'à sa livraison.",
+      "services": [
+        {
+          "id": "btp1",
+          "titre": "Construction de bâtiments",
+          "desc": "Résidentiels, commerciaux, administratifs, professionnels, ouvrages et infrastructures diverses."
+        },
+        {
+          "id": "btp2",
+          "titre": "Travaux publics",
+          "desc": "Terrassement, préparation et aménagement des sites, voiries, réseaux divers, ouvrages d'assainissement, aménagements extérieurs, infrastructures associées aux projets."
+        },
+        {
+          "id": "btp3",
+          "titre": "Rénovation et réhabilitation",
+          "desc": "Remise en état, modernisation, transformation, réhabilitation de bâtiments et ouvrages existants."
+        },
+        {
+          "id": "btp4",
+          "titre": "Gestion de projets de construction",
+          "desc": "Planification, coordination des intervenants, suivi des travaux, contrôle de la qualité, suivi des coûts, suivi des délais, réception des ouvrages."
+        }
+      ]
+    },
+    "foncier": {
+      "eyebrow": "Pôle 2",
+      "titre": "Développement Foncier & Aménagement",
+      "intro": "Le foncier constitue une composante essentielle de notre activité. DA-TO intervient dans la transformation et la valorisation des terrains à travers des opérations structurées d'aménagement et de développement.",
+      "conclusion": "Nous considérons le foncier comme une base de développement qui doit être organisée, sécurisée et valorisée dans une perspective durable.",
+      "services": [
+        {
+          "id": "f1",
+          "texte": "Identification et analyse des opportunités foncières"
+        },
+        {
+          "id": "f2",
+          "texte": "Structuration des projets"
+        },
+        {
+          "id": "f3",
+          "texte": "Lotissement"
+        },
+        {
+          "id": "f4",
+          "texte": "Aménagement des terrains"
+        },
+        {
+          "id": "f5",
+          "texte": "Viabilisation"
+        },
+        {
+          "id": "f6",
+          "texte": "Création et organisation des espaces"
+        },
+        {
+          "id": "f7",
+          "texte": "Préparation des terrains à la construction"
+        },
+        {
+          "id": "f8",
+          "texte": "Développement de projets fonciers"
+        }
+      ]
+    },
+    "immobilier": {
+      "eyebrow": "Pôle 3",
+      "titre": "Immobilier & Valorisation",
+      "intro": "DA-TO développe également des activités liées à la promotion, à la commercialisation et à la gestion immobilière.",
+      "conclusion": "Notre approche vise à établir une cohérence entre emplacement, conception, qualité, fonctionnalité, coût et potentiel de valorisation.",
+      "services": [
+        {
+          "id": "i1",
+          "texte": "Promotion immobilière"
+        },
+        {
+          "id": "i2",
+          "texte": "Développement de programmes immobiliers"
+        },
+        {
+          "id": "i3",
+          "texte": "Vente de parcelles"
+        },
+        {
+          "id": "i4",
+          "texte": "Vente de bâtiments et biens immobiliers"
+        },
+        {
+          "id": "i5",
+          "texte": "Gestion immobilière"
+        },
+        {
+          "id": "i6",
+          "texte": "Valorisation d'actifs"
+        },
+        {
+          "id": "i7",
+          "texte": "Accompagnement des investisseurs"
+        },
+        {
+          "id": "i8",
+          "texte": "Accompagnement des particuliers dans leurs projets immobiliers"
+        }
+      ]
+    }
+  },
+  "actualites": {
+    "banner": {
+      "titre": "Actualités",
+      "sousTitre": "Nos projets, réalisations et annonces"
+    },
+    "articles": [
+      {
+        "id": "art1",
+        "date": "15 septembre 2026",
+        "titre": "DA-TO GUINEE SA lance un nouveau programme immobilier en Guinée",
+        "resume": "DA-TO GUINEE SA annonce le lancement d'un nouveau programme immobilier destiné à répondre à la demande croissante de logements modernes et accessibles en Guinée.",
+        "slug": "programme-immobilier-guinee"
+      },
+      {
+        "id": "art2",
+        "date": "2 septembre 2026",
+        "titre": "Nos équipes mobilisées sur un chantier de viabilisation",
+        "resume": "Les équipes de DA-TO sont pleinement engagées sur un important chantier de viabilisation, contribuant à la préparation de nouveaux espaces constructibles.",
+        "slug": "chantier-viabilisation"
+      },
+      {
+        "id": "art3",
+        "date": "20 août 2026",
+        "titre": "DA-TO renforce ses partenariats avec les acteurs locaux",
+        "resume": "Dans le cadre de sa stratégie de développement, DA-TO GUINEE SA consolide ses relations avec les entreprises, prestataires et institutions guinéens.",
+        "slug": "partenariats-acteurs-locaux"
+      }
+    ]
+  },
+  "contact": {
+    "banner": {
+      "titre": "Contact",
+      "sousTitre": "Parlons de votre projet"
+    },
+    "coordonnees": {
+      "adresse": "Lambanyi Carrefour TMI, Conakry, Guinée",
+      "telephone": "+224 628 88 30 30",
+      "email": "contact@datoguinee.com",
+      "horaires": "Lundi – Vendredi : 8h00 – 17h00"
+    },
+    "clients": {
+      "eyebrow": "Nos Clients & Partenaires",
+      "titre": "Avec qui nous travaillons",
+      "clients": {
+        "label": "Nos clients",
+        "items": [
+          {
+            "id": "c1",
+            "texte": "Particuliers"
+          },
+          {
+            "id": "c2",
+            "texte": "Entreprises"
+          },
+          {
+            "id": "c3",
+            "texte": "Investisseurs"
+          },
+          {
+            "id": "c4",
+            "texte": "Propriétaires fonciers"
+          },
+          {
+            "id": "c5",
+            "texte": "Promoteurs"
+          },
+          {
+            "id": "c6",
+            "texte": "Institutions et organisations"
+          }
+        ]
+      },
+      "partenaires": {
+        "label": "Nos partenaires",
+        "items": [
+          {
+            "id": "p1",
+            "texte": "Architectes & ingénieurs"
+          },
+          {
+            "id": "p2",
+            "texte": "Bureaux d'études & géomètres"
+          },
+          {
+            "id": "p3",
+            "texte": "Entreprises spécialisées"
+          },
+          {
+            "id": "p4",
+            "texte": "Fournisseurs & prestataires techniques"
+          },
+          {
+            "id": "p5",
+            "texte": "Investisseurs & établissements financiers"
+          },
+          {
+            "id": "p6",
+            "texte": "Partenaires institutionnels"
+          }
+        ]
+      }
+    },
+    "contribution": {
+      "eyebrow": "Notre Contribution au Développement de la Guinée",
+      "items": [
+        {
+          "id": "con1",
+          "texte": "Création d'infrastructures"
+        },
+        {
+          "id": "con2",
+          "texte": "Développement de logements et d'espaces professionnels"
+        },
+        {
+          "id": "con3",
+          "texte": "Aménagement des territoires"
+        },
+        {
+          "id": "con4",
+          "texte": "Valorisation du foncier"
+        },
+        {
+          "id": "con5",
+          "texte": "Création d'emplois directs et indirects"
+        },
+        {
+          "id": "con6",
+          "texte": "Développement des compétences locales"
+        },
+        {
+          "id": "con7",
+          "texte": "Collaboration avec les entreprises guinéennes"
+        },
+        {
+          "id": "con8",
+          "texte": "Création de valeur économique durable"
+        }
+      ]
+    }
+  },
+  "engagements": {
+    "banner": {
+      "titre": "Engagements & HSE",
+      "sousTitre": "Notre responsabilité envers nos projets, nos équipes et notre territoire"
+    },
+    "engagements": {
+      "eyebrow": "Nos Engagements",
+      "titre": "Ce qui guide chacun de nos projets",
+      "items": [
+        {
+          "id": "eng1",
+          "titre": "Construire durablement",
+          "desc": "Solutions pensées pour durer et répondre aux conditions réelles de leur environnement."
+        },
+        {
+          "id": "eng2",
+          "titre": "Maîtriser les coûts",
+          "desc": "Efficience à chaque étape pour éviter les dépenses inutiles et préserver l'équilibre économique des projets."
+        },
+        {
+          "id": "eng3",
+          "titre": "Garantir la qualité",
+          "desc": "Attention particulière à la conception, aux matériaux, à l'exécution et au contrôle des travaux."
+        },
+        {
+          "id": "eng4",
+          "titre": "Respecter les délais",
+          "desc": "La planification et le suivi sont essentiels à notre gestion de projet."
+        },
+        {
+          "id": "eng5",
+          "titre": "Travailler avec transparence",
+          "desc": "Relations claires avec clients, partenaires, fournisseurs et collaborateurs."
+        },
+        {
+          "id": "eng6",
+          "titre": "Préserver la valeur",
+          "desc": "Un ouvrage ou un actif immobilier doit conserver son utilité et sa valeur aussi longtemps que possible."
+        },
+        {
+          "id": "eng7",
+          "titre": "Agir avec responsabilité",
+          "desc": "Chaque projet doit tenir compte de son environnement, de ses utilisateurs et de son impact sur le territoire."
+        }
+      ]
+    },
+    "hse": {
+      "eyebrow": "Qualité, Sécurité & HSE",
+      "titre": "Une culture de chantier responsable",
+      "pratiques": [
+        {
+          "id": "h1",
+          "texte": "Sécurité des travailleurs"
+        },
+        {
+          "id": "h2",
+          "texte": "Prévention des risques"
+        },
+        {
+          "id": "h3",
+          "texte": "Protection des personnes et des biens"
+        },
+        {
+          "id": "h4",
+          "texte": "Organisation des chantiers"
+        },
+        {
+          "id": "h5",
+          "texte": "Qualité des travaux"
+        },
+        {
+          "id": "h6",
+          "texte": "Gestion des matériaux et équipements"
+        },
+        {
+          "id": "h7",
+          "texte": "Protection de l'environnement"
+        }
+      ],
+      "objectif": "Développer une culture de chantier où la performance ne se fait pas au détriment de la sécurité ou de la qualité."
+    },
+    "technologie": {
+      "eyebrow": "Notre Rapport à la Technologie",
+      "titre": "Nous Intégrons la technologie et solutions numeriques",
+      "domaines": [
+        {
+          "id": "t1",
+          "texte": "Gestion des projets"
+        },
+        {
+          "id": "t2",
+          "texte": "Planification des travaux"
+        },
+        {
+          "id": "t3",
+          "texte": "Suivi des chantiers"
+        },
+        {
+          "id": "t4",
+          "texte": "Gestion documentaire"
+        },
+        {
+          "id": "t5",
+          "texte": "Gestion financière"
+        },
+        {
+          "id": "t6",
+          "texte": "Relation client"
+        },
+        {
+          "id": "t7",
+          "texte": "Gestion immobilière"
+        },
+        {
+          "id": "t8",
+          "texte": "Reporting & prise de décision"
+        }
+      ]
+    }
+  },
+  "home": {
+    "hero": {
+      "tagline": "BTP • Développement Foncier • Immobilier",
+      "titre": "Construire durablement.",
+      "titreAccent": "Créer de la valeur.",
+      "sousTitre": "Votre partenaire de confiance pour tous vos projets de construction, d’aménagement et d’immobilier en Guinée.",
+      "cta": "Découvrir nos activités",
+      "scrollLabel": "Défiler"
+    },
+    "carousel": [
+      {
+        "id": "slide-btp",
+        "titre": "BTP & Infrastructures",
+        "description": "Nous réalisons des ouvrages de qualité — bâtiments, routes, ponts et infrastructures — qui structurent le développement de la Guinée."
+      },
+      {
+        "id": "slide-foncier",
+        "titre": "Développement Foncier & Aménagement",
+        "description": "Nous valorisons le foncier guinéen à travers des opérations d’aménagement, de lotissement et de viabilisation durables."
+      },
+      {
+        "id": "slide-immobilier",
+        "titre": "Immobilier & Valorisation",
+        "description": "Nous concevons et commercialisons des programmes immobiliers modernes, adaptés aux besoins du marché africain."
+      }
+    ],
+    "accroche": {
+      "ligne1": "DA-TO GUINEE SA est une entreprise guinéenne spécialisée dans le BTP, le développement foncier et l’immobilier.",
+      "ligne2": "Nous concevons, développons et réalisons des projets qui créent de la valeur durable."
+    },
+    "poles": {
+      "eyebrow": "Expertise",
+      "titre": "Nos 3 Pôles d’Activité",
+      "items": [
+        {
+          "id": "pole-btp",
+          "titre": "BTP & Infrastructures"
+        },
+        {
+          "id": "pole-foncier",
+          "titre": "Développement Foncier & Aménagement"
+        },
+        {
+          "id": "pole-immobilier",
+          "titre": "Immobilier & Valorisation"
+        }
+      ]
+    },
+    "atouts": {
+      "eyebrow": "Notre différence",
+      "titre": "Pourquoi nous choisir ?",
+      "items": [
+        {
+          "id": "qualite",
+          "titre": "Qualité",
+          "desc": "Des standards rigoureux à chaque étape de nos projets."
+        },
+        {
+          "id": "durabilite",
+          "titre": "Durabilité",
+          "desc": "Des solutions pensées pour durer et respecter l’environnement."
+        },
+        {
+          "id": "maitrise",
+          "titre": "Maîtrise",
+          "desc": "Une expertise technique et managériale reconnue."
+        },
+        {
+          "id": "valeur",
+          "titre": "Valeur",
+          "desc": "Chaque projet crée une valeur tangible et durable."
+        }
+      ]
+    },
+    "contribution": {
+      "eyebrow": "",
+      "titre": "Notre contribution au développement de la Guinée",
+      "para1": "DA-TO GUINEE SA s’engage à bâtir une Guinée moderne, en contribuant activement à la création d’infrastructures solides, de logements accessibles et d’espaces aménagés qui améliorent le cadre de vie des populations.",
+      "para2": "Chaque projet que nous réalisons est une pierre posée sur le chemin du développement durable de notre pays.",
+      "cta": "En savoir plus"
+    },
+    "ctaContact": {
+      "eyebrow": "Passez à l’action",
+      "titre": "Prêt à concrétiser votre projet ?",
+      "desc": "Notre équipe est à votre disposition pour étudier votre projet et vous proposer les meilleures solutions.",
+      "cta": "Contactez-nous",
+      "slogan": "“Construire durablement. Créer de la valeur.”"
+    }
+  },
+  "methode": {
+    "banner": {
+      "titre": "Notre Méthode",
+      "sousTitre": "Un processus rigoureux, du besoin à la livraison"
+    },
+    "intro": {
+      "eyebrow": "Notre Approche",
+      "texte": "Chaque projet que nous réalisons suit une méthodologie structurée qui garantit la qualité, la maîtrise des délais et la satisfaction de nos clients."
+    },
+    "etapes": [
+      {
+        "id": "m1",
+        "num": "01",
+        "titre": "Comprendre",
+        "desc": "Nous analysons le besoin, le contexte, les contraintes et les objectifs du projet."
+      },
+      {
+        "id": "m2",
+        "num": "02",
+        "titre": "Étudier",
+        "desc": "Nous examinons les caractéristiques du terrain, les contraintes techniques, les exigences réglementaires et les différentes options envisageables."
+      },
+      {
+        "id": "m3",
+        "num": "03",
+        "titre": "Concevoir",
+        "desc": "Nous recherchons des solutions adaptées à la destination du projet, à son environnement et aux moyens disponibles."
+      },
+      {
+        "id": "m4",
+        "num": "04",
+        "titre": "Planifier",
+        "desc": "Nous définissons les différentes étapes du projet, les ressources nécessaires, les délais et les modalités de suivi."
+      },
+      {
+        "id": "m5",
+        "num": "05",
+        "titre": "Exécuter",
+        "desc": "Nous coordonnons la réalisation des travaux dans le respect des exigences définies."
+      },
+      {
+        "id": "m6",
+        "num": "06",
+        "titre": "Contrôler",
+        "desc": "Nous suivons l'avancement, la qualité, les coûts, les délais et les éventuelles difficultés rencontrées."
+      },
+      {
+        "id": "m7",
+        "num": "07",
+        "titre": "Livrer",
+        "desc": "Nous veillons à ce que le résultat final corresponde aux exigences convenues et aux objectifs du projet."
+      }
+    ]
+  }
+}

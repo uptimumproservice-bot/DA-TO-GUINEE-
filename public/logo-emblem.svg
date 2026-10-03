@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="emb-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00488A" />
+      <stop offset="50%" stop-color="#072C5B" />
+      <stop offset="100%" stop-color="#031733" />
+    </linearGradient>
+    <linearGradient id="emb-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#E07A00" />
+    </linearGradient>
+    <linearGradient id="emb-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A3E0" />
+      <stop offset="100%" stop-color="#006BB3" />
+    </linearGradient>
+    <linearGradient id="emb-red" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D9162E" />
+      <stop offset="100%" stop-color="#940819" />
+    </linearGradient>
+    <linearGradient id="emb-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B933C" />
+      <stop offset="100%" stop-color="#0F5320" />
+    </linearGradient>
+    <linearGradient id="emb-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#474C54" />
+      <stop offset="100%" stop-color="#1E2124" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left outer frame -->
+  <path d="M 100,8 L 15,58 L 15,182 L 100,232 L 90,216 L 44,166 L 44,74 L 90,34 Z" fill="url(#emb-blue)" />
+
+  <!-- Top-right gold -->
+  <path d="M 100,8 L 185,58 L 185,88 L 100,38 Z" fill="url(#emb-gold)" />
+
+  <!-- Cyan inner slope -->
+  <path d="M 100,44 L 185,94 L 164,107 L 100,70 Z" fill="url(#emb-cyan)" />
+
+  <!-- Red column -->
+  <path d="M 44,90 L 88,64 L 88,195 L 44,170 Z" fill="url(#emb-red)" />
+
+  <!-- Green column -->
+  <path d="M 96,98 L 140,124 L 140,198 L 96,222 Z" fill="url(#emb-green)" />
+
+  <!-- Anthracite block -->
+  <path d="M 148,130 L 185,152 L 185,175 L 148,154 Z" fill="url(#emb-dark)" />
+</svg>

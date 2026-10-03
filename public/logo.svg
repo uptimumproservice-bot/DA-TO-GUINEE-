@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <defs>
+    <!-- Left outer frame gradient: Royal blue to dark navy -->
+    <linearGradient id="dato-blue-chevron" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#005FAA" />
+      <stop offset="30%" stop-color="#034386" />
+      <stop offset="70%" stop-color="#052654" />
+      <stop offset="100%" stop-color="#02142B" />
+    </linearGradient>
+
+    <!-- Top right facet gradient: Warm golden amber -->
+    <linearGradient id="dato-gold-roof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#E06A00" />
+    </linearGradient>
+
+    <!-- Cyan inner facet gradient -->
+    <linearGradient id="dato-cyan-roof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B2EE" />
+      <stop offset="100%" stop-color="#0072B2" />
+    </linearGradient>
+
+    <!-- Crimson red column gradient -->
+    <linearGradient id="dato-red-tower" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E31B23" />
+      <stop offset="100%" stop-color="#9E0D1B" />
+    </linearGradient>
+
+    <!-- Emerald green column gradient -->
+    <linearGradient id="dato-green-tower" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1FA84A" />
+      <stop offset="100%" stop-color="#0D5A22" />
+    </linearGradient>
+
+    <!-- Dark charcoal anthracite block gradient -->
+    <linearGradient id="dato-dark-facet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#424850" />
+      <stop offset="100%" stop-color="#1E2125" />
+    </linearGradient>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- 1. 3D ISOMETRIC HEXAGON EMBLEM              -->
+  <!-- ========================================== -->
+
+  <!-- Left outer shell (Navy blue frame with progressive gradient) -->
+  <path 
+    d="M 150,105 L 55,250 L 150,395 L 150,355 L 85,250 L 150,145 Z" 
+    fill="url(#dato-blue-chevron)" 
+  />
+
+  <!-- Top right golden amber facet -->
+  <path 
+    d="M 150,105 L 245,160 L 245,195 L 150,140 Z" 
+    fill="url(#dato-gold-roof)" 
+  />
+
+  <!-- Cyan inner roof facet -->
+  <path 
+    d="M 150,150 L 245,205 L 245,240 L 150,185 Z" 
+    fill="url(#dato-cyan-roof)" 
+  />
+
+  <!-- Red column (1st inner tower) -->
+  <path 
+    d="M 105,218 L 142,196 L 142,340 L 105,362 Z" 
+    fill="url(#dato-red-tower)" 
+  />
+
+  <!-- Green column (2nd inner tower) -->
+  <path 
+    d="M 152,232 L 189,210 L 189,354 L 152,376 Z" 
+    fill="url(#dato-green-tower)" 
+  />
+
+  <!-- Anthracite block (3rd inner tower) -->
+  <path 
+    d="M 205,270 L 245,295 L 245,325 L 205,300 Z" 
+    fill="url(#dato-dark-facet)" 
+  />
+
+  <!-- ========================================== -->
+  <!-- 2. VERTICAL NAVY SEPARATOR LINE             -->
+  <!-- ========================================== -->
+  <line 
+    x1="285" 
+    y1="120" 
+    x2="285" 
+    y2="380" 
+    stroke="#0A2540" 
+    stroke-width="3.5" 
+    stroke-linecap="round" 
+  />
+
+  <!-- ========================================== -->
+  <!-- 3. WORDMARK: DA-TO                         -->
+  <!-- ========================================== -->
+  <g fill="#0A2540">
+    <!-- Letter 'D' -->
+    <path d="M 330,135 L 405,135 C 445,135 468,155 468,192.5 C 468,230 445,250 405,250 L 330,250 Z M 362,159 L 362,226 L 400,226 C 426,226 440,213 440,192.5 C 440,172 426,159 400,159 Z" />
+
+    <!-- Letter 'A' (Chevron / with no crossbar) -->
+    <path d="M 527,135 L 548,135 L 600,250 L 565,250 L 537.5,182 L 510,250 L 475,250 Z" />
+
+    <!-- Hyphen '-' -->
+    <rect x="622" y="180" width="45" height="22" rx="2" />
+
+    <!-- Letter 'T' -->
+    <path d="M 685,135 L 795,135 L 795,160 L 755,160 L 755,250 L 725,250 L 725,160 L 685,160 Z" />
+
+    <!-- Letter 'O' -->
+    <path d="M 877.5,135 C 922,135 944,157 944,192.5 C 944,228 922,250 877.5,250 C 833,250 811,228 811,192.5 C 811,157 833,135 877.5,135 Z M 877.5,159 C 898,159 915,172 915,192.5 C 915,213 898,226 877.5,226 C 857,226 840,213 840,192.5 C 840,172 857,159 877.5,159 Z" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. SUBTITLE: ——  G U I N É E  ——           -->
+  <!-- ========================================== -->
+  <!-- Left rule -->
+  <line x1="330" y1="292" x2="455" y2="292" stroke="#0A2540" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Vector paths for G U I N É E to guarantee 100% exact rendering -->
+  <g fill="#0A2540">
+    <!-- G (X ~ 490) -->
+    <path d="M 530,277 L 530,289 C 524,285 517,283 509,283 C 496,283 488,292 488,303 C 488,314 496,323 509,323 C 517,323 523,320 528,315 L 528,306 L 510,306 L 510,297 L 538,297 L 538,321 C 530,328 520,332 508,332 C 489,332 476,319 476,303 C 476,287 489,274 508,274 C 520,274 526,276 530,277 Z" />
+    
+    <!-- U (X ~ 555) -->
+    <path d="M 552,275 L 562,275 L 562,310 C 562,319 567,323 575,323 C 583,323 588,319 588,310 L 588,275 L 598,275 L 598,310 C 598,325 589,332 575,332 C 561,332 552,325 552,310 Z" />
+    
+    <!-- I (X ~ 620) -->
+    <path d="M 618,275 L 628,275 L 628,331 L 618,331 Z" />
+    
+    <!-- N (X ~ 655) -->
+    <path d="M 652,275 L 662,275 L 685,315 L 685,275 L 695,275 L 695,331 L 685,331 L 662,291 L 662,331 L 652,331 Z" />
+    
+    <!-- É (X ~ 720) -->
+    <path d="M 718,275 L 748,275 L 748,284 L 728,284 L 728,298 L 745,298 L 745,307 L 728,307 L 728,322 L 748,322 L 748,331 L 718,331 Z" />
+    <!-- Acute accent over E -->
+    <path d="M 730,269 L 742,259 L 746,262 L 734,272 Z" />
+    
+    <!-- E (X ~ 775) -->
+    <path d="M 772,275 L 802,275 L 802,284 L 782,284 L 782,298 L 799,298 L 799,307 L 782,307 L 782,322 L 802,322 L 802,331 L 772,331 Z" />
+  </g>
+  
+  <!-- Right rule -->
+  <line x1="815" y1="292" x2="940" y2="292" stroke="#0A2540" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- ========================================== -->
+  <!-- 5. SLOGAN: Construire durablement...        -->
+  <!-- ========================================== -->
+  <text 
+    x="330" 
+    y="380" 
+    textLength="610" 
+    lengthAdjust="spacingAndGlyphs"
+    font-family="'Inter', 'Montserrat', 'Liberation Sans', sans-serif" 
+    font-size="26" 
+    font-weight="500" 
+    fill="#0A2540"
+  >Construire durablement. Créer de la valeur.</text>
+</svg>
