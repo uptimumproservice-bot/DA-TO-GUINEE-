@@ -82,13 +82,23 @@ export default function NosActivitesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
               {/* Image */}
               <FadeIn>
-                <div className="rounded-2xl overflow-hidden shadow-xl h-96 sticky top-24">
-                  <img
-                    src="/airo-assets/images/pages/activites/pole-btp"
-                    alt="BTP & Infrastructures"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                <div className="flex flex-col gap-6 sticky top-24">
+                  <div className="rounded-2xl overflow-hidden shadow-xl h-72">
+                    <img
+                      src="/src/assets/images/btp_modern_building_1791198251128.jpg"
+                      alt="BTP & Infrastructures - Chantier moderne"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden shadow-xl h-72">
+                    <img
+                      src="/src/assets/images/bitume_road_construction_1791198264835.jpg"
+                      alt="BTP & Infrastructures - Travaux de bitume"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </FadeIn>
               {/* Content */}
