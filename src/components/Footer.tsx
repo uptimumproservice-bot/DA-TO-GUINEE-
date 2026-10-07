@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-[#F5A623] transition-colors flex items-center gap-1.5 text-slate-300 group"
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-[#F5A623] group-hover:translate-x-1 transition-transform" />
-                  À propos du Groupe
+                  À propos de DA-TO GUINEE SA
                 </button>
               </li>
               <li>

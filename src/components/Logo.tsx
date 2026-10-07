@@ -62,7 +62,7 @@ export const Logo: React.FC<LogoProps> = ({
       <img 
         src={logoSrc} 
         alt="DA-TO GUINEE SA" 
-        className="h-10 sm:h-14 md:h-16 w-auto max-w-[100px] sm:max-w-none object-contain select-none"
+        className="h-10 w-auto sm:h-12 sm:w-auto sm:max-w-[180px] md:h-16 md:max-w-[220px] object-contain select-none"
       />
     </div>
   );

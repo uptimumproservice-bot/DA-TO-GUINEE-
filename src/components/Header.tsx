@@ -75,16 +75,16 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Sticky Header */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-[#0B2C5C] text-white border-b border-blue-900/60 ${
-          isScrolled ? 'shadow-xl py-2.5' : 'py-3.5'
+        className={`sticky top-0 z-50 transition-all duration-300 bg-[#0B2C5C] text-white border-b border-blue-900/60 h-[60px] flex items-center ${
+          isScrolled ? 'shadow-xl' : ''
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo Zone (Left) */}
           <button 
             onClick={() => handleNavClick('accueil')}
-            className="flex items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] rounded-md transition-opacity hover:opacity-95"
+            className="flex items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] rounded-md transition-opacity hover:opacity-95 flex-shrink-0 -ml-2 sm:ml-0"
             title="Retour à l'accueil DA-TO GUINEE SA"
           >
             <LogoPlaceholder variant="header" />
@@ -121,10 +121,10 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Action Button & Mobile Hamburger (Right) */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-shrink-0">
             <button
               onClick={onOpenQuoteModal}
-              className="btn-accent px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-md cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="hidden sm:flex btn-accent px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold items-center gap-1.5 shadow-md cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span>Demander un devis</span>
               <ArrowRight className="w-4 h-4 hidden sm:inline-block" />
@@ -133,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623]"
+              className="xl:hidden p-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={mobileMenuOpen}
             >
