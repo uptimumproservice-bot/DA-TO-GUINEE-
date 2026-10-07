@@ -34,7 +34,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({
       <ParallaxBanner
         title="Nos Activités & Domaines d'Expertise"
         subtitle="Trois pôles d'excellence complémentaires pour bâtir la Guinée moderne avec sécurité, rigueur et performance."
-        image="/src/assets/images/hero_real_estate_1790975118410.jpg"
+        image="/uploaded-images/hero_real_estate_1790975118410.jpg"
         badge="EXPERTISE BTP & VALORISATION EN GUINÉE"
         currentPageLabel="Nos Activités"
         onNavigateHome={() => onNavigate('accueil')}

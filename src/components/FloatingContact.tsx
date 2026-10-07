@@ -26,14 +26,14 @@ export const FloatingContact: React.FC = () => {
 
           <div className="mt-3 space-y-2">
             <a
-              href="tel:+224600000000"
+              href="tel:+224628883030"
               className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-amber-50 text-slate-800 hover:text-[#0B2C5C] border border-slate-200/80 transition-colors group"
             >
               <div className="w-8 h-8 rounded-lg bg-[#0B2C5C] text-white flex items-center justify-center">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="text-left flex-1">
-                <div className="text-xs font-bold">+224 600 00 00 00</div>
+                <div className="text-xs font-bold">+224 628 88 30 30</div>
                 <div className="text-[10px] text-slate-500">Appel direct Conakry</div>
               </div>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#F5A623]" />

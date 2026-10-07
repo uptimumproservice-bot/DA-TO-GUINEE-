@@ -73,7 +73,7 @@ export const NewsPage: React.FC<NewsPageProps> = ({
       <ParallaxBanner
         title="Actualités & Vie des Chantiers"
         subtitle="Suivez les étapes majeures de nos réalisations, nos avancées techniques et la vie du DA-TO GUINEE SA en République de Guinée."
-        image="/src/assets/images/hero_land_survey_1790975129590.jpg"
+        image="/uploaded-images/hero_land_survey_1790975129590.jpg"
         badge="COMMUNIQUÉS OFFICIELS & JOURNAL DE CHANTIER"
         currentPageLabel="Actualités"
         onNavigateHome={() => onNavigate('accueil')}

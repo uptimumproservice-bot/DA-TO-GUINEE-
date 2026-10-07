@@ -40,25 +40,25 @@ export default function Footer() {
       name: 'Facebook',
       url: 'https://facebook.com',
       icon: Facebook,
-      label: 'Suivez le DA-TO GUINEE SA sur Facebook',
+      label: 'Suivez DA-TO GUINEE SA sur Facebook',
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com',
       icon: Linkedin,
-      label: 'Suivez le DA-TO GUINEE SA sur LinkedIn',
+      label: 'Suivez DA-TO GUINEE SA sur LinkedIn',
     },
     {
       name: 'TikTok',
       url: 'https://tiktok.com',
       icon: TikTokIcon,
-      label: 'Suivez le DA-TO GUINEE SA sur TikTok',
+      label: 'Suivez DA-TO GUINEE SA sur TikTok',
     },
     {
       name: 'YouTube',
       url: 'https://youtube.com',
       icon: Youtube,
-      label: 'Chaîne YouTube du DA-TO GUINEE SA',
+      label: 'Chaîne YouTube de DA-TO GUINEE SA',
     },
   ];
 
@@ -207,7 +207,7 @@ export default function Footer() {
         <div className="border-t border-white/10">
           <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/50 text-center md:text-left">
-              © {currentYear} DA-TO GUINEE SA. Tous droits réservés.
+              © 2026 DA-TO GUINEE SA. Tous droits réservés.
             </p>
 
             <div className="flex gap-5 text-center">

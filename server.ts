@@ -139,6 +139,13 @@ app.post('/api/video-download', async (req, res) => {
 async function startServer() {
   const isProd = process.env.NODE_ENV === 'production';
   const port = process.env.PORT || 3000;
+  const publicPath = path.resolve(import.meta.dirname, 'public');
+
+  // Serve static assets directly with proper caching & MIME handling
+  app.use(express.static(publicPath));
+  app.use('/uploaded-images', express.static(path.resolve(publicPath, 'uploaded-images')));
+  app.use('/airo-assets', express.static(path.resolve(publicPath, 'airo-assets')));
+  app.use('/assets', express.static(path.resolve(publicPath, 'assets')));
 
   if (!isProd) {
     const vite = await createViteServer({

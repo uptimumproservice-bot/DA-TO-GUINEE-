@@ -3,6 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { actualites } from 'virtual:content';
+import { formatBrandText } from '@/components/BrandText';
 
 function FadeIn({
   children,
@@ -29,9 +30,9 @@ function FadeIn({
 }
 
 const articleImages = [
-  '/airo-assets/images/pages/actualites/article-immobilier',
-  '/airo-assets/images/pages/actualites/article-viabilisation',
-  '/airo-assets/images/pages/actualites/article-partenariat',
+  '/airo-assets/images/pages/actualites/article-immobilier.jpg',
+  '/airo-assets/images/pages/actualites/article-viabilisation.jpg',
+  '/airo-assets/images/pages/actualites/article-partenariat.jpg',
 ];
 
 export default function ActualitesPage() {
@@ -57,7 +58,7 @@ export default function ActualitesPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/actualites/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/actualites/banner.jpg)',
               y: parallaxY,
             }}
           />
@@ -65,6 +66,7 @@ export default function ActualitesPage() {
             className="absolute inset-0 pointer-events-none"
             style={{ background: 'linear-gradient(135deg, hsl(var(--primary) / 0.90) 0%, hsl(var(--primary) / 0.65) 100%)' }}
           />
+
           <div className="relative z-10 container mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -111,7 +113,7 @@ export default function ActualitesPage() {
                         <span>{article.titre}</span>
                       </h2>
                       <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                        <span>{article.resume}</span>
+                        <span>{formatBrandText(article.resume)}</span>
                       </p>
                       <div className="pt-2">
                         <span

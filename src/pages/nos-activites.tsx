@@ -4,6 +4,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { CheckCircle2, ArrowRight, Target } from 'lucide-react';
 import { activites } from 'virtual:content';
+import { formatBrandText } from '@/components/BrandText';
 
 function FadeIn({
   children,
@@ -80,24 +81,47 @@ export default function NosActivitesPage() {
         <section id="btp" className="py-20 bg-white scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-              {/* Image */}
+              {/* Images BTP & Infrastructure */}
               <FadeIn>
                 <div className="flex flex-col gap-6 sticky top-24">
-                  <div className="rounded-2xl overflow-hidden shadow-xl h-72">
+                  {/* Image 1: BTP & Construction */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
                     <img
-                      src="/src/assets/images/btp_modern_building_1791198251128.jpg"
-                      alt="BTP & Infrastructures - Chantier moderne"
-                      className="w-full h-full object-cover"
+                      src="/src/assets/images/btp_building_construction_1791408048105.jpg"
+                      alt="BTP et Construction de Bâtiments - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      referrerPolicy="no-referrer"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                      <span className="text-xs font-bold uppercase tracking-wider bg-[#0B2C5C]/90 backdrop-blur-xs px-3 py-1 rounded-md border border-white/20">
+                        BTP & Bâtiments
+                      </span>
+                      <span className="text-[11px] text-white/90 font-medium">
+                        Génie Civil & Gros Œuvre
+                      </span>
+                    </div>
                   </div>
-                  <div className="rounded-2xl overflow-hidden shadow-xl h-72">
+
+                  {/* Image 2: Infrastructures & VRD */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
                     <img
-                      src="/src/assets/images/bitume_road_construction_1791198264835.jpg"
-                      alt="BTP & Infrastructures - Travaux de bitume"
-                      className="w-full h-full object-cover"
+                      src="/src/assets/images/road_asphalt_paving_crew_1791411346218.jpg"
+                      alt="Travaux de bitumage et pose d'enrobé - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      referrerPolicy="no-referrer"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                      <span className="text-xs font-bold uppercase tracking-wider bg-[#F5A623] text-[#0B2C5C] px-3 py-1 rounded-md font-bold">
+                        Infrastructures & VRD
+                      </span>
+                      <span className="text-[11px] text-white/90 font-medium">
+                        Routes, Ponts & Réseaux
+                      </span>
+                    </div>
                   </div>
                 </div>
               </FadeIn>
@@ -111,7 +135,7 @@ export default function NosActivitesPage() {
                   <span>{activites.btp.titre}</span>
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  <span>{activites.btp.intro}</span>
+                  <span>{formatBrandText(activites.btp.intro)}</span>
                 </p>
                 <div className="flex flex-col gap-5 mb-8">
                   {activites.btp.services.map((s) => (
@@ -147,7 +171,7 @@ export default function NosActivitesPage() {
                   <span>{activites.foncier.titre}</span>
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  <span>{activites.foncier.intro}</span>
+                  <span>{formatBrandText(activites.foncier.intro)}</span>
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {activites.foncier.services.map((s) => (
@@ -201,7 +225,7 @@ export default function NosActivitesPage() {
                   <span>{activites.immobilier.titre}</span>
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  <span>{activites.immobilier.intro}</span>
+                  <span>{formatBrandText(activites.immobilier.intro)}</span>
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {activites.immobilier.services.map((s) => (

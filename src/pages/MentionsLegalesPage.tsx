@@ -34,7 +34,7 @@ export default function MentionsLegalesPage() {
                   1. Éditeur du site et identification de l'entreprise
                 </h2>
                 <p>
-                  Le présent site internet institutionnel est édité par la société <strong>DA-TO GUINEE SA</strong> (Société Anonyme de droit guinéen), entreprise de référence spécialisée dans le BTP, le développement foncier et la promotion immobilière, dont le siège social est situé à <strong>Lambanyi Carrefour TMI, Conakry, République de Guinée</strong>, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM).
+                  Le présent site internet institutionnel est édité par la société DA-TO GUINEE SA (Société Anonyme de droit guinéen), entreprise de référence spécialisée dans le BTP, le développement foncier et la promotion immobilière, dont le siège social est situé à <strong>Lambanyi Carrefour TMI, Conakry, République de Guinée</strong>, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM).
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600 mt-3">
                   <li className="flex items-center gap-2">
@@ -61,7 +61,7 @@ export default function MentionsLegalesPage() {
                   2. Direction de la publication & Hébergement
                 </h2>
                 <p>
-                  <strong>Directeur de la publication :</strong> La Direction Générale du DA-TO GUINEE SA.<br />
+                  <strong>Directeur de la publication :</strong> La Direction Générale de DA-TO GUINEE SA.<br />
                   <strong>Hébergement :</strong> Cloud sécurisé haute performance (Infrastructure Cloud Run / Vercel Enterprise).
                 </p>
               </section>
@@ -72,10 +72,10 @@ export default function MentionsLegalesPage() {
                   3. Propriété intellectuelle & Conformité réglementaire
                 </h2>
                 <p>
-                  L'ensemble des contenus (textes, images, graphismes, logos, icônes, vidéos, structures) affichés sur ce site est la propriété exclusive du DA-TO GUINEE SA ou de ses partenaires. Toute reproduction, représentation, modification ou exploitation totale ou partielle, par quelque procédé que ce soit, est formellement interdite sans l'autorisation écrite préalable du DA-TO GUINEE SA.
+                  L'ensemble des contenus (textes, images, graphismes, logos, icônes, vidéos, structures) affichés sur ce site est la propriété exclusive de DA-TO GUINEE SA ou de ses partenaires. Toute reproduction, représentation, modification ou exploitation totale ou partielle, par quelque procédé que ce soit, est formellement interdite sans l'autorisation écrite préalable de DA-TO GUINEE SA.
                 </p>
                 <p>
-                  Le DA-TO GUINEE SA exerce ses activités de BTP, d'aménagement foncier et de valorisation immobilière en stricte conformité avec la législation en vigueur en République de Guinée (Code Foncier et Domanial, normes techniques du Ministère des Travaux Publics).
+                  DA-TO GUINEE SA exerce ses activités de BTP, d'aménagement foncier et de valorisation immobilière en stricte conformité avec la législation en vigueur en République de Guinée (Code Foncier et Domanial, normes techniques du Ministère des Travaux Publics).
                 </p>
               </section>
 
@@ -84,7 +84,7 @@ export default function MentionsLegalesPage() {
                   4. Limitation de responsabilité
                 </h2>
                 <p>
-                  Les informations fournies sur ce site le sont à titre indicatif. Le DA-TO GUINEE SA s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées, mais ne saurait garantir l'exhaustivité ou l'actualité absolue des données présentées.
+                  Les informations fournies sur ce site le sont à titre indicatif. DA-TO GUINEE SA s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées, mais ne saurait garantir l'exhaustivité ou l'actualité absolue des données présentées.
                 </p>
               </section>
             </div>

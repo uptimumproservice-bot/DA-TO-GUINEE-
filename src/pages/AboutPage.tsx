@@ -56,7 +56,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <ParallaxBanner
         title="À Propos du DA-TO GUINEE SA"
         subtitle="Un bâtisseur guinéen engagé pour un développement urbain et territorial durable, rigoureux et porteur de valeur."
-        image="/src/assets/images/hero_btp_engineers_1790975106455.jpg"
+        image="/uploaded-images/hero_btp_engineers_1790975106455.jpg"
         badge="IDENTITÉ & ENGAGEMENT INSTITUTIONNEL"
         currentPageLabel="À Propos"
         onNavigateHome={() => onNavigate('accueil')}

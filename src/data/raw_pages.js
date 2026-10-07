@@ -103,7 +103,7 @@ export const pages = {
         "texte": "Construire avec davantage de responsabilité."
       }
     ],
-    "conclusion": "Pour DA-TO, le développement immobilier ne doit pas uniquement produire des bâtiments ou des terrains. Il doit produire de l'utilité, de la durabilité et de la valeur."
+    "conclusion": "Pour DA-TO GUINEE SA, le développement immobilier ne doit pas uniquement produire des bâtiments ou des terrains. Il doit produire de l'utilité, de la durabilité et de la valeur."
   }
 }),
   "activites": (schemas.pages?.activites ?? schemas.activites ?? identity).parse({
@@ -114,7 +114,7 @@ export const pages = {
   "btp": {
     "eyebrow": "Pôle 1",
     "titre": "BTP & Infrastructures",
-    "intro": "Le BTP constitue l'un des principaux domaines d'intervention de DA-TO. Nous développons et réalisons des projets de construction et d'infrastructures en recherchant un équilibre entre qualité, fonctionnalité, coût, délai et durabilité.",
+    "intro": "Le BTP constitue l'un des principaux domaines d'intervention de DA-TO GUINEE SA. Nous développons et réalisons des projets de construction et d'infrastructures en recherchant un équilibre entre qualité, fonctionnalité, coût, délai et durabilité.",
     "objectif": "Faire de chaque chantier un projet maîtrisé, depuis sa préparation jusqu'à sa livraison.",
     "services": [
       {
@@ -142,7 +142,7 @@ export const pages = {
   "foncier": {
     "eyebrow": "Pôle 2",
     "titre": "Développement Foncier & Aménagement",
-    "intro": "Le foncier constitue une composante essentielle de notre activité. DA-TO intervient dans la transformation et la valorisation des terrains à travers des opérations structurées d'aménagement et de développement.",
+    "intro": "Le foncier constitue une composante essentielle de notre activité. DA-TO GUINEE SA intervient dans la transformation et la valorisation des terrains à travers des opérations structurées d'aménagement et de développement.",
     "conclusion": "Nous considérons le foncier comme une base de développement qui doit être organisée, sécurisée et valorisée dans une perspective durable.",
     "services": [
       {
@@ -182,7 +182,7 @@ export const pages = {
   "immobilier": {
     "eyebrow": "Pôle 3",
     "titre": "Immobilier & Valorisation",
-    "intro": "DA-TO développe également des activités liées à la promotion, à la commercialisation et à la gestion immobilière.",
+    "intro": "DA-TO GUINEE SA développe également des activités liées à la promotion, à la commercialisation et à la gestion immobilière.",
     "conclusion": "Notre approche vise à établir une cohérence entre emplacement, conception, qualité, fonctionnalité, coût et potentiel de valorisation.",
     "services": [
       {
@@ -237,13 +237,13 @@ export const pages = {
       "id": "art2",
       "date": "2 septembre 2026",
       "titre": "Nos équipes mobilisées sur un chantier de viabilisation",
-      "resume": "Les équipes de DA-TO sont pleinement engagées sur un important chantier de viabilisation, contribuant à la préparation de nouveaux espaces constructibles.",
+      "resume": "Les équipes de DA-TO GUINEE SA sont pleinement engagées sur un important chantier de viabilisation, contribuant à la préparation de nouveaux espaces constructibles.",
       "slug": "chantier-viabilisation"
     },
     {
       "id": "art3",
       "date": "20 août 2026",
-      "titre": "DA-TO renforce ses partenariats avec les acteurs locaux",
+      "titre": "DA-TO GUINEE SA renforce ses partenariats avec les acteurs locaux",
       "resume": "Dans le cadre de sa stratégie de développement, DA-TO GUINEE SA consolide ses relations avec les entreprises, prestataires et institutions guinéens.",
       "slug": "partenariats-acteurs-locaux"
     }
@@ -256,7 +256,7 @@ export const pages = {
   },
   "coordonnees": {
     "adresse": "Conakry, Lambanyi, Carrefour TMI",
-    "telephone": "+224 600 00 00 00",
+    "telephone": "+224 628 88 30 30",
     "email": "contact@datoguinee.com",
     "horaires": "Lundi – Vendredi : 8h00 – 17h00"
   },

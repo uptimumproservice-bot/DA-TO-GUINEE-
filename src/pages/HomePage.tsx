@@ -210,7 +210,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600 font-medium">
-                  <span>Norme DA-TO Standard</span>
+                  <span>Norme DA-TO GUINEE SA Standard</span>
                   <span className="font-bold text-[#0B2C5C]">0{index + 1}</span>
                 </div>
               </div>

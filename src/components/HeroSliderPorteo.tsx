@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     titreAccent: 'structurer l’avenir de la Guinée.',
     description:
       'Conception et réalisation de routes, ponts, bâtiments résidentiels et complexes administratifs aux normes internationales les plus exigeantes.',
-    image: '/airo-assets/images/pages/home/carousel-btp',
+    image: '/airo-assets/images/pages/home/carousel-btp.jpg',
     link: '/nos-activites#btp',
     statLabel: 'Projets BTP & Voiries',
     statValue: '100% Maîtrisés',
@@ -36,7 +36,7 @@ const slides: SlideData[] = [
     titreAccent: 'valoriser le foncier guinéen.',
     description:
       'Opérations d’envergure de lotissement, viabilisation, terrassement et viabilisation des réseaux divers (VRD) pour des territoires durables.',
-    image: '/airo-assets/images/pages/home/carousel-foncier',
+    image: '/airo-assets/images/pages/home/carousel-foncier.jpg',
     link: '/nos-activites#foncier',
     statLabel: 'Sécurisation Foncière',
     statValue: 'Cadastre & Normes',
@@ -48,7 +48,7 @@ const slides: SlideData[] = [
     titreAccent: 'modernes et accessibles.',
     description:
       'Programmes immobiliers neufs, promotion durable et valorisation patrimoniale répondant aux besoins croissants des entreprises et familles.',
-    image: '/airo-assets/images/pages/home/carousel-immobilier',
+    image: '/airo-assets/images/pages/home/carousel-immobilier.jpg',
     link: '/nos-activites#immobilier',
     statLabel: 'Actifs & Logements',
     statValue: 'Haute Valeur',

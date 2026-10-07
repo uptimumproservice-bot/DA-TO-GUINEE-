@@ -15,10 +15,6 @@ import {
 } from 'lucide-react';
 import { home } from 'virtual:content';
 
-import heroBtpImg from '../assets/images/hero_btp_engineers_1790975106455.jpg';
-import heroLandImg from '../assets/images/hero_land_survey_1790975129590.jpg';
-import heroRealEstateImg from '../assets/images/hero_real_estate_1790975118410.jpg';
-
 // ─── Fade-in wrapper with smooth ease ──────────────────────────────────────
 function FadeIn({
   children,
@@ -46,16 +42,16 @@ function FadeIn({
 
 // ─── Carousel image slots ────────────────────────────────────────────────────
 const carouselImages = [
-  heroBtpImg,
-  heroLandImg,
-  heroRealEstateImg,
+  '/uploaded-images/hero_btp_engineers_1790975106455.jpg',
+  '/uploaded-images/hero_land_survey_1790975129590.jpg',
+  '/uploaded-images/hero_real_estate_1790975118410.jpg',
 ];
 
 // ─── Pole image slots ────────────────────────────────────────────────────────
 const poleImages = [
-  '/airo-assets/images/pages/home/pole-btp',
-  '/airo-assets/images/pages/home/pole-foncier',
-  '/airo-assets/images/pages/home/pole-immobilier',
+  '/airo-assets/images/pages/home/pole-btp.jpg',
+  '/airo-assets/images/pages/home/pole-foncier.png',
+  '/airo-assets/images/pages/home/pole-immobilier.jpg',
 ];
 
 const poleHrefs = [
@@ -417,7 +413,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url(/airo-assets/images/pages/home/contribution-guinee)',
+              backgroundImage: 'url(/airo-assets/images/pages/home/contribution-guinee.jpg)',
             }}
           />
 

@@ -34,7 +34,7 @@ export default function PolitiqueConfidentialitePage() {
                   1. Introduction & Engagement
                 </h2>
                 <p>
-                  Le <strong>DA-TO GUINEE SA</strong> accorde une importance capitale à la protection de la vie privée et des données personnelles de ses clients, investisseurs, partenaires et visiteurs de son site internet. La présente Politique de Confidentialité explicite la nature des données collectées, l'utilisation qui en est faite et les mesures de sécurité mises en œuvre.
+                  DA-TO GUINEE SA accorde une importance capitale à la protection de la vie privée et des données personnelles de ses clients, investisseurs, partenaires et visiteurs de son site internet. La présente Politique de Confidentialité explicite la nature des données collectées, l'utilisation qui en est faite et les mesures de sécurité mises en œuvre.
                 </p>
               </section>
 
@@ -68,7 +68,7 @@ export default function PolitiqueConfidentialitePage() {
                   3. Utilisation des données
                 </h2>
                 <p>
-                  Les données recueillies sont strictement destinées au traitement interne de vos demandes par le DA-TO GUINEE SA :
+                  Les données recueillies sont strictement destinées au traitement interne de vos demandes par DA-TO GUINEE SA :
                 </p>
                 <ul className="list-disc list-inside space-y-1 pl-2 text-xs text-slate-600">
                   <li>Étude technique et établissement de devis personnalisés sous 48h.</li>
@@ -85,7 +85,7 @@ export default function PolitiqueConfidentialitePage() {
                   4. Sécurité & Contact
                 </h2>
                 <p>
-                  Le DA-TO GUINEE SA met en œuvre des mesures de sécurité techniques et organisationnelles rigoureuses afin de protéger vos données contre toute perte, altération, divulgation ou accès non autorisé.
+                  DA-TO GUINEE SA met en œuvre des mesures de sécurité techniques et organisationnelles rigoureuses afin de protéger vos données contre toute perte, altération, divulgation ou accès non autorisé.
                 </p>
                 <p>
                   Pour toute question relative à notre politique de confidentialité ou pour exercer vos droits d'accès et de rectification, vous pouvez nous contacter :

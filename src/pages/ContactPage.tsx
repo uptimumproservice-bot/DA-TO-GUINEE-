@@ -70,7 +70,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
       <ParallaxBanner
         title="Contact & Siège Social"
         subtitle="Nos équipes d'ingénieurs et nos conseillers fonciers vous accueillent à Conakry pour donner vie à vos projets."
-        image="/src/assets/images/hero_btp_engineers_1790975106455.jpg"
+        image="/uploaded-images/hero_btp_engineers_1790975106455.jpg"
         badge="DISPONIBILITÉ & ÉCOUTE TECHNIQUE"
         currentPageLabel="Contact"
         onNavigateHome={() => onNavigate('accueil')}
@@ -430,7 +430,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </div>
             </div>
             <img 
-              src="/src/assets/images/hse_safety_team_1790975150296.jpg" 
+              src="/uploaded-images/hse_safety_team_1790975150296.jpg" 
               alt="Équipe technique professionnelle du DA-TO GUINEE SA" 
               className="w-full h-[380px] sm:h-[440px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
             />

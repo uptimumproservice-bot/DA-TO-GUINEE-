@@ -9,21 +9,21 @@ import {
 export const HERO_SLIDES = [
   {
     id: 'btp',
-    image: '/src/assets/images/hero_btp_engineers_1790975106455.jpg',
+    image: '/uploaded-images/hero_btp_engineers_1790975106455.jpg',
     category: 'Génie Civil & BTP en Guinée',
     title: 'Construire durablement. Créer de la valeur.',
     subtitle: 'Expertise technique de pointe pour les grands chantiers d’infrastructures, bâtiments tertiaires et voiries urbaines à Conakry et en provinces.',
   },
   {
     id: 'foncier',
-    image: '/src/assets/images/hero_land_survey_1790975129590.jpg',
+    image: '/uploaded-images/hero_land_survey_1790975129590.jpg',
     category: 'Développement Foncier & Aménagement',
     title: 'Aménager le territoire guinéen avec rigueur.',
     subtitle: 'Sécurisation juridique rigoureuse, topographie géospatiale de pointe et viabilisation intégrale pour des lotissements modernes et durables.',
   },
   {
     id: 'immobilier',
-    image: '/src/assets/images/hero_real_estate_1790975118410.jpg',
+    image: '/uploaded-images/hero_real_estate_1790975118410.jpg',
     category: 'Immobilier & Valorisation d’Actifs',
     title: 'Bâtir des cadres de vie d’exception.',
     subtitle: 'Conception, promotion et gestion patrimoniale de résidences modernes et de complexes commerciaux à haute rentabilité patrimoniale.',
@@ -36,8 +36,8 @@ export const ACTIVITY_POLES: ActivityPole[] = [
     title: 'BTP & Infrastructures',
     shortTitle: 'BTP & Génie Civil',
     tagline: 'Ouvrages d’art, routes et bâtiments industriels pérennes',
-    description: 'Le pôle BTP & Infrastructures du DA-TO GUINEE SA pilote la conception et l’exécution de projets structurants sur l’ensemble du territoire guinéen. Nous allions rigueur d’ingénierie, conformité aux normes internationales et maîtrise stricte des délais d’exécution.',
-    image: '/src/assets/images/hero_btp_engineers_1790975106455.jpg',
+    description: 'Le pôle BTP & Infrastructures de DA-TO GUINEE SA pilote la conception et l’exécution de projets structurants sur l’ensemble du territoire guinéen. Nous allions rigueur d’ingénierie, conformité aux normes internationales et maîtrise stricte des délais d’exécution.',
+    image: '/src/assets/images/btp_building_construction_1791408048105.jpg',
     accentColor: '#0B2C5C',
     services: [
       'Génie civil lourd et terrassements de grande masse',
@@ -58,8 +58,8 @@ export const ACTIVITY_POLES: ActivityPole[] = [
     title: 'Développement Foncier & Aménagement',
     shortTitle: 'Développement Foncier',
     tagline: 'Sécurisation, viabilisation et aménagement de réserves foncières',
-    description: 'Le DA-TO GUINEE SA est un acteur de référence dans la sécurisation juridique et l’aménagement d’espaces fonciers en République de Guinée. De la levée topographique par drone à la viabilisation complète en eau, énergie et voirie, nous transformons des terrains bruts en actifs viabilisés de haute qualité.',
-    image: '/src/assets/images/hero_land_survey_1790975129590.jpg',
+    description: 'DA-TO GUINEE SA est un acteur de référence dans la sécurisation juridique et l’aménagement d’espaces fonciers en République de Guinée. De la levée topographique par drone à la viabilisation complète en eau, énergie et voirie, nous transformons des terrains bruts en actifs viabilisés de haute qualité.',
+    image: '/uploaded-images/hero_land_survey_1790975129590.jpg',
     accentColor: '#F5A623',
     services: [
       'Bornage contradictoire, levés topographiques haute précision (RTK/Drones)',
@@ -81,7 +81,7 @@ export const ACTIVITY_POLES: ActivityPole[] = [
     shortTitle: 'Immobilier & Promotion',
     tagline: 'Promotion de standing et optimisation d’investissements',
     description: 'Notre pôle Immobilier développe des projets architecturaux modernes respectueux de l’environnement guinéen. Nous concevons, construisons et administrons des résidences contemporaines, des immeubles de standing et accompagnons les investisseurs dans la valorisation maximale de leur portefeuille.',
-    image: '/src/assets/images/hero_real_estate_1790975118410.jpg',
+    image: '/uploaded-images/hero_real_estate_1790975118410.jpg',
     accentColor: '#1F7A3A',
     services: [
       'Promotion immobilière résidentielle haut de standing et intermédiaire',
@@ -328,23 +328,23 @@ export const ARTICLES_DEMO: Article[] = [
     date: '28 Septembre 2026',
     category: 'Aménagement Foncier',
     readTime: '4 min',
-    summary: 'Le DA-TO GUINEE SA franchit une étape majeure dans l’urbanisation durable avec la viabilisation intégrale d’un lotissement moderne de 35 hectares, doté de voiries pavées et d’électrification solaire.',
-    image: '/src/assets/images/hero_real_estate_1790975118410.jpg',
+    summary: 'DA-TO GUINEE SA franchit une étape majeure dans l’urbanisation durable avec la viabilisation intégrale d’un lotissement moderne de 35 hectares, doté de voiries pavées et d’électrification solaire.',
+    image: '/uploaded-images/hero_real_estate_1790975118410.jpg',
     quote: '« Notre ambition est d’offrir aux familles et aux investisseurs guinéens des terrains avec une sécurité juridique absolue et un niveau d’équipement digne des standards internationaux. »',
     content: [
-      'Face à la croissance démographique et urbaine rapide de l’agglomération de Conakry, le DA-TO GUINEE SA a inauguré la première phase d’un programme d’aménagement novateur. Ce projet intègre dès sa genèse l’ensemble des réseaux primaires et secondaires indispensables au confort des résidents.',
+      'Face à la croissance démographique et urbaine rapide de l’agglomération de Conakry, DA-TO GUINEE SA a inauguré la première phase d’un programme d’aménagement novateur. Ce projet intègre dès sa genèse l’ensemble des réseaux primaires et secondaires indispensables au confort des résidents.',
       'Grâce à nos équipes de géomètres-experts et à l’utilisation de drones de cartographie géospatiale, l’ensemble des parcelles bénéficie d’un bornage contradictoire inaltérable et d’un statut foncier validé par les autorités compétentes.',
       'Les travaux comprennent également la réalisation de 12 kilomètres de voiries internes maçonnées, la pose de canalisations en béton armé pour l’évacuation des eaux pluviales et l’installation d’un réseau d’éclairage public autonome à haute efficacité énergétique.'
     ]
   },
   {
     id: 'infrastructure-routiere-vrd',
-    title: 'Génie civil : Le DA-TO GUINEE SA achève avec succès un tronçon routier stratégique et ses ouvrages d’art',
+    title: 'Génie civil : DA-TO GUINEE SA achève avec succès un tronçon routier stratégique et ses ouvrages d’art',
     date: '14 Août 2026',
     category: 'BTP & Infrastructures',
     readTime: '5 min',
-    summary: 'Les équipes travaux du DA-TO GUINEE SA ont réceptionné sans réserves un important chantier de désenclavement économique combinant terrassement rocheux, dalots hydrauliques et revêtement haute durabilité.',
-    image: '/src/assets/images/hero_btp_engineers_1790975106455.jpg',
+    summary: 'Les équipes travaux de DA-TO GUINEE SA ont réceptionné sans réserves un important chantier de désenclavement économique combinant terrassement rocheux, dalots hydrauliques et revêtement haute durabilité.',
+    image: '/uploaded-images/hero_btp_engineers_1790975106455.jpg',
     quote: '« La résistance d’une infrastructure en Guinée repose sur la maîtrise de l’eau. Nos ouvrages d’art sont calibrés pour résister aux crues décennales les plus intenses. »',
     content: [
       'Mobilisant plus de 25 engins lourds et une cinquantaine de techniciens et compagnons spécialisés, ce chantier s’est distingué par une organisation logistique exemplaire durant la saison des pluies.',
@@ -358,11 +358,11 @@ export const ARTICLES_DEMO: Article[] = [
     date: '05 Juillet 2026',
     category: 'Engagements & HSE',
     readTime: '3 min',
-    summary: 'Avec plus de 450 000 heures de travail cumulées sans accident majeur, le DA-TO GUINEE SA réaffirme sa politique volontariste en matière de santé, sécurité et promotion des compétences guinéennes.',
-    image: '/src/assets/images/hse_safety_team_1790975150296.jpg',
+    summary: 'Avec plus de 450 000 heures de travail cumulées sans accident majeur, DA-TO GUINEE SA réaffirme sa politique volontariste en matière de santé, sécurité et promotion des compétences guinéennes.',
+    image: '/uploaded-images/hse_safety_team_1790975150296.jpg',
     quote: '« La performance technique d’un chantier n’a de valeur que si elle garantit le retour de chaque travailleur sain et sauf auprès des siens chaque soir. »',
     content: [
-      'Lors de la journée d’entreprise organisée à Conakry, la direction du DA-TO GUINEE SA a remis les diplômes de certification interne HSE à une trentaine de chefs de chantier et ouvriers spécialisés.',
+      'Lors de la journée d’entreprise organisée à Conakry, la direction de DA-TO GUINEE SA a remis les diplômes de certification interne HSE à une trentaine de chefs de chantier et ouvriers spécialisés.',
       'Ce programme s’inscrit dans un plan pluriannuel de montée en compétences axé sur le travail en hauteur, la manipulation des engins de terrassement et les gestes de premiers secours en milieu isolé.',
       'En parallèle, de nouvelles dotations d’équipements de sécurité innovants et thermo-ventilés ont été attribuées aux équipes de terrain pour conjuguer protection maximale et ergonomie sous le climat tropical.'
     ]

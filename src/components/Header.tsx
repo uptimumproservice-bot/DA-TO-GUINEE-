@@ -16,7 +16,6 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'methode', label: 'Notre Méthode' },
   { id: 'hse', label: 'Engagements & HSE' },
   { id: 'actualites', label: 'Actualités' },
-  { id: 'contact', label: 'Contact' },
 ];
 
 export const Header: React.FC<HeaderProps> = ({ 
@@ -53,11 +52,11 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
             <span className="text-slate-400">|</span>
             <a 
-              href="tel:+224622345678" 
+              href="tel:+224628883030" 
               className="hover:text-[#F5A623] transition-colors flex items-center gap-1 text-slate-300"
             >
               <Phone className="w-3.5 h-3.5 text-[#F5A623]" />
-              +224 622 34 56 78 / +224 664 12 34 56
+              +224 628 88 30 30
             </a>
           </div>
           <div className="flex items-center gap-4 text-slate-300 font-medium">
@@ -75,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Sticky Header */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-[#0B2C5C] text-white border-b border-blue-900/60 h-[60px] flex items-center ${
+        className={`sticky top-0 z-50 transition-all duration-300 bg-[#0B2C5C] text-white border-b border-blue-900/60 h-[78px] sm:h-[92px] flex items-center ${
           isScrolled ? 'shadow-xl' : ''
         }`}
       >
@@ -177,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Demander un devis gratuit
                 </button>
                 <div className="text-center text-xs text-slate-400 pt-1">
-                  Urgence chantier : +224 622 34 56 78
+                  Urgence chantier : +224 628 88 30 30
                 </div>
               </div>
             </nav>

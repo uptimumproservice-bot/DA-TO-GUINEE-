@@ -149,12 +149,13 @@ export default function EngagementsHSEPage() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.15}>
-                <div className="rounded-2xl overflow-hidden shadow-2xl h-96">
+                <div className="rounded-2xl overflow-hidden shadow-2xl h-[480px] sm:h-[540px] lg:h-[580px] w-full border border-white/15">
                   <img
-                    src="/airo-assets/images/pages/engagements/banner"
-                    alt="Sécurité sur chantier"
-                    className="w-full h-full object-cover"
+                    src="/src/assets/images/professional_site_inspector_ppe_1791409620212.jpg"
+                    alt="Ingénieur de chantier et agent HSE avec EPI complet et harnais - DA-TO GUINEE SA"
+                    className="w-full h-full object-cover object-center"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </FadeIn>
@@ -169,10 +170,11 @@ export default function EngagementsHSEPage() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/airo-assets/images/pages/engagements/technologie"
-                    alt="Technologie sur chantier"
+                    src="/src/assets/images/african_engineers_office_digital_1791410135615.jpg"
+                    alt="Ingénieurs africains au bureau travaillant sur les solutions numériques - DA-TO GUINEE SA"
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </FadeIn>
@@ -205,7 +207,7 @@ export default function EngagementsHSEPage() {
             <FadeIn>
               <h2 className="text-3xl font-extrabold text-primary mb-4">Un projet qui respecte ces engagements ?</h2>
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-                Contactez-nous pour discuter de votre projet et découvrir comment DA-TO peut vous accompagner.
+                Contactez-nous pour discuter de votre projet et découvrir comment DA-TO GUINEE SA peut vous accompagner.
               </p>
               <Link
                 to="/contact"

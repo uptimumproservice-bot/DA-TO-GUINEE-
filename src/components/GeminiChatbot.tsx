@@ -12,7 +12,7 @@ export function GeminiChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Bonjour ! Je suis l'assistant virtuel expert du DA-TO GUINEE SA. Comment puis-je vous aider ?",
+      content: "Bonjour ! Je suis l'assistant virtuel expert de DA-TO GUINEE SA. Comment puis-je vous aider ?",
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -71,10 +71,10 @@ export function GeminiChatbot() {
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-5 right-5 z-50 bg-[#F5A623] hover:bg-[#e0951a] text-[#0B2C5C] p-2.5 sm:px-3 sm:py-2 rounded-full shadow-lg flex items-center gap-1.5 font-bold transition-all duration-300 hover:scale-105 border-2 border-white group text-xs"
-          aria-label="Assistant IA DA-TO"
+          aria-label="Assistant IA DA-TO GUINEE SA"
         >
           <Sparkles className="w-4 h-4 animate-pulse" />
-          <span className="hidden sm:inline text-xs">Expert IA DA-TO</span>
+          <span className="hidden sm:inline text-xs">Expert IA DA-TO GUINEE SA</span>
         </button>
       )}
 
@@ -88,7 +88,7 @@ export function GeminiChatbot() {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-sm leading-tight">Assistant Expert DA-TO</h3>
+                <h3 className="font-bold text-sm leading-tight">Assistant Expert DA-TO GUINEE SA</h3>
                 <span className="text-[11px] text-[#F5A623] flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   En ligne · Propulsé par Gemini

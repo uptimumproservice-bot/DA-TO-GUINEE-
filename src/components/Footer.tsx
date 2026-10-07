@@ -156,9 +156,6 @@ export const Footer: React.FC<FooterProps> = ({
                   <a href={`tel:${CONTACT_COORDINATES.phone1}`} className="hover:text-[#F5A623] transition-colors">
                     {CONTACT_COORDINATES.phone1}
                   </a>
-                  <a href={`tel:${CONTACT_COORDINATES.phone2}`} className="hover:text-[#F5A623] transition-colors text-xs text-slate-400">
-                    {CONTACT_COORDINATES.phone2}
-                  </a>
                 </div>
               </li>
               <li className="flex items-center gap-2.5">

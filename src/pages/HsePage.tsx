@@ -48,7 +48,7 @@ export const HsePage: React.FC<HsePageProps> = ({
       <ParallaxBanner
         title="Engagements & Politique HSE"
         subtitle="Hygiène, Sécurité, Environnement et RSE : la protection de la vie humaine et la préservation de la nature au cœur de chacun de nos chantiers."
-        image="/src/assets/images/hse_safety_team_1790975150296.jpg"
+        image="/uploaded-images/hse_safety_team_1790975150296.jpg"
         badge="SÉCURITÉ INDUSTRIELLE & RESPONSABILITÉ SOCIÉTALE"
         currentPageLabel="Engagements & HSE"
         onNavigateHome={() => onNavigate('accueil')}

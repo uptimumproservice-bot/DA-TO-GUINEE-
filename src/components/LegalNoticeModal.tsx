@@ -44,14 +44,14 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({ isOpen, onCl
               1. Identité de l'Entreprise
             </h3>
             <p>
-              Le présent site internet est édité par la société <strong>DA-TO GUINEE SA</strong> (Société Anonyme de droit guinéen), dont le siège social est situé à Lambanyi Carrefour TMI, Conakry, République de Guinée, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM) de Conakry.
+              Le présent site internet est édité par la société DA-TO GUINEE SA (Société Anonyme de droit guinéen), dont le siège social est situé à Lambanyi Carrefour TMI, Conakry, République de Guinée, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM) de Conakry.
             </p>
             <ul className="mt-2 space-y-1 text-xs text-slate-600 list-disc list-inside">
               <li><strong>Siège social :</strong> {CONTACT_COORDINATES.address}</li>
               <li><strong>NIF :</strong> 100984523T</li>
-              <li><strong>Téléphones :</strong> {CONTACT_COORDINATES.phone1} / {CONTACT_COORDINATES.phone2}</li>
+              <li><strong>Téléphone :</strong> {CONTACT_COORDINATES.phone1}</li>
               <li><strong>Email officiel :</strong> {CONTACT_COORDINATES.email}</li>
-              <li><strong>Directeur de publication :</strong> La Direction Générale du DA-TO GUINEE SA</li>
+              <li><strong>Directeur de publication :</strong> La Direction Générale de DA-TO GUINEE SA</li>
             </ul>
           </div>
 
@@ -61,7 +61,7 @@ export const LegalNoticeModal: React.FC<LegalNoticeModalProps> = ({ isOpen, onCl
               2. Sécurisation Foncière & Agréments BTP
             </h3>
             <p>
-              Le DA-TO GUINEE SA opère en stricte conformité avec le Code Foncier et Domanial de la République de Guinée, ainsi que les cahiers des charges techniques du Ministère des Travaux Publics et des Infrastructures et du Ministère de l'Urbanisme, de l'Habitat et de l'Aménagement du Territoire.
+              DA-TO GUINEE SA opère en stricte conformité avec le Code Foncier et Domanial de la République de Guinée, ainsi que les cahiers des charges techniques du Ministère des Travaux Publics et des Infrastructures et du Ministère de l'Urbanisme, de l'Habitat et de l'Aménagement du Territoire.
             </p>
           </div>
 

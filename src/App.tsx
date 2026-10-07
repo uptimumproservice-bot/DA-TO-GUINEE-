@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import { AnimatePresence, motion } from 'motion/react';
@@ -17,6 +17,29 @@ import ActualitesPage from './pages/actualites';
 import ContactPage from './pages/contact';
 import MentionsLegalesPage from './pages/MentionsLegalesPage';
 import PolitiqueConfidentialitePage from './pages/PolitiqueConfidentialitePage';
+
+function ScrollProgressBar() {
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const currentScroll = window.scrollY;
+      setScrollWidth(totalHeight > 0 ? (currentScroll / totalHeight) * 100 : 0);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="fixed top-0 left-0 right-0 h-[3px] bg-transparent z-[100] pointer-events-none">
+      <div 
+        className="h-full bg-gradient-to-r from-[#0B2C5C] via-[#1a498f] to-[#F5A623] transition-all duration-150 shadow-[0_0_10px_#F5A623]"
+        style={{ width: `${scrollWidth}%` }}
+      />
+    </div>
+  );
+}
 
 // Automatically scroll to top on route change or hash target
 function ScrollToTop() {
@@ -68,13 +91,24 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollProgressBar />
         <ScrollToTop />
         <ScrollAnimationProvider />
         <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans selection:bg-[#F5A623] selection:text-[#0B2C5C]">
-          <Header />
+          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           
           <main className="flex-1 w-full flex flex-col">
             <AnimatedRoutes />

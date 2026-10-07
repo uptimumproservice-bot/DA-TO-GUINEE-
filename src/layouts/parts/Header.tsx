@@ -1,8 +1,13 @@
 import { Link, useLocation } from 'react-router';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-export default function Header() {
+interface HeaderProps {
+  darkMode?: boolean;
+  setDarkMode?: (val: boolean) => void;
+}
+
+export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,55 +33,88 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-        isScrolled ? 'shadow-md' : 'shadow-sm'
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-slate-200/80 py-2 sm:py-3' 
+          : 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-100 py-3 sm:py-4'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex h-32 items-center justify-between gap-4">
+        <div className={`flex items-center justify-between gap-3 sm:gap-4 transition-all duration-300 ${
+          isScrolled ? 'h-[64px] sm:h-[72px]' : 'h-[76px] sm:h-[88px]'
+        }`}>
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center h-full py-2 transition-all duration-300 hover:opacity-95">
+          <Link to="/" className="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-[1.02]">
             <img
               src="/logo.png"
               alt="DA-TO GUINEE SA"
-              className="block h-28 sm:h-[116px] w-auto object-contain select-none"
+              className="block h-[44px] sm:h-[54px] md:h-[60px] w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none"
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`text-sm font-medium px-3 py-2 rounded transition-colors whitespace-nowrap relative ${
-                  location.pathname === item.href
-                    ? 'text-[#F5A623] font-semibold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-[#F5A623]'
-                    : 'text-[#0B2C5C] hover:text-[#F5A623]'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`text-sm px-3 py-2 rounded whitespace-nowrap cursor-pointer relative transition-colors duration-300 ${
+                    isActive
+                      ? 'text-[#F5A623] font-semibold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[3px] after:bg-[#F5A623] after:rounded-full'
+                      : 'text-[#0B2C5C] font-medium no-underline bg-transparent hover:text-[#F5A623]'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* CTA Button */}
-          <Link
-            to="/contact"
-            className="hidden xl:inline-flex items-center px-5 py-2.5 rounded text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg flex-shrink-0"
-            style={{ background: 'hsl(var(--accent))' }}
-          >
-            Contactez-nous
-          </Link>
+          {/* Actions: Theme Toggle & CTA */}
+          <div className="hidden xl:flex items-center gap-3">
+            {setDarkMode && (
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className="p-2.5 rounded-full bg-slate-100 text-[#0B2C5C] hover:bg-slate-200 transition-colors shadow-sm cursor-pointer"
+                aria-label="Basculer le mode sombre"
+                title={darkMode ? "Passer en mode clair" : "Passer en mode sombre"}
+              >
+                {darkMode ? <Sun size={18} className="text-[#F5A623]" /> : <Moon size={18} />}
+              </button>
+            )}
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="xl:hidden p-2 rounded-md transition-colors hover:bg-muted"
-            aria-label="Ouvrir le menu"
-          >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-5 py-2.5 rounded text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg flex-shrink-0"
+              style={{ background: 'hsl(var(--accent))' }}
+            >
+              Contactez-nous
+            </Link>
+          </div>
+
+          {/* Mobile hamburger & theme */}
+          <div className="xl:hidden flex items-center gap-2">
+            {setDarkMode && (
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className="p-2 rounded-md transition-colors hover:bg-slate-100 text-[#0B2C5C]"
+                aria-label="Basculer le mode sombre"
+              >
+                {darkMode ? <Sun size={20} className="text-[#F5A623]" /> : <Moon size={20} />}
+              </button>
+            )}
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-md transition-colors hover:bg-slate-100 text-[#0B2C5C]"
+              aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -84,20 +122,24 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="xl:hidden border-t border-border bg-white shadow-lg">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`text-sm font-medium py-3 px-3 rounded transition-colors ${
-                  location.pathname === item.href
-                    ? 'text-[#F5A623] bg-muted font-semibold border-l-4 border-[#F5A623]'
-                    : 'text-[#0B2C5C] hover:text-[#F5A623] hover:bg-muted'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={`text-sm py-3 px-3.5 rounded cursor-pointer transition-colors duration-300 ${
+                    isActive
+                      ? 'text-[#F5A623] bg-[#F5A623]/10 font-semibold border-l-4 border-[#F5A623]'
+                      : 'text-[#0B2C5C] font-medium no-underline bg-transparent hover:text-[#F5A623] hover:bg-[#F5A623]/5'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
               to="/contact"
               className="mt-3 inline-flex items-center justify-center px-5 py-3 rounded text-sm font-semibold text-white transition-all duration-200"

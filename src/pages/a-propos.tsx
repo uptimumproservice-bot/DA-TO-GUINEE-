@@ -4,6 +4,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { about } from 'virtual:content';
+import { formatBrandText } from '@/components/BrandText';
 
 function FadeIn({
   children,
@@ -92,10 +93,11 @@ export default function AProposPage() {
               <FadeIn delay={0.15}>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/src/assets/images/vision_authentic_professionals_1791199086264.jpg"
-                    alt="Vision DA-TO GUINEE SA - Équipe professionnelle"
+                    src="/src/assets/images/vision_urban_btp_1791407884147.jpg"
+                    alt="Vision DA-TO GUINEE SA - Aménagement urbain et infrastructures durables"
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </FadeIn>
@@ -203,7 +205,7 @@ export default function AProposPage() {
                 ))}
               </div>
               <p className="text-base text-white/75 leading-relaxed mb-10 max-w-xl">
-                <span>{about.philosophie.conclusion}</span>
+                <span>{formatBrandText(about.philosophie.conclusion)}</span>
               </p>
               <Link
                 to="/nos-activites"
