@@ -92,8 +92,8 @@ export default function AProposPage() {
               <FadeIn delay={0.15}>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/airo-assets/images/pages/about/team-construction"
-                    alt="Équipe DA-TO GUINEE SA"
+                    src="/src/assets/images/vision_authentic_professionals_1791199086264.jpg"
+                    alt="Vision DA-TO GUINEE SA - Équipe professionnelle"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />

@@ -12,7 +12,7 @@ export function GeminiChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Bonjour ! Je suis l'assistant virtuel expert du DA-TO GUINEE SA. Comment puis-je vous renseigner sur nos projets BTP, notre développement foncier ou nos programmes immobiliers en Guinée ?",
+      content: "Bonjour ! Je suis l'assistant virtuel expert du DA-TO GUINEE SA. Comment puis-je vous aider ?",
     },
   ]);
   const [loading, setLoading] = useState(false);
