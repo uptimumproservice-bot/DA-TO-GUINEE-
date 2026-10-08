@@ -3,8 +3,12 @@ import { GoogleGenAI, GenerateVideosOperation } from '@google/genai';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json({ limit: '50mb' }));
@@ -138,14 +142,20 @@ app.post('/api/video-download', async (req, res) => {
 
 async function startServer() {
   const isProd = process.env.NODE_ENV === 'production';
-  const port = process.env.PORT || 3000;
-  const publicPath = path.resolve(import.meta.dirname, 'public');
+  const portArgIndex = process.argv.indexOf('--port');
+  const portArg = portArgIndex !== -1 ? process.argv[portArgIndex + 1] : null;
+  const port = Number(portArg || (isProd ? process.env.PORT : (process.env.DEFAULT_APP_PORT || 3000)) || 3000);
+  const publicPath = path.resolve(__dirname, 'public');
 
   // Serve static assets directly with proper caching & MIME handling
   app.use(express.static(publicPath));
   app.use('/uploaded-images', express.static(path.resolve(publicPath, 'uploaded-images')));
   app.use('/airo-assets', express.static(path.resolve(publicPath, 'airo-assets')));
   app.use('/assets', express.static(path.resolve(publicPath, 'assets')));
+
+  app.get('/api/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+  });
 
   if (!isProd) {
     const vite = await createViteServer({
@@ -154,15 +164,26 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.resolve(import.meta.dirname, 'dist');
-    app.use(express.static(distPath));
+    const distPath = path.resolve(__dirname, 'dist');
+    app.use(express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        } else {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+      }
+    }));
     app.get('*', (req, res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
       res.sendFile(path.resolve(distPath, 'index.html'));
     });
   }
 
   app.listen(Number(port), '0.0.0.0', () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://0.0.0.0:${port} (mode: ${isProd ? 'production' : 'development'})`);
   });
 }
 

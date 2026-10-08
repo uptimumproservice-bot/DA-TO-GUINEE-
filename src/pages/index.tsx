@@ -110,7 +110,7 @@ export default function HomePage() {
               poster="/airo-assets/images/pages/home/hero-poster.jpg"
               className="absolute inset-0 w-full h-full object-cover scale-105"
             >
-              <source src="/airo-assets/images/pages/home/hero" type="video/mp4" />
+              <source src="/airo-assets/images/pages/home/hero.mp4" type="video/mp4" />
             </video>
             <div
               className="absolute inset-0 bg-cover bg-center -z-10"

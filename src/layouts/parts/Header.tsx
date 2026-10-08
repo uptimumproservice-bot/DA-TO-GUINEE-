@@ -13,9 +13,19 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      setIsScrolled(scrollY > 15);
+    };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -110,8 +120,9 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
           <div className="xl:hidden flex items-center gap-2.5">
             {setDarkMode && (
               <button
+                type="button"
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2.5 rounded-lg transition-colors border cursor-pointer ${
+                className={`p-2.5 rounded-lg transition-colors border cursor-pointer select-none touch-manipulation active:scale-95 ${
                   darkMode
                     ? 'bg-[#122444] text-[#F5A623] border-[#F5A623]/40 hover:bg-[#1a3360]'
                     : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200'
@@ -124,8 +135,9 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             )}
 
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`mobile-menu-btn p-2.5 rounded-lg transition-all duration-200 border cursor-pointer ${
+              type="button"
+              onClick={() => setIsMobileMenuOpen(prev => !prev)}
+              className={`mobile-menu-btn p-2.5 rounded-lg transition-all duration-200 border cursor-pointer select-none touch-manipulation active:scale-95 ${
                 darkMode
                   ? 'bg-[#122444] text-[#F5A623] border-[#F5A623]/50 hover:bg-[#1a3360] shadow-[0_0_12px_rgba(245,166,35,0.25)]'
                   : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200 shadow-sm'
@@ -144,7 +156,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden border-t border-border dark:border-white/10 bg-white/98 dark:bg-[#0d1b33]/98 backdrop-blur-2xl shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="xl:hidden border-t border-slate-200/80 dark:border-white/10 bg-white/98 dark:bg-[#0d1b33]/98 backdrop-blur-2xl shadow-2xl max-h-[85vh] overflow-y-auto overscroll-contain">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;

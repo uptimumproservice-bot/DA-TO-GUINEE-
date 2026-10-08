@@ -27,18 +27,31 @@
     --radius-button: 0.375rem;
   }
 
-  html, body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #1e293b;
-    background-color: #ffffff;
+  html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    box-sizing: border-box;
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    touch-action: manipulation;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display, button, input, select, textarea {
@@ -358,20 +371,14 @@
   border-bottom-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.dark .mobile-menu-btn,
-.dark button[aria-label*="menu" i],
-.dark button[aria-label*="Fermer" i],
-.dark button[aria-label*="Ouvrir" i] {
+.dark .mobile-menu-btn {
   background-color: #122444 !important;
   color: #F5A623 !important;
   border: 1px solid rgba(245, 166, 35, 0.45) !important;
   box-shadow: 0 0 12px rgba(245, 166, 35, 0.2) !important;
 }
 
-.dark .mobile-menu-btn svg,
-.dark button[aria-label*="menu" i] svg,
-.dark button[aria-label*="Fermer" i] svg,
-.dark button[aria-label*="Ouvrir" i] svg {
+.dark .mobile-menu-btn svg {
   color: #F5A623 !important;
   stroke: #F5A623 !important;
 }
