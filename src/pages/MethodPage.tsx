@@ -31,7 +31,7 @@ export const MethodPage: React.FC<MethodPageProps> = ({
       <ParallaxBanner
         title="Notre Méthode d'Intervention"
         subtitle="Un processus d'ingénierie rigoureux en 7 étapes chronologiques pour garantir sécurité, respect des délais et qualité d'exécution."
-        image="/uploaded-images/methode_engineer_1790975139598.jpg"
+        image="/src/assets/images/banner_hero_btp_1791447790757.jpg"
         badge="PROCESSUS QUALITÉ DE BOUT EN BOUT"
         currentPageLabel="Notre Méthode"
         onNavigateHome={() => onNavigate('accueil')}

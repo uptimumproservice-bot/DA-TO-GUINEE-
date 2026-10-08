@@ -42,16 +42,16 @@ function FadeIn({
 
 // ─── Carousel image slots ────────────────────────────────────────────────────
 const carouselImages = [
-  '/uploaded-images/hero_btp_engineers_1790975106455.jpg',
-  '/uploaded-images/hero_land_survey_1790975129590.jpg',
-  '/uploaded-images/hero_real_estate_1790975118410.jpg',
+  '/assets/images/btp_building_construction_1791408048105.jpg',
+  '/assets/images/clean_road_infrastructure_1791408557677.jpg',
+  '/assets/images/clean_project_completion_1791408542954.jpg',
 ];
 
 // ─── Pole image slots ────────────────────────────────────────────────────────
 const poleImages = [
-  '/airo-assets/images/pages/home/pole-btp.jpg',
+  '/assets/images/btp_building_construction_1791408048105.jpg',
   '/airo-assets/images/pages/home/pole-foncier.png',
-  '/airo-assets/images/pages/home/pole-immobilier.jpg',
+  '/assets/images/clean_project_completion_1791408542954.jpg',
 ];
 
 const poleHrefs = [

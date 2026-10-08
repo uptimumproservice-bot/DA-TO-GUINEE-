@@ -93,7 +93,7 @@ export default function AProposPage() {
               <FadeIn delay={0.15}>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/src/assets/images/vision_urban_btp_1791407884147.jpg"
+                    src="/assets/images/vision_urban_btp_1791407884147.jpg"
                     alt="Vision DA-TO GUINEE SA - Aménagement urbain et infrastructures durables"
                     className="w-full h-full object-cover"
                     loading="lazy"

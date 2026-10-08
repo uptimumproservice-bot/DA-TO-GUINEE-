@@ -71,7 +71,12 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="DA-TO GUINEE SA"
-              className="block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
+              className="dark:hidden block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
+            />
+            <img
+              src="/logo-dark.png"
+              alt="DA-TO GUINEE SA"
+              className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
             />
           </Link>
           <p className="text-sm font-medium text-muted-foreground italic text-center sm:text-right">

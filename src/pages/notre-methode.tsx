@@ -134,7 +134,7 @@ export default function NotreMethodePage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/src/assets/images/clean_project_completion_1791408542954.jpg)' }}
+            style={{ backgroundImage: 'url(/assets/images/clean_project_completion_1791408542954.jpg)' }}
           />
           <div
             className="absolute inset-0 pointer-events-none"

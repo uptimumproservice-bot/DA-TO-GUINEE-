@@ -30,9 +30,9 @@ function FadeIn({
 }
 
 const articleImages = [
-  '/airo-assets/images/pages/actualites/article-immobilier.jpg',
-  '/airo-assets/images/pages/actualites/article-viabilisation.jpg',
-  '/airo-assets/images/pages/actualites/article-partenariat.jpg',
+  '/src/assets/images/pole_immobilier_residence_1791447808970.jpg',
+  '/src/assets/images/actualite_chantier_terrassement_1791447818014.jpg',
+  '/src/assets/images/contact_office_team_1791410764644.jpg',
 ];
 
 export default function ActualitesPage() {
@@ -58,7 +58,7 @@ export default function ActualitesPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/actualites/banner.jpg)',
+              backgroundImage: 'url(/src/assets/images/banner_hero_btp_1791447790757.jpg)',
               y: parallaxY,
             }}
           />

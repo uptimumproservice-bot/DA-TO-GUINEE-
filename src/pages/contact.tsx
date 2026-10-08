@@ -256,7 +256,7 @@ export default function ContactPage() {
                 {/* Image Conakry */}
                 <div className="rounded-2xl overflow-hidden shadow-xl h-56">
                   <img
-                    src="/src/assets/images/contact_office_team_1791410764644.jpg"
+                    src="/assets/images/contact_office_team_1791410764644.jpg"
                     alt="Équipe professionnelle DA-TO GUINEE SA à Conakry"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -323,7 +323,7 @@ export default function ContactPage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/src/assets/images/contact_office_team_1791410764644.jpg)' }}
+            style={{ backgroundImage: 'url(/assets/images/contact_office_team_1791410764644.jpg)' }}
           />
           <div
             className="absolute inset-0 pointer-events-none"

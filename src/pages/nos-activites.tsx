@@ -87,7 +87,7 @@ export default function NosActivitesPage() {
                   {/* Image 1: BTP & Construction */}
                   <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
                     <img
-                      src="/src/assets/images/btp_building_construction_1791408048105.jpg"
+                      src="/assets/images/btp_building_construction_1791408048105.jpg"
                       alt="BTP et Construction de Bâtiments - DA-TO GUINEE SA"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
@@ -107,7 +107,7 @@ export default function NosActivitesPage() {
                   {/* Image 2: Infrastructures & VRD */}
                   <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
                     <img
-                      src="/src/assets/images/road_asphalt_paving_crew_1791411346218.jpg"
+                      src="/assets/images/road_asphalt_paving_crew_1791411346218.jpg"
                       alt="Travaux de bitumage et pose d'enrobé - DA-TO GUINEE SA"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"

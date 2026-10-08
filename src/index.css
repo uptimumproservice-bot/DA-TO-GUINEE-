@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -211,24 +213,167 @@
   pointer-events: none;
 }
 
-/* Dark mode overrides */
-.dark body {
-  background-color: #071124;
-  color: #f1f5f9;
+/* Dark mode overrides — High-legibility & luxurious corporate midnight harmony */
+.dark {
+  color-scheme: dark;
 }
-.dark .bg-white {
-  background-color: #0b1a36 !important;
+
+.dark body,
+.dark main {
+  background-color: #070e1c !important;
   color: #f1f5f9 !important;
+}
+
+/* Background surfaces */
+.dark .bg-white {
+  background-color: #0d1b33 !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .bg-muted {
+  background-color: #122444 !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .border-border {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
-.dark .text-primary {
-  color: #60a5fa !important;
+
+.dark .border-slate-100,
+.dark .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
-.dark .text-slate-650, .dark .text-slate-600, .dark .text-slate-700 {
+
+/* Headings and primary text — brilliant clean white with soft warmth */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #f8fafc !important;
+}
+
+.dark .text-primary,
+.dark [class*="text-[#0B2C5C]"] {
+  color: #f8fafc !important;
+}
+
+.dark .text-foreground,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-neutral-900,
+.dark .text-gray-900,
+.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+/* Body copy, paragraphs, and list items */
+.dark p,
+.dark li,
+.dark span {
+  /* keep gold/accent intact */
+}
+
+.dark .text-slate-700,
+.dark .text-slate-650,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-neutral-700,
+.dark .text-neutral-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-muted-foreground,
+.dark .text-slate-500,
+.dark .text-gray-500 {
   color: #94a3b8 !important;
 }
-.dark .bg-muted {
-  background-color: #0f2347 !important;
+
+/* Preserve gold/accent colors */
+.dark .text-accent,
+.dark [class*="text-[#F5A623]"] {
+  color: #F5A623 !important;
+}
+
+/* Form inputs & controls in dark mode */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #122444 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #F5A623 !important;
+  box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.25) !important;
+}
+
+.dark select option {
+  background-color: #0d1b33 !important;
+  color: #ffffff !important;
+}
+
+.dark label {
+  color: #e2e8f0 !important;
+}
+
+/* Cards & containers in dark mode */
+.dark .glass-card {
+  background: rgba(13, 27, 51, 0.88) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Footer in dark mode */
+.dark footer > div:first-child {
+  background-color: #091324 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark footer > div.bg-primary {
+  background-color: #050b16 !important;
+}
+
+/* Header & Mobile Burger Button in dark mode */
+.dark header {
+  background-color: rgba(7, 14, 28, 0.96) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .mobile-menu-btn,
+.dark button[aria-label*="menu" i],
+.dark button[aria-label*="Fermer" i],
+.dark button[aria-label*="Ouvrir" i] {
+  background-color: #122444 !important;
+  color: #F5A623 !important;
+  border: 1px solid rgba(245, 166, 35, 0.45) !important;
+  box-shadow: 0 0 12px rgba(245, 166, 35, 0.2) !important;
+}
+
+.dark .mobile-menu-btn svg,
+.dark button[aria-label*="menu" i] svg,
+.dark button[aria-label*="Fermer" i] svg,
+.dark button[aria-label*="Ouvrir" i] svg {
+  color: #F5A623 !important;
+  stroke: #F5A623 !important;
 }
 
 .card-hover,

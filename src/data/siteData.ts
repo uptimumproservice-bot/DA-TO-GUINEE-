@@ -37,7 +37,7 @@ export const ACTIVITY_POLES: ActivityPole[] = [
     shortTitle: 'BTP & Génie Civil',
     tagline: 'Ouvrages d’art, routes et bâtiments industriels pérennes',
     description: 'Le pôle BTP & Infrastructures de DA-TO GUINEE SA pilote la conception et l’exécution de projets structurants sur l’ensemble du territoire guinéen. Nous allions rigueur d’ingénierie, conformité aux normes internationales et maîtrise stricte des délais d’exécution.',
-    image: '/src/assets/images/btp_building_construction_1791408048105.jpg',
+    image: '/assets/images/btp_building_construction_1791408048105.jpg',
     accentColor: '#0B2C5C',
     services: [
       'Génie civil lourd et terrassements de grande masse',

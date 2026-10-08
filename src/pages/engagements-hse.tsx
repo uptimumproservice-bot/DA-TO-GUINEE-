@@ -151,7 +151,7 @@ export default function EngagementsHSEPage() {
               <FadeIn delay={0.15}>
                 <div className="rounded-2xl overflow-hidden shadow-2xl h-[480px] sm:h-[540px] lg:h-[580px] w-full border border-white/15">
                   <img
-                    src="/src/assets/images/professional_site_inspector_ppe_1791409620212.jpg"
+                    src="/assets/images/professional_site_inspector_ppe_1791409620212.jpg"
                     alt="Ingénieur de chantier et agent HSE avec EPI complet et harnais - DA-TO GUINEE SA"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
@@ -170,7 +170,7 @@ export default function EngagementsHSEPage() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/src/assets/images/african_engineers_office_digital_1791410135615.jpg"
+                    src="/assets/images/african_engineers_office_digital_1791410135615.jpg"
                     alt="Ingénieurs africains au bureau travaillant sur les solutions numériques - DA-TO GUINEE SA"
                     className="w-full h-full object-cover"
                     loading="lazy"

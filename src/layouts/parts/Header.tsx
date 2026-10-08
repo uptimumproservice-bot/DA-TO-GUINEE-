@@ -35,8 +35,8 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-slate-200/80 py-2 sm:py-3' 
-          : 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-100 py-3 sm:py-4'
+          ? 'bg-white/90 dark:bg-[#070e1c]/90 backdrop-blur-md shadow-lg border-b border-slate-200/80 dark:border-white/10 py-2 sm:py-3' 
+          : 'bg-white/95 dark:bg-[#070e1c]/95 backdrop-blur-sm shadow-sm border-b border-slate-100 dark:border-white/10 py-3 sm:py-4'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -46,7 +46,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-[1.02]">
             <img
-              src="/logo.png"
+              src={darkMode ? "/logo-dark.png" : "/logo.png"}
               alt="DA-TO GUINEE SA"
               className="block h-[44px] sm:h-[54px] md:h-[60px] w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none"
             />
@@ -63,7 +63,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
                   className={`text-sm px-3 py-2 rounded whitespace-nowrap cursor-pointer relative transition-colors duration-300 ${
                     isActive
                       ? 'text-[#F5A623] font-semibold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[3px] after:bg-[#F5A623] after:rounded-full'
-                      : 'text-[#0B2C5C] font-medium no-underline bg-transparent hover:text-[#F5A623]'
+                      : 'text-[#0B2C5C] dark:text-slate-200 font-medium no-underline bg-transparent hover:text-[#F5A623] dark:hover:text-[#F5A623]'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -78,7 +78,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             {setDarkMode && (
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 rounded-full bg-slate-100 text-[#0B2C5C] hover:bg-slate-200 transition-colors shadow-sm cursor-pointer"
+                className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800/80 text-[#0B2C5C] dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm cursor-pointer border border-transparent dark:border-white/10"
                 aria-label="Basculer le mode sombre"
                 title={darkMode ? "Passer en mode clair" : "Passer en mode sombre"}
               >
@@ -96,23 +96,36 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
           </div>
 
           {/* Mobile hamburger & theme */}
-          <div className="xl:hidden flex items-center gap-2">
+          <div className="xl:hidden flex items-center gap-2.5">
             {setDarkMode && (
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-md transition-colors hover:bg-slate-100 text-[#0B2C5C]"
+                className={`p-2.5 rounded-lg transition-colors border cursor-pointer ${
+                  darkMode
+                    ? 'bg-[#122444] text-[#F5A623] border-[#F5A623]/40 hover:bg-[#1a3360]'
+                    : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200'
+                }`}
                 aria-label="Basculer le mode sombre"
+                title={darkMode ? "Passer en mode clair" : "Passer en mode sombre"}
               >
-                {darkMode ? <Sun size={20} className="text-[#F5A623]" /> : <Moon size={20} />}
+                {darkMode ? <Sun size={20} className="text-[#F5A623]" /> : <Moon size={20} className="text-[#0B2C5C]" />}
               </button>
             )}
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md transition-colors hover:bg-slate-100 text-[#0B2C5C]"
+              className={`mobile-menu-btn p-2.5 rounded-lg transition-all duration-200 border cursor-pointer ${
+                darkMode
+                  ? 'bg-[#122444] text-[#F5A623] border-[#F5A623]/50 hover:bg-[#1a3360] shadow-[0_0_12px_rgba(245,166,35,0.25)]'
+                  : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200 shadow-sm'
+              }`}
               aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? (
+                <X size={24} className={darkMode ? 'text-[#F5A623] stroke-[2.5]' : 'text-[#0B2C5C] stroke-[2.5]'} />
+              ) : (
+                <Menu size={24} className={darkMode ? 'text-[#F5A623] stroke-[2.5]' : 'text-[#0B2C5C] stroke-[2.5]'} />
+              )}
             </button>
           </div>
         </div>
@@ -120,7 +133,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden border-t border-border bg-white shadow-lg">
+        <div className="xl:hidden border-t border-border dark:border-white/10 bg-white dark:bg-[#0d1b33] shadow-lg">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
@@ -131,7 +144,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
                   className={`text-sm py-3 px-3.5 rounded cursor-pointer transition-colors duration-300 ${
                     isActive
                       ? 'text-[#F5A623] bg-[#F5A623]/10 font-semibold border-l-4 border-[#F5A623]'
-                      : 'text-[#0B2C5C] font-medium no-underline bg-transparent hover:text-[#F5A623] hover:bg-[#F5A623]/5'
+                      : 'text-[#0B2C5C] dark:text-slate-200 font-medium no-underline bg-transparent hover:text-[#F5A623] hover:bg-[#F5A623]/5 dark:hover:bg-white/5'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
