@@ -86,7 +86,7 @@ export default function ContactPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/contact/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/contact/banner.jpg)',
               y: parallaxY,
             }}
           />
@@ -323,7 +323,7 @@ export default function ContactPage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/assets/images/contact_office_team_1791410764644.jpg)' }}
+            style={{ backgroundImage: 'url(/airo-assets/images/pages/contact/conakry.jpg)' }}
           />
           <div
             className="absolute inset-0 pointer-events-none"

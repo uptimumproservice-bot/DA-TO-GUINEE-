@@ -110,7 +110,7 @@ export default function App() {
         <div className="min-h-screen flex flex-col bg-white dark:bg-[#070e1c] text-slate-800 dark:text-slate-100 font-sans selection:bg-[#F5A623] selection:text-[#0B2C5C] transition-colors duration-200">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           
-          <main className="flex-1 w-full flex flex-col">
+          <main className="flex-1 w-full flex flex-col pt-[78px] sm:pt-[88px]">
             <AnimatedRoutes />
           </main>
 

@@ -54,7 +54,7 @@ export default function EngagementsHSEPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/engagements/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/engagements/banner.jpg)',
               y: parallaxY,
             }}
           />

@@ -53,7 +53,7 @@ export default function AProposPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/about/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/about/banner.jpg)',
               y: parallaxY,
             }}
           />
@@ -185,7 +185,7 @@ export default function AProposPage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/airo-assets/images/pages/about/team-construction)' }}
+            style={{ backgroundImage: 'url(/airo-assets/images/pages/about/team-construction.jpg)' }}
           />
           <div
             className="absolute inset-0 pointer-events-none"

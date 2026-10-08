@@ -53,7 +53,7 @@ export default function NosActivitesPage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/activites/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/activites/banner.jpg)',
               y: parallaxY,
             }}
           />
@@ -189,7 +189,7 @@ export default function NosActivitesPage() {
               <FadeIn delay={0.1}>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-96 sticky top-24">
                   <img
-                    src="/airo-assets/images/pages/activites/pole-foncier"
+                    src="/airo-assets/images/pages/activites/pole-foncier.jpg"
                     alt="Développement Foncier & Aménagement"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -208,7 +208,7 @@ export default function NosActivitesPage() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-96 sticky top-24">
                   <img
-                    src="/airo-assets/images/pages/activites/pole-immobilier"
+                    src="/airo-assets/images/pages/activites/pole-immobilier.jpg"
                     alt="Immobilier & Valorisation"
                     className="w-full h-full object-cover"
                     loading="lazy"

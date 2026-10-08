@@ -52,7 +52,7 @@ export default function NotreMethodePage() {
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
             style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/methode/banner)',
+              backgroundImage: 'url(/airo-assets/images/pages/methode/banner.jpg)',
               y: parallaxY,
             }}
           />
@@ -134,7 +134,7 @@ export default function NotreMethodePage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/assets/images/clean_project_completion_1791408542954.jpg)' }}
+            style={{ backgroundImage: 'url(/assets/images/project_delivery_success_1791408340290.jpg)' }}
           />
           <div
             className="absolute inset-0 pointer-events-none"

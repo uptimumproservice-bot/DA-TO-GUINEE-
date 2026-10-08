@@ -33,22 +33,33 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 dark:bg-[#070e1c]/90 backdrop-blur-md shadow-lg border-b border-slate-200/80 dark:border-white/10 py-2 sm:py-3' 
-          : 'bg-white/95 dark:bg-[#070e1c]/95 backdrop-blur-sm shadow-sm border-b border-slate-100 dark:border-white/10 py-3 sm:py-4'
+          ? 'bg-white/95 dark:bg-[#070e1c]/95 backdrop-blur-xl shadow-[0_10px_35px_-8px_rgba(11,44,92,0.18)] dark:shadow-[0_14px_40px_-10px_rgba(0,0,0,0.85)] border-b border-slate-200/80 dark:border-white/10' 
+          : 'bg-white/98 dark:bg-[#070e1c]/98 backdrop-blur-md shadow-xs border-b border-slate-100 dark:border-white/5'
       }`}
     >
+      {/* Signature dynamic gold accent glow line on bottom of fixed header */}
+      <div 
+        className={`absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 pointer-events-none ${
+          isScrolled 
+            ? 'opacity-100 bg-gradient-to-r from-transparent via-[#F5A623] to-transparent shadow-[0_1px_8px_rgba(245,166,35,0.6)]' 
+            : 'opacity-0'
+        }`} 
+      />
+
       <div className="container mx-auto px-4 lg:px-8">
         <div className={`flex items-center justify-between gap-3 sm:gap-4 transition-all duration-300 ${
-          isScrolled ? 'h-[64px] sm:h-[72px]' : 'h-[76px] sm:h-[88px]'
+          isScrolled ? 'h-[64px] sm:h-[72px]' : 'h-[78px] sm:h-[88px]'
         }`}>
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-[1.02]">
             <img
               src={darkMode ? "/logo-dark.png" : "/logo.png"}
               alt="DA-TO GUINEE SA"
-              className="block h-[44px] sm:h-[54px] md:h-[60px] w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none"
+              className={`block w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none transition-all duration-300 ${
+                isScrolled ? 'h-[40px] sm:h-[48px] md:h-[54px]' : 'h-[44px] sm:h-[54px] md:h-[60px]'
+              }`}
             />
           </Link>
 
@@ -133,7 +144,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden border-t border-border dark:border-white/10 bg-white dark:bg-[#0d1b33] shadow-lg">
+        <div className="xl:hidden border-t border-border dark:border-white/10 bg-white/98 dark:bg-[#0d1b33]/98 backdrop-blur-2xl shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
