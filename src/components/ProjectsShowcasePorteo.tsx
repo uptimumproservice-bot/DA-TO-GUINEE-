@@ -224,7 +224,7 @@ export const ProjectsShowcasePorteo: React.FC = () => {
                       </div>
 
                       {/* Location Bar overlay */}
-                      <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-white/90 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
+                      <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-white/90 bg-[#0B2C5C]/80 backdrop-blur-sm px-2.5 py-1 rounded-md">
                         <MapPin className="w-3.5 h-3.5 text-[#F5A623]" />
                         <span>{project.location}</span>
                       </div>

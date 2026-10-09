@@ -135,13 +135,13 @@ export default function HomePage() {
 
           {/* Ambient Floating badges (Desktop — Site animé & dynamique) */}
           <div className="hidden lg:flex absolute top-28 left-8 xl:left-16 flex-col gap-3 pointer-events-none z-20">
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-continuous">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0B2C5C]/60 dark:bg-[#071933]/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-continuous">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Normes & Sécurité HSE ISO</span>
             </div>
           </div>
           <div className="hidden lg:flex absolute bottom-28 right-8 xl:right-16 flex-col gap-3 pointer-events-none z-20">
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-gentle-alt">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0B2C5C]/60 dark:bg-[#071933]/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-gentle-alt">
               <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-pulse" />
               <span>Flotte d'Engins Modernes</span>
             </div>
@@ -305,7 +305,7 @@ export default function HomePage() {
                 <ChevronLeft size={20} />
               </button>
 
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/10" data-no-anim="true">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0B2C5C]/60 dark:bg-[#071933]/70 backdrop-blur-md border border-white/15" data-no-anim="true">
                 {home.carousel.map((_: any, idx: number) => (
                   <button
                     type="button"

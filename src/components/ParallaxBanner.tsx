@@ -57,7 +57,7 @@ export const ParallaxBanner: React.FC<ParallaxBannerProps> = ({
 
       {/* Scrim Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C5C]/95 via-[#0B2C5C]/80 to-[#0B2C5C]/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C5C] via-transparent to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C5C] via-transparent to-[#071933]/40" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">

@@ -67,16 +67,16 @@ export default function Footer() {
       {/* Animated continuous glow border at top of footer */}
       <div className="w-full h-[2px] glow-line-animated" />
 
-      {/* Logo band — white in light, pure black in dark for seamless blend with logo */}
+      {/* Logo band — clean surface in light mode, deep navy in dark mode */}
       <div 
         data-logo-zone="true"
-        className="bg-white dark:!bg-black border-b border-border dark:border-white/10 py-8 transition-colors duration-200"
+        className="bg-slate-50 dark:bg-[#071933] border-b border-slate-200 dark:border-white/10 py-8 transition-colors duration-200"
       >
         <div className="container mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
           <Link 
             to="/" 
             data-logo-zone="true"
-            className="inline-block bg-transparent dark:!bg-black rounded-lg"
+            className="inline-block bg-transparent rounded-lg"
           >
             <img
               src="/logo.png"
@@ -86,8 +86,7 @@ export default function Footer() {
             <img
               src="/logo-dark.png"
               alt="DA-TO GUINEE SA"
-              className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none bg-black"
-              style={{ backgroundColor: '#000000' }}
+              className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
             />
           </Link>
           <p className="text-sm font-medium text-muted-foreground dark:text-blue-100 italic text-center sm:text-right">

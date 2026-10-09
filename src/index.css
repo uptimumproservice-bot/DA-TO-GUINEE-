@@ -263,8 +263,8 @@
 }
 
 /* Background surfaces, cards & light container overrides to prevent white-on-white */
-.dark .bg-white:not(header):not([data-logo-zone]):not([class*="dark:!bg-black"]):not([class*="dark:bg-black"]):not(.bg-black),
-.dark [class*="bg-white"]:not(header):not([data-logo-zone]):not([class*="dark:!bg-black"]):not([class*="dark:bg-black"]):not(.bg-black) {
+.dark .bg-white:not(header):not([data-logo-zone]),
+.dark [class*="bg-white"]:not(header):not([data-logo-zone]) {
   background-color: #0C254B !important;
   color: #f8fafc !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
@@ -433,65 +433,40 @@
   box-shadow: 0 14px 30px -8px rgba(3, 14, 30, 0.7) !important;
 }
 
-/* Logo placement areas in dark mode: pure black for seamless blend with logo */
+/* Header & Footer harmonious theme in dark mode (deep corporate navy, never black) */
 .dark header,
-.dark header[class],
-.dark header.bg-white,
-.dark header[class*="bg-white"],
 .dark header.header-logo-zone,
-.dark .header-logo-zone,
-.dark header a[href="/"],
-.dark header a[href="/"] *,
-.dark [data-logo-zone],
-.dark [data-logo-zone="true"],
-.dark footer > div:first-child,
-.dark footer > div[data-logo-zone],
-.dark footer [class*="dark:bg-black"],
-.dark footer a[href="/"],
-.dark [role="img"][aria-label*="Logo"],
-.dark a[aria-label*="logo"],
-.dark .logo-container,
-.dark [class*="dark:!bg-black"],
-.dark [class*="dark:bg-black"] {
-  background-color: #000000 !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+.dark .header-logo-zone {
+  background-color: rgba(7, 25, 51, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark footer > div.bg-primary,
-.dark footer > div.bg-\[\#0B2C5C\] {
-  background-color: #071933 !important;
+.dark footer > div.bg-\[\#0B2C5C\],
+.dark footer > div:first-child {
+  background-color: #071933;
 }
 
-/* Header & Navigation Menus in dark mode: pure black background, pure white text, no blue surrounds */
+/* Header & Navigation Menus in dark mode */
 .dark .mobile-menu-btn,
 .dark header .mobile-menu-btn {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: none !important;
+  background-color: #0C254B;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark .mobile-menu-btn svg,
 .dark header .mobile-menu-btn svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
+  color: #ffffff;
+  stroke: #ffffff;
 }
 
-.dark header nav a,
-.dark header nav a span {
-  color: #ffffff !important;
+.dark header nav a {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.dark header a[href="/contact"] {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: none !important;
-}
-
-.dark header a[href="/contact"]:hover {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+.dark header nav a:hover {
+  color: #F5A623;
 }
 
 /* Hover cards with white & royal blue glow */

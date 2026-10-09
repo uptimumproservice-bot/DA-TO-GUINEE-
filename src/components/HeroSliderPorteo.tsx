@@ -117,7 +117,7 @@ export const HeroSliderPorteo: React.FC = () => {
           />
           {/* Multi-layered cinematic gradient inspired by Porteo Group */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#07172E]/95 via-[#0B2C5C]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07172E] via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07172E] via-transparent to-[#07172E]/40" />
         </motion.div>
       </AnimatePresence>
 
@@ -142,7 +142,7 @@ export const HeroSliderPorteo: React.FC = () => {
             {/* Official Logo Badge */}
             <div 
               data-logo-zone="true"
-              className="bg-white/95 dark:!bg-black backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/40 dark:border-white/10 shadow-xl inline-flex items-center"
+              className="bg-white/95 dark:bg-[#0C254B]/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/40 dark:border-white/15 shadow-xl inline-flex items-center"
             >
               <img
                 src="/logo.png"
@@ -152,8 +152,7 @@ export const HeroSliderPorteo: React.FC = () => {
               <img
                 src="/logo-dark.png"
                 alt="DA-TO GUINEE SA"
-                className="hidden dark:block h-7 sm:h-8 w-auto object-contain bg-black"
-                style={{ backgroundColor: '#000000' }}
+                className="hidden dark:block h-7 sm:h-8 w-auto object-contain"
               />
             </div>
 

@@ -76,7 +76,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             
             {/* Cinematic Gradient Overlays for High Legibility */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C5C]/90 via-[#0B2C5C]/60 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C5C] via-transparent to-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C5C] via-transparent to-[#071933]/50" />
           </div>
         );
       })}
@@ -136,7 +136,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       {/* Carousel Controls: Arrows (Left/Right) */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/30 hover:bg-[#0B2C5C] text-white flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] hidden sm:flex"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#0B2C5C]/70 hover:bg-[#0B2C5C] text-white flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] hidden sm:flex"
         aria-label="Image précédente"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -144,7 +144,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/30 hover:bg-[#0B2C5C] text-white flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] hidden sm:flex"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#0B2C5C]/70 hover:bg-[#0B2C5C] text-white flex items-center justify-center backdrop-blur-sm border border-white/20 transition-all hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] hidden sm:flex"
         aria-label="Image suivante"
       >
         <ChevronRight className="w-6 h-6" />
@@ -152,7 +152,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
 
       {/* Bottom Progress Bars & Indicators */}
       <div className="absolute bottom-6 left-0 right-0 z-20 max-w-xl mx-auto px-4">
-        <div className="bg-black/40 backdrop-blur-md rounded-full px-5 py-2.5 border border-white/15 flex items-center justify-between gap-4">
+        <div className="bg-[#0B2C5C]/80 backdrop-blur-md rounded-full px-5 py-2.5 border border-white/15 flex items-center justify-between gap-4">
           
           {/* Pause / Play button */}
           <button
