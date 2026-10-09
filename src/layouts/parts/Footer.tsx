@@ -63,7 +63,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer>
+    <footer className="relative">
+      {/* Animated continuous glow border at top of footer */}
+      <div className="w-full h-[2px] glow-line-animated" />
+
       {/* Logo band — white in light, pure black in dark for seamless blend with logo */}
       <div 
         data-logo-zone="true"
@@ -204,7 +207,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         aria-label={social.label}
                         title={social.label}
-                        className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#F5A623] hover:text-[#0B2C5C] dark:hover:bg-[#0E3E7E] dark:hover:text-white dark:hover:border-white/40 text-white flex items-center justify-center transition-all duration-200 border border-white/15 hover:border-[#F5A623] shadow-sm hover:scale-105"
+                        className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#F5A623] hover:text-[#0B2C5C] dark:hover:bg-[#0E3E7E] dark:hover:text-white dark:hover:border-white/40 text-white flex items-center justify-center transition-colors duration-200 border border-white/15 hover:border-[#F5A623] shadow-sm cursor-pointer select-none"
                       >
                         <Icon className="w-4 h-4" />
                       </a>

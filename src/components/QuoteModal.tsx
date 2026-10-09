@@ -77,8 +77,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           </div>
           
           <button 
+            type="button"
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors duration-200 select-none cursor-pointer"
             aria-label="Fermer le formulaire de devis"
           >
             <X className="w-5 h-5" />

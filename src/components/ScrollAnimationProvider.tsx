@@ -12,11 +12,25 @@ export function ScrollAnimationProvider() {
       const sections = document.querySelectorAll('section');
 
       sections.forEach((section) => {
-        const children = section.querySelectorAll('h1, h2, h3, h4, p, img, .card-hover, article, form, .grid > div, button');
+        // Target content blocks, cards, headings, and images. NEVER target buttons, navs, toggles, or controls!
+        const children = section.querySelectorAll(
+          'h1, h2, h3, h4, p:not([data-no-anim]), .card-hover, article, .stat-card, .grid > div:not(button):not([data-no-anim])'
+        );
         
         children.forEach((child) => {
           const el = child as HTMLElement;
-          if (el.classList.contains('anim-reveal')) return;
+          // Skip interactive controls, buttons, navigation links, carousels, and header elements
+          if (
+            el.closest('nav') ||
+            el.closest('button') ||
+            el.closest('[data-no-anim]') ||
+            el.closest('header') ||
+            el.tagName === 'BUTTON' ||
+            el.tagName === 'NAV' ||
+            el.classList.contains('anim-reveal')
+          ) {
+            return;
+          }
 
           el.classList.add('anim-reveal');
 

@@ -68,7 +68,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
           <Link 
             to="/" 
             data-logo-zone="true"
-            className="flex-shrink-0 flex items-center bg-transparent dark:!bg-black rounded-lg transition-transform duration-300 hover:scale-[1.02]"
+            className="flex-shrink-0 flex items-center bg-transparent dark:!bg-black rounded-lg transition-opacity duration-200 hover:opacity-95"
             style={darkMode ? { backgroundColor: '#000000' } : undefined}
           >
             <img
@@ -88,15 +88,15 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             />
           </Link>
 
-          {/* Desktop Nav — text directly on black background, zero blue */}
-          <nav className="hidden xl:flex items-center gap-1.5">
+          {/* Desktop Nav — text directly on black background, zero blue, zero parasitic jump */}
+          <nav className="hidden xl:flex items-center gap-1.5" data-no-anim="true">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm px-3.5 py-2 rounded-lg whitespace-nowrap cursor-pointer relative transition-all duration-200 ${
+                  className={`text-sm px-3.5 py-2 rounded-lg whitespace-nowrap cursor-pointer relative transition-colors duration-200 select-none ${
                     isActive
                       ? 'text-[#F5A623] dark:text-white font-bold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:bg-[#F5A623] dark:after:bg-white after:rounded-full'
                       : 'text-[#0B2C5C] dark:text-white/90 font-medium no-underline hover:text-[#F5A623] dark:hover:text-white dark:hover:bg-neutral-900'
@@ -109,13 +109,13 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             })}
           </nav>
 
-          {/* Actions: Theme Toggle & CTA — on black background, no blue surround */}
-          <div className="hidden xl:flex items-center gap-3">
+          {/* Actions: Theme Toggle & CTA — stable, zero jerk */}
+          <div className="hidden xl:flex items-center gap-3" data-no-anim="true">
             {setDarkMode && (
               <button
                 type="button"
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 rounded-full bg-slate-100 dark:!bg-black text-[#0B2C5C] dark:text-white hover:bg-slate-200 dark:hover:!bg-neutral-900 transition-colors shadow-sm cursor-pointer border border-transparent dark:border-white/30"
+                className="p-2.5 rounded-full bg-slate-100 dark:!bg-black text-[#0B2C5C] dark:text-white hover:bg-slate-200 dark:hover:!bg-neutral-900 transition-colors duration-200 shadow-sm cursor-pointer border border-transparent dark:border-white/30 select-none"
                 aria-label="Basculer le mode sombre"
                 title={darkMode ? "Passer en mode clair" : "Passer en mode sombre"}
               >
@@ -125,19 +125,19 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg flex-shrink-0 bg-[#F5A623] hover:bg-[#e0951a] text-white dark:!bg-black dark:text-white dark:border dark:border-white/40 dark:hover:!bg-white dark:hover:!text-black"
+              className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-200 hover:shadow-md flex-shrink-0 bg-[#F5A623] hover:bg-[#e0951a] text-white dark:!bg-black dark:text-white dark:border dark:border-white/40 dark:hover:!bg-white dark:hover:!text-black select-none"
             >
               Contactez-nous
             </Link>
           </div>
 
-          {/* Mobile hamburger & theme */}
-          <div className="xl:hidden flex items-center gap-2.5">
+          {/* Mobile hamburger & theme — stable, zero parasitic jump */}
+          <div className="xl:hidden flex items-center gap-2.5" data-no-anim="true">
             {setDarkMode && (
               <button
                 type="button"
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2.5 rounded-lg transition-colors border cursor-pointer select-none touch-manipulation active:scale-95 ${
+                className={`p-2.5 rounded-lg transition-colors duration-200 border cursor-pointer select-none touch-manipulation ${
                   darkMode
                     ? 'bg-black text-white border-white/30 hover:bg-neutral-900'
                     : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200'
@@ -152,7 +152,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(prev => !prev)}
-              className={`mobile-menu-btn p-2.5 rounded-lg transition-all duration-200 border cursor-pointer select-none touch-manipulation active:scale-95 ${
+              className={`mobile-menu-btn p-2.5 rounded-lg transition-colors duration-200 border cursor-pointer select-none touch-manipulation ${
                 darkMode
                   ? 'bg-black text-white border-white/30 hover:bg-neutral-900'
                   : 'bg-slate-100 text-[#0B2C5C] border-slate-200 hover:bg-slate-200 shadow-sm'

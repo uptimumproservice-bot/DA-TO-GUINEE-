@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { home } from 'virtual:content';
+import { PartnersMarquee } from '@/components/PartnersMarquee';
 
 // ─── Fade-in wrapper with smooth ease ──────────────────────────────────────
 function FadeIn({
@@ -127,6 +128,25 @@ export default function HomePage() {
             }}
           />
 
+          {/* Ambient luminous moving orbs (Site en mouvement constant) */}
+          <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl animate-ambient-glow pointer-events-none" />
+          <div className="absolute bottom-1/3 -right-20 w-96 h-96 rounded-full bg-[#F5A623]/20 blur-3xl animate-float-reverse pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[100px] animate-breathe pointer-events-none" />
+
+          {/* Ambient Floating badges (Desktop — Site animé & dynamique) */}
+          <div className="hidden lg:flex absolute top-28 left-8 xl:left-16 flex-col gap-3 pointer-events-none z-20">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-continuous">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Normes & Sécurité HSE ISO</span>
+            </div>
+          </div>
+          <div className="hidden lg:flex absolute bottom-28 right-8 xl:right-16 flex-col gap-3 pointer-events-none z-20">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-gentle-alt">
+              <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-pulse" />
+              <span>Flotte d'Engins Modernes</span>
+            </div>
+          </div>
+
           <div className="relative z-10 container mx-auto px-4 lg:px-8 flex flex-col items-center text-center gap-8 py-16">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -154,7 +174,7 @@ export default function HomePage() {
             >
               <Link
                 to="/nos-activites"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded text-base font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:brightness-105"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded text-base font-bold text-white shadow-xl transition-all duration-300 hover:brightness-110 hover:shadow-2xl select-none"
                 style={{ background: 'hsl(var(--accent))' }}
               >
                 <span>{home.hero.cta}</span>
@@ -181,6 +201,33 @@ export default function HomePage() {
             />
           </motion.div>
         </section>
+
+        {/* ── Dynamic Moving Ribbon (Site en mouvement permanent) ── */}
+        <div className="relative py-3.5 bg-[#0B2C5C] text-white overflow-hidden border-y border-white/10 shadow-md">
+          <div className="flex shrink-0 animate-marquee items-center gap-8 whitespace-nowrap text-xs font-bold uppercase tracking-widest text-slate-100">
+            {[1, 2].map((k) => (
+              <span key={k} className="inline-flex items-center gap-8">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-pulse" />
+                  BTP & Infrastructures Routières
+                </span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Génie Civil & VRD</span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Aménagement & Sécurisation Foncière</span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Programmes Immobiliers Durables</span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Normes & Sécurité HSE ISO</span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Engins Lourds & Équipements Modernes</span>
+                <span className="text-[#F5A623]">✦</span>
+                <span>Conakry • République de Guinée</span>
+                <span className="text-[#F5A623]">✦</span>
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* ── 2. CARROUSEL (Structure Airo enrichie avec commandes et animations Porteo) ── */}
         <section className="relative group">
@@ -247,22 +294,24 @@ export default function HomePage() {
               })}
             </CarouselContent>
 
-            {/* Porteo-style carousel arrows & navigation dots */}
-            <div className="absolute bottom-6 right-6 md:right-12 z-20 flex items-center gap-3">
+            {/* Porteo-style carousel arrows & navigation dots — stable, zero sursaut */}
+            <div className="absolute bottom-6 right-6 md:right-12 z-20 flex items-center gap-3" data-no-anim="true">
               <button
+                type="button"
                 onClick={() => api?.scrollPrev()}
-                className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-all duration-200 border border-white/20"
+                className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-colors duration-200 border border-white/20 select-none cursor-pointer"
                 aria-label="Slide précédente"
               >
                 <ChevronLeft size={20} />
               </button>
 
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/10">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/10" data-no-anim="true">
                 {home.carousel.map((_: any, idx: number) => (
                   <button
+                    type="button"
                     key={idx}
                     onClick={() => api?.scrollTo(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                       currentSlide === idx
                         ? 'w-6 bg-[#F5A623]'
                         : 'w-2 bg-white/40 hover:bg-white/70'
@@ -273,15 +322,24 @@ export default function HomePage() {
               </div>
 
               <button
+                type="button"
                 onClick={() => api?.scrollNext()}
-                className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-all duration-200 border border-white/20"
+                className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-colors duration-200 border border-white/20 select-none cursor-pointer"
                 aria-label="Slide suivante"
               >
                 <ChevronRight size={20} />
               </button>
             </div>
+
+            {/* Animated continuous slide progress bar */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden z-20 pointer-events-none">
+              <div className="h-full bg-gradient-to-r from-[#F5A623] to-amber-300 animate-carousel-progress" />
+            </div>
           </Carousel>
         </section>
+
+        {/* Dynamic Glowing Divider Line (Site en mouvement permanent) */}
+        <div className="w-full h-[2.5px] glow-line-animated" />
 
         {/* ── 3. ACCROCHE (Structure Airo) ─────────────────────────────────── */}
         <section className="py-20 bg-white">
@@ -321,7 +379,7 @@ export default function HomePage() {
                 <FadeIn key={pole.id} delay={i * 0.12}>
                   <Link
                     to={poleHrefs[i]}
-                    className="group block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-white"
+                    className="group block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-2xl bg-white border border-slate-100 hover:border-amber-400/40"
                   >
                     <div className="relative h-64 overflow-hidden">
                       <img
@@ -352,6 +410,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Dynamic Glowing Divider Line (Site en mouvement permanent) */}
+        <div className="w-full h-[2px] glow-line-animated" />
 
         {/* ── 5. POURQUOI NOUS CHOISIR (Structure Airo) ────────────────────── */}
         <section className="py-20 bg-primary text-white">
@@ -439,13 +500,16 @@ export default function HomePage() {
               </p>
               <Link
                 to="/a-propos"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded text-sm font-bold text-white border border-white/30 hover:border-white/70 transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded text-sm font-bold text-white border border-white/30 hover:border-white/70 transition-colors duration-200"
               >
                 <span>{home.contribution.cta}</span> <ArrowRight size={16} />
               </Link>
             </FadeIn>
           </div>
         </section>
+
+        {/* ── PARTNERS MARQUEE (Défilement fluide continu) ── */}
+        <PartnersMarquee />
 
         {/* ── 7. CTA CONTACT (Structure Airo) ──────────────────────────────── */}
         <section className="py-20 bg-white dark:bg-[#071933] transition-colors">

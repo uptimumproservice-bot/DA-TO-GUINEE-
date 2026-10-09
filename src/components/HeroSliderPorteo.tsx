@@ -196,7 +196,7 @@ export const HeroSliderPorteo: React.FC = () => {
           >
             <Link
               to={activeSlide.link}
-              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-lg bg-[#F5A623] hover:bg-[#e09415] text-[#07172E] font-bold text-sm sm:text-base shadow-xl transition-all duration-300 hover:shadow-[0_10px_25px_rgba(245,166,35,0.4)] hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-lg bg-[#F5A623] hover:bg-[#e09415] text-[#07172E] font-bold text-sm sm:text-base shadow-xl transition-all duration-300 hover:shadow-[0_10px_25px_rgba(245,166,35,0.4)]"
             >
               <span>Découvrir ce Pôle</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -204,7 +204,7 @@ export const HeroSliderPorteo: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white font-semibold text-sm sm:text-base transition-colors duration-200"
             >
               <span>Parler d'un projet</span>
             </Link>
@@ -225,7 +225,10 @@ export const HeroSliderPorteo: React.FC = () => {
       </div>
 
       {/* ── Slide Numbers & Controls Widget (Porteo Style) ── */}
-      <div className="absolute right-6 sm:right-12 bottom-24 md:bottom-28 z-20 hidden md:flex items-center gap-4 bg-[#07172E]/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-2xl">
+      <div 
+        data-no-anim="true"
+        className="absolute right-6 sm:right-12 bottom-24 md:bottom-28 z-20 hidden md:flex items-center gap-4 bg-[#07172E]/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-2xl"
+      >
         <div className="flex items-center gap-1.5 px-3">
           <span className="text-2xl font-black text-[#F5A623] font-display">
             0{current + 1}
@@ -236,25 +239,28 @@ export const HeroSliderPorteo: React.FC = () => {
         <div className="h-6 w-px bg-white/20" />
 
         <button
+          type="button"
           onClick={handlePrev}
           aria-label="Slide précédente"
-          className="p-2 rounded-lg hover:bg-white/15 text-white/80 hover:text-white transition-all duration-200"
+          className="p-2 rounded-lg hover:bg-white/15 text-white/80 hover:text-white transition-colors duration-200 cursor-pointer select-none"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
 
         <button
+          type="button"
           onClick={() => setIsPlaying(!isPlaying)}
           aria-label={isPlaying ? 'Mettre en pause' : 'Lecture'}
-          className="p-2 rounded-lg hover:bg-white/15 text-[#F5A623] transition-all duration-200"
+          className="p-2 rounded-lg hover:bg-white/15 text-[#F5A623] transition-colors duration-200 cursor-pointer select-none"
         >
           {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
         </button>
 
         <button
+          type="button"
           onClick={handleNext}
           aria-label="Slide suivante"
-          className="p-2 rounded-lg hover:bg-white/15 text-white/80 hover:text-white transition-all duration-200"
+          className="p-2 rounded-lg hover:bg-white/15 text-white/80 hover:text-white transition-colors duration-200 cursor-pointer select-none"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

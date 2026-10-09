@@ -131,20 +131,22 @@ export const ProjectsShowcasePorteo: React.FC = () => {
             </p>
           </div>
 
-          {/* Navigation Arrows (Porteo style) */}
-          <div className="flex items-center gap-3">
+          {/* Navigation Arrows (Porteo style) — stable, zero sursaut */}
+          <div className="flex items-center gap-3" data-no-anim="true">
             <button
+              type="button"
               onClick={handlePrev}
               disabled={startIndex === 0}
-              className="p-3 rounded-full border border-slate-300 bg-white text-[#0B2C5C] hover:bg-[#0B2C5C] hover:text-white transition-all duration-200 disabled:opacity-40 disabled:pointer-events-none shadow-xs"
+              className="p-3 rounded-full border border-slate-300 bg-white text-[#0B2C5C] hover:bg-[#0B2C5C] hover:text-white transition-colors duration-200 disabled:opacity-40 disabled:pointer-events-none shadow-xs cursor-pointer select-none"
               aria-label="Projets précédents"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
+              type="button"
               onClick={handleNext}
               disabled={startIndex >= maxIndex}
-              className="p-3 rounded-full border border-slate-300 bg-white text-[#0B2C5C] hover:bg-[#0B2C5C] hover:text-white transition-all duration-200 disabled:opacity-40 disabled:pointer-events-none shadow-xs"
+              className="p-3 rounded-full border border-slate-300 bg-white text-[#0B2C5C] hover:bg-[#0B2C5C] hover:text-white transition-colors duration-200 disabled:opacity-40 disabled:pointer-events-none shadow-xs cursor-pointer select-none"
               aria-label="Projets suivants"
             >
               <ChevronRight className="w-5 h-5" />

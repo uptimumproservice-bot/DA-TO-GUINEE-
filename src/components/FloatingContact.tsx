@@ -16,8 +16,9 @@ export const FloatingContact: React.FC = () => {
               <p className="text-[11px] text-slate-500">DA-TO GUINEE SA • Guinée</p>
             </div>
             <button
+              type="button"
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+              className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-neutral-800 transition-colors duration-200 select-none cursor-pointer"
               aria-label="Fermer"
             >
               <X className="w-4 h-4" />
