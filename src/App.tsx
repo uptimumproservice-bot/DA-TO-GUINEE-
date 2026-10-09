@@ -34,7 +34,7 @@ function ScrollProgressBar() {
   return (
     <div className="fixed top-0 left-0 right-0 h-[3px] bg-transparent z-[100] pointer-events-none">
       <div 
-        className="h-full bg-gradient-to-r from-[#0B2C5C] via-[#1a498f] to-[#F5A623] transition-all duration-150 shadow-[0_0_10px_#F5A623]"
+        className="h-full bg-gradient-to-r from-[#0B2C5C] via-[#1a498f] to-[#F5A623] dark:from-white dark:via-blue-300 dark:to-white transition-all duration-150 shadow-[0_0_10px_#F5A623] dark:shadow-[0_0_10px_#ffffff]"
         style={{ width: `${scrollWidth}%` }}
       />
     </div>
@@ -128,7 +128,7 @@ export default function App() {
         <ScrollProgressBar />
         <ScrollToTop />
         <ScrollAnimationProvider />
-        <div className="min-h-screen flex flex-col bg-white dark:bg-[#070e1c] text-slate-800 dark:text-slate-100 font-sans selection:bg-[#F5A623] selection:text-[#0B2C5C] transition-colors duration-200">
+        <div className="min-h-screen flex flex-col bg-white dark:bg-[#071933] text-slate-800 dark:text-slate-100 font-sans selection:bg-white selection:text-[#0B2C5C] transition-colors duration-200">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           
           <main className="flex-1 w-full flex flex-col pt-[78px] sm:pt-[88px]">

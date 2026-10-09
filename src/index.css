@@ -27,6 +27,26 @@
     --radius-button: 0.375rem;
   }
 
+  .dark {
+    --background: 216 76% 11%; /* #071933 - Deep corporate blue */
+    --foreground: 210 40% 98%; /* #F8FAFC - Crisp white */
+    --card: 216 73% 17%; /* #0C254B - Logo navy card surface */
+    --card-foreground: 210 40% 98%;
+    --popover: 216 73% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 216 78% 20%; /* #0B2C5C */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 65% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 75% 15%; /* #092040 */
+    --muted-foreground: 215 25% 82%; /* #CBD5E1 - Highly readable ice-white */
+    --accent: 217 91% 65%; /* Bright royal blue */
+    --accent-foreground: 0 0% 100%;
+    --border: 216 40% 25%;
+    --input: 216 40% 25%;
+    --ring: 0 0% 100%;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -226,51 +246,72 @@
   pointer-events: none;
 }
 
-/* Dark mode overrides — High-legibility & luxurious corporate midnight harmony */
+/* Dark mode overrides — Premium Corporate White & Logo Blue Harmony for Maximum Legibility */
 .dark {
   color-scheme: dark;
 }
 
 .dark body,
 .dark main {
-  background-color: #070e1c !important;
-  color: #f1f5f9 !important;
+  background-color: #071933 !important;
+  color: #f8fafc !important;
 }
 
-/* Background surfaces */
-.dark .bg-white {
-  background-color: #0d1b33 !important;
-  color: #f1f5f9 !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+/* Background surfaces, cards & light container overrides to prevent white-on-white */
+.dark .bg-white:not(header):not([data-logo-zone]):not([class*="dark:!bg-black"]):not([class*="dark:bg-black"]):not(.bg-black),
+.dark [class*="bg-white"]:not(header):not([data-logo-zone]):not([class*="dark:!bg-black"]):not([class*="dark:bg-black"]):not(.bg-black) {
+  background-color: #0C254B !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .dark .bg-muted {
-  background-color: #122444 !important;
-  color: #f1f5f9 !important;
+  background-color: #092040 !important;
+  color: #f8fafc !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-slate-200,
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-zinc-50,
+.dark .bg-neutral-50,
+.dark .bg-neutral-100,
+.dark .bg-amber-50,
+.dark .bg-amber-100,
+.dark [class*="bg-slate-50"],
+.dark [class*="bg-slate-100"],
+.dark [class*="bg-amber-50"],
+.dark [class*="bg-amber-100"] {
+  background-color: #092040 !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
 
 .dark .border-border {
-  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .dark .border-slate-100,
-.dark .border-slate-200 {
-  border-color: rgba(255, 255, 255, 0.08) !important;
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-/* Headings and primary text — brilliant clean white with soft warmth */
+/* Headings and primary text — brilliant pure white for optimal contrast */
 .dark h1,
 .dark h2,
 .dark h3,
 .dark h4,
 .dark h5,
 .dark h6 {
-  color: #f8fafc !important;
+  color: #ffffff !important;
 }
 
 .dark .text-primary,
 .dark [class*="text-[#0B2C5C]"] {
-  color: #f8fafc !important;
+  color: #ffffff !important;
 }
 
 .dark .text-foreground,
@@ -279,14 +320,13 @@
 .dark .text-neutral-900,
 .dark .text-gray-900,
 .dark .text-gray-800 {
-  color: #f1f5f9 !important;
+  color: #f8fafc !important;
 }
 
-/* Body copy, paragraphs, and list items */
+/* Body copy, paragraphs, and list items — crystal clear legibility */
 .dark p,
-.dark li,
-.dark span {
-  /* keep gold/accent intact */
+.dark li {
+  color: #e2e8f0;
 }
 
 .dark .text-slate-700,
@@ -296,28 +336,61 @@
 .dark .text-gray-600,
 .dark .text-neutral-700,
 .dark .text-neutral-600 {
-  color: #cbd5e1 !important;
+  color: #e2e8f0 !important;
 }
 
 .dark .text-muted-foreground,
 .dark .text-slate-500,
 .dark .text-gray-500 {
-  color: #94a3b8 !important;
+  color: #cbd5e1 !important;
 }
 
-/* Preserve gold/accent colors */
+/* All yellow accents eliminated in dark mode — replaced by crystal ice-blue / pure white */
 .dark .text-accent,
-.dark [class*="text-[#F5A623]"] {
-  color: #F5A623 !important;
+.dark [class*="text-[#F5A623]"],
+.dark [class*="text-amber-"],
+.dark [class*="text-yellow-"] {
+  color: #93c5fd !important;
+}
+
+.dark [class*="border-[#F5A623]"],
+.dark [class*="border-amber-"],
+.dark [class*="border-yellow-"] {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark [class*="bg-[#F5A623]"],
+.dark [class*="bg-amber-"],
+.dark [class*="bg-yellow-"] {
+  background-color: #0E3E7E !important;
+  color: #ffffff !important;
+}
+
+.dark [class*="hover:bg-[#F5A623]"]:hover,
+.dark [class*="hover:text-[#F5A623]"]:hover {
+  background-color: #1455a8 !important;
+  color: #ffffff !important;
+}
+
+.dark [class*="hover:border-[#F5A623]"]:hover {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark svg[style*="hsl(var(--accent))"],
+.dark svg[class*="text-[#F5A623]"],
+.dark svg[class*="text-amber-"],
+.dark svg[class*="text-yellow-"] {
+  color: #93c5fd !important;
+  stroke: #93c5fd !important;
 }
 
 /* Form inputs & controls in dark mode */
 .dark input,
 .dark textarea,
 .dark select {
-  background-color: #122444 !important;
+  background-color: #0B254E !important;
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
 }
 
 .dark input::placeholder,
@@ -328,59 +401,160 @@
 .dark input:focus,
 .dark textarea:focus,
 .dark select:focus {
-  border-color: #F5A623 !important;
-  box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.25) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35) !important;
 }
 
 .dark select option {
-  background-color: #0d1b33 !important;
+  background-color: #0B254E !important;
   color: #ffffff !important;
 }
 
 .dark label {
-  color: #e2e8f0 !important;
+  color: #ffffff !important;
 }
 
 /* Cards & containers in dark mode */
 .dark .glass-card {
-  background: rgba(13, 27, 51, 0.88) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+  background: rgba(12, 37, 75, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 15px 35px -10px rgba(5, 19, 41, 0.8) !important;
 }
 
 .dark .shadow-sm,
 .dark .shadow-md,
 .dark .shadow-lg,
 .dark .shadow-xl {
-  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 14px 30px -8px rgba(3, 14, 30, 0.7) !important;
 }
 
-/* Footer in dark mode */
-.dark footer > div:first-child {
-  background-color: #091324 !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+/* Logo placement areas in dark mode: pure black for seamless blend with logo */
+.dark header,
+.dark header[class],
+.dark header.bg-white,
+.dark header[class*="bg-white"],
+.dark header.header-logo-zone,
+.dark .header-logo-zone,
+.dark header a[href="/"],
+.dark header a[href="/"] *,
+.dark [data-logo-zone],
+.dark [data-logo-zone="true"],
+.dark footer > div:first-child,
+.dark footer > div[data-logo-zone],
+.dark footer [class*="dark:bg-black"],
+.dark footer a[href="/"],
+.dark [role="img"][aria-label*="Logo"],
+.dark a[aria-label*="logo"],
+.dark .logo-container,
+.dark [class*="dark:!bg-black"],
+.dark [class*="dark:bg-black"] {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-.dark footer > div.bg-primary {
-  background-color: #050b16 !important;
+.dark footer > div.bg-primary,
+.dark footer > div.bg-\[\#0B2C5C\] {
+  background-color: #071933 !important;
 }
 
-/* Header & Mobile Burger Button in dark mode */
-.dark header {
-  background-color: rgba(7, 14, 28, 0.96) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+/* Header & Navigation Menus in dark mode: pure black background, pure white text, no blue surrounds */
+.dark .mobile-menu-btn,
+.dark header .mobile-menu-btn {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: none !important;
 }
 
-.dark .mobile-menu-btn {
-  background-color: #122444 !important;
-  color: #F5A623 !important;
-  border: 1px solid rgba(245, 166, 35, 0.45) !important;
-  box-shadow: 0 0 12px rgba(245, 166, 35, 0.2) !important;
+.dark .mobile-menu-btn svg,
+.dark header .mobile-menu-btn svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
-.dark .mobile-menu-btn svg {
-  color: #F5A623 !important;
-  stroke: #F5A623 !important;
+.dark header nav a,
+.dark header nav a span {
+  color: #ffffff !important;
+}
+
+.dark header a[href="/contact"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+}
+
+.dark header a[href="/contact"]:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Hover cards with white & royal blue glow */
+.dark .card-hover:hover,
+.dark article:hover,
+.dark .grid > div.bg-white:hover,
+.dark .grid > div.rounded-2xl:hover,
+.dark .grid > div.rounded-xl:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.75), 0 0 20px rgba(147, 197, 253, 0.25) !important;
+}
+
+/* Call-to-actions in dark mode: corporate logo blue with crisp white text — zero white-on-white risk */
+.dark a[style*="hsl(var(--accent))"],
+.dark button[style*="hsl(var(--accent))"],
+.dark .btn-accent,
+.dark [class*="btn-accent"] {
+  background: #0E3E7E !important;
+  background-color: #0E3E7E !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 4px 20px rgba(14, 62, 126, 0.5), 0 0 10px rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark a[style*="hsl(var(--accent))"] *,
+.dark button[style*="hsl(var(--accent))"] *,
+.dark .btn-accent *,
+.dark [class*="btn-accent"] * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.dark a[style*="hsl(var(--accent))"]:hover,
+.dark button[style*="hsl(var(--accent))"]:hover,
+.dark .btn-accent:hover,
+.dark [class*="btn-accent"]:hover {
+  background: #1455a8 !important;
+  background-color: #1455a8 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 8px 25px rgba(20, 85, 168, 0.7) !important;
+}
+
+/* Subtle separator bars in dark mode: crisp white line (ONLY thin separator bars) */
+.dark div[style*="hsl(var(--accent))"][class*="h-1"],
+.dark div[style*="hsl(var(--accent))"][class*="h-0.5"],
+.dark div[style*="hsl(var(--accent))"][class*="h-[2px]"],
+.dark div[style*="hsl(var(--accent))"][class*="w-12"],
+.dark div[style*="hsl(var(--accent))"][class*="w-2"] {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Forced dark blue for elements requiring dark blue against white/light backgrounds in dark mode */
+.dark .text-forced-blue,
+.dark .text-forced-blue * {
+  color: #0B2C5C !important;
+  stroke: #0B2C5C !important;
+}
+
+/* Eyebrows and highlight text: clear sky/ice logo blue */
+.dark span[style*="hsl(var(--accent))"],
+.dark p[style*="hsl(var(--accent))"],
+.dark h3[style*="hsl(var(--accent))"],
+.dark h4[style*="hsl(var(--accent))"] {
+  color: #93c5fd !important;
 }
 
 .card-hover,

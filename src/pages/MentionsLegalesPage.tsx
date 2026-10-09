@@ -12,41 +12,41 @@ export default function MentionsLegalesPage() {
         <link rel="canonical" href="https://groupe-dato.com/mentions-legales" />
       </Helmet>
 
-      <main className="py-16 bg-slate-50 min-h-screen">
+      <main className="py-16 bg-slate-50 dark:bg-[#071933] min-h-screen transition-colors">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-          <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 border border-slate-200">
-            <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-200">
-              <div className="w-12 h-12 rounded-xl bg-[#0B2C5C] text-[#F5A623] flex items-center justify-center font-bold">
+          <div className="bg-white dark:bg-[#0C254B] rounded-2xl shadow-xl p-8 sm:p-12 border border-slate-200 dark:border-white/10">
+            <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-200 dark:border-white/10">
+              <div className="w-12 h-12 rounded-xl bg-[#0B2C5C] dark:bg-[#0E3366] text-[#F5A623] dark:text-blue-300 border dark:border-white/20 flex items-center justify-center font-bold">
                 <Scale className="w-6 h-6" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B2C5C]">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B2C5C] dark:text-white">
                   Mentions Légales
                 </h1>
-                <p className="text-xs text-slate-500">DA-TO GUINEE SA · Lambanyi Carrefour TMI, Conakry</p>
+                <p className="text-xs text-slate-500 dark:text-blue-200">DA-TO GUINEE SA · Lambanyi Carrefour TMI, Conakry</p>
               </div>
             </div>
 
-            <div className="space-y-8 text-slate-700 text-sm leading-relaxed">
+            <div className="space-y-8 text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
               <section className="space-y-3">
-                <h2 className="text-lg font-bold text-[#0B2C5C] flex items-center gap-2">
-                  <Building className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-lg font-bold text-[#0B2C5C] dark:text-white flex items-center gap-2">
+                  <Building className="w-5 h-5 text-[#F5A623] dark:text-blue-300" />
                   1. Éditeur du site et identification de l'entreprise
                 </h2>
                 <p>
                   Le présent site internet institutionnel est édité par la société DA-TO GUINEE SA (Société Anonyme de droit guinéen), entreprise de référence spécialisée dans le BTP, le développement foncier et la promotion immobilière, dont le siège social est situé à <strong>Lambanyi Carrefour TMI, Conakry, République de Guinée</strong>, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM).
                 </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600 mt-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 dark:bg-[#0B254E] p-4 rounded-xl border border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-blue-100 mt-3">
                   <li className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#F5A623] shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0" />
                     <span><strong>Siège social :</strong> {CONTACT_COORDINATES.address}</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-[#F5A623] shrink-0" />
+                    <Phone className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0" />
                     <span><strong>Téléphone :</strong> {CONTACT_COORDINATES.phone1}</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#F5A623] shrink-0" />
+                    <Mail className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0" />
                     <span><strong>Email :</strong> {CONTACT_COORDINATES.email}</span>
                   </li>
                   <li>

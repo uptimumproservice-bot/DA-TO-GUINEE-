@@ -144,13 +144,13 @@ export default function AProposPage() {
         </section>
 
         {/* ── APPROCHE INTÉGRÉE ────────────────────────────────────────────── */}
-        <section className="py-20 bg-white overflow-hidden">
+        <section className="py-20 bg-white dark:bg-[#071933] overflow-hidden transition-colors">
           <div className="container mx-auto px-4 lg:px-8">
             <FadeIn className="text-center mb-14">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'hsl(var(--accent))' }}>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3 text-[#F5A623] dark:text-blue-300">
                 <span>{about.approche.eyebrow}</span>
               </p>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-primary dark:text-white">
                 <span>{about.approche.titre}</span>
               </h2>
             </FadeIn>
@@ -162,17 +162,21 @@ export default function AProposPage() {
                   <div key={etape.id} className="flex items-center flex-shrink-0">
                     <div className="flex flex-col items-center gap-3">
                       <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg"
-                        style={{ background: i === 0 || i === about.approche.etapes.length - 1 ? 'hsl(var(--accent))' : 'hsl(var(--primary))' }}
+                        className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border border-transparent dark:border-white/20 transition-colors ${
+                          i === 0 || i === about.approche.etapes.length - 1
+                            ? 'bg-[#F5A623] dark:!bg-[#0B2C5C]'
+                            : 'bg-[#0B2C5C] dark:!bg-[#0B2C5C]'
+                        }`}
+                        style={{ color: '#ffffff' }}
                       >
                         {i + 1}
                       </div>
-                      <span className="text-xs font-semibold text-center text-primary whitespace-nowrap px-1">
+                      <span className="text-xs font-semibold text-center text-primary dark:text-blue-100 whitespace-nowrap px-1">
                         <span>{etape.label}</span>
                       </span>
                     </div>
                     {i < about.approche.etapes.length - 1 && (
-                      <div className="w-8 md:w-14 h-0.5 flex-shrink-0 mx-1" style={{ background: 'hsl(var(--primary) / 0.2)' }} />
+                      <div className="w-8 md:w-14 h-0.5 flex-shrink-0 mx-1 bg-[#0B2C5C]/20 dark:bg-white/25" />
                     )}
                   </div>
                 ))}

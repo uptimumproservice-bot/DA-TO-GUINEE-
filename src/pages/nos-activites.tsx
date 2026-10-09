@@ -148,9 +148,11 @@ export default function NosActivitesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="flex items-start gap-3 p-5 rounded-xl border-l-4" style={{ borderColor: 'hsl(var(--accent))', background: 'hsl(var(--accent) / 0.06)' }}>
-                  <Target size={18} className="flex-shrink-0 mt-0.5" style={{ color: 'hsl(var(--accent))' }} />
-                  <p className="text-sm font-semibold text-primary italic"><span>{activites.btp.objectif}</span></p>
+                <div className="flex items-start gap-3 p-5 rounded-xl border-l-4 border-[#0B2C5C] bg-white dark:!bg-white shadow-sm border border-slate-200/80">
+                  <Target size={18} className="flex-shrink-0 mt-0.5 text-[#0B2C5C] dark:!text-[#0B2C5C] text-forced-blue" style={{ color: '#0B2C5C' }} />
+                  <p className="text-sm font-bold text-[#0B2C5C] dark:!text-[#0B2C5C] text-forced-blue italic leading-relaxed" style={{ color: '#0B2C5C' }}>
+                    <span>{activites.btp.objectif}</span>
+                  </p>
                 </div>
               </FadeIn>
             </div>

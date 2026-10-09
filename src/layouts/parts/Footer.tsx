@@ -64,10 +64,17 @@ export default function Footer() {
 
   return (
     <footer>
-      {/* Logo band — white background */}
-      <div className="bg-white border-b border-border py-8">
+      {/* Logo band — white in light, pure black in dark for seamless blend with logo */}
+      <div 
+        data-logo-zone="true"
+        className="bg-white dark:!bg-black border-b border-border dark:border-white/10 py-8 transition-colors duration-200"
+      >
         <div className="container mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center gap-4 justify-between">
-          <Link to="/">
+          <Link 
+            to="/" 
+            data-logo-zone="true"
+            className="inline-block bg-transparent dark:!bg-black rounded-lg"
+          >
             <img
               src="/logo.png"
               alt="DA-TO GUINEE SA"
@@ -76,17 +83,18 @@ export default function Footer() {
             <img
               src="/logo-dark.png"
               alt="DA-TO GUINEE SA"
-              className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
+              className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none bg-black"
+              style={{ backgroundColor: '#000000' }}
             />
           </Link>
-          <p className="text-sm font-medium text-muted-foreground italic text-center sm:text-right">
+          <p className="text-sm font-medium text-muted-foreground dark:text-blue-100 italic text-center sm:text-right">
             "Construire durablement. Créer de la valeur."
           </p>
         </div>
       </div>
 
-      {/* Main footer — dark blue */}
-      <div className="bg-primary text-white">
+      {/* Main footer — deep corporate blue */}
+      <div className="bg-[#0B2C5C] dark:bg-[#071933] text-white transition-colors duration-200">
         <div className="container mx-auto px-4 lg:px-8 py-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Liens rapides */}
@@ -196,7 +204,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         aria-label={social.label}
                         title={social.label}
-                        className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#F5A623] hover:text-[#0B2C5C] text-white flex items-center justify-center transition-all duration-200 border border-white/15 hover:border-[#F5A623] shadow-sm hover:scale-105"
+                        className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#F5A623] hover:text-[#0B2C5C] dark:hover:bg-[#0E3E7E] dark:hover:text-white dark:hover:border-white/40 text-white flex items-center justify-center transition-all duration-200 border border-white/15 hover:border-[#F5A623] shadow-sm hover:scale-105"
                       >
                         <Icon className="w-4 h-4" />
                       </a>

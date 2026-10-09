@@ -448,27 +448,26 @@ export default function HomePage() {
         </section>
 
         {/* ── 7. CTA CONTACT (Structure Airo) ──────────────────────────────── */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-[#071933] transition-colors">
           <div className="container mx-auto px-4 lg:px-8">
             <FadeIn>
-              <div className="rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+              <div className="rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-slate-100 dark:border-white/12">
                 <div
-                  className="flex-1 p-10 lg:p-14 flex flex-col justify-center gap-6"
-                  style={{ background: 'hsl(var(--accent))' }}
+                  className="flex-1 p-10 lg:p-14 flex flex-col justify-center gap-6 bg-[#F5A623] dark:!bg-[#0C254B] border-b lg:border-b-0 lg:border-r border-transparent dark:border-white/10 transition-colors"
                 >
-                  <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+                  <p className="text-sm font-semibold uppercase tracking-widest text-white/90 dark:text-blue-300">
                     <span>{home.ctaContact.eyebrow}</span>
                   </p>
                   <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
                     <span>{home.ctaContact.titre}</span>
                   </h2>
-                  <p className="text-base text-white/80 max-w-md leading-relaxed">
+                  <p className="text-base text-white/90 dark:text-slate-100 max-w-md leading-relaxed font-normal">
                     <span>{home.ctaContact.desc}</span>
                   </p>
                   <div>
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded text-base font-bold text-primary bg-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded text-base font-bold text-primary dark:text-white bg-white dark:!bg-[#0E3E7E] dark:hover:!bg-[#1455a8] dark:border dark:border-white/30 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                     >
                       <span>{home.ctaContact.cta}</span> <ArrowRight size={18} />
                     </Link>
@@ -476,21 +475,17 @@ export default function HomePage() {
                 </div>
 
                 <div
-                  className="hidden lg:flex flex-1 items-center justify-center p-14"
-                  style={{ background: 'hsl(var(--primary))' }}
+                  className="hidden lg:flex flex-1 items-center justify-center p-14 bg-[#0B2C5C] dark:!bg-[#071933] transition-colors"
                 >
                   <div className="text-center">
                     <div className="text-6xl font-extrabold text-white/10 leading-none mb-4">
                       DA-TO
                     </div>
-                    <p className="text-lg font-semibold text-white/60 italic">
+                    <p className="text-lg font-semibold text-white/70 italic">
                       <span>{home.ctaContact.slogan}</span>
                     </p>
                     <div className="mt-8 flex justify-center gap-3">
-                      <span
-                        className="w-3 h-3 rounded-full"
-                        style={{ background: 'hsl(var(--accent))' }}
-                      />
+                      <span className="w-3 h-3 rounded-full bg-[#F5A623] dark:bg-white" />
                       <span className="w-3 h-3 rounded-full bg-white/30" />
                       <span className="w-3 h-3 rounded-full bg-white/30" />
                     </div>

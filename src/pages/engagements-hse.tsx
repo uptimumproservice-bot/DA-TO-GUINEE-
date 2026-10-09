@@ -140,10 +140,9 @@ export default function EngagementsHSEPage() {
                   ))}
                 </div>
                 <div
-                  className="p-5 rounded-xl border-l-4"
-                  style={{ borderColor: 'hsl(var(--accent))', background: 'hsl(var(--accent) / 0.08)' }}
+                  className="p-5 rounded-xl border-l-4 border-[#F5A623] dark:border-white bg-[#F5A623]/15 dark:!bg-[#0C254B] shadow-sm transition-colors"
                 >
-                  <p className="text-sm font-semibold text-white/90 italic">
+                  <p className="text-sm font-semibold text-white dark:!text-slate-100 italic leading-relaxed">
                     <span>{engagements.hse.objectif}</span>
                   </p>
                 </div>

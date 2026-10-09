@@ -139,12 +139,21 @@ export const HeroSliderPorteo: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-wrap items-center gap-4 mb-6"
           >
-            {/* Cloned Official Logo */}
-            <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/40 shadow-xl inline-flex items-center">
+            {/* Official Logo Badge */}
+            <div 
+              data-logo-zone="true"
+              className="bg-white/95 dark:!bg-black backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/40 dark:border-white/10 shadow-xl inline-flex items-center"
+            >
               <img
                 src="/logo.png"
                 alt="DA-TO GUINEE SA"
-                className="h-7 sm:h-8 w-auto object-contain"
+                className="dark:hidden h-7 sm:h-8 w-auto object-contain"
+              />
+              <img
+                src="/logo-dark.png"
+                alt="DA-TO GUINEE SA"
+                className="hidden dark:block h-7 sm:h-8 w-auto object-contain bg-black"
+                style={{ backgroundColor: '#000000' }}
               />
             </div>
 

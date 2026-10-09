@@ -12,25 +12,25 @@ export default function PolitiqueConfidentialitePage() {
         <link rel="canonical" href="https://groupe-dato.com/politique-confidentialite" />
       </Helmet>
 
-      <main className="py-16 bg-slate-50 min-h-screen">
+      <main className="py-16 bg-slate-50 dark:bg-[#071933] min-h-screen transition-colors">
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-          <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 border border-slate-200">
-            <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-200">
-              <div className="w-12 h-12 rounded-xl bg-[#0B2C5C] text-[#F5A623] flex items-center justify-center font-bold">
+          <div className="bg-white dark:bg-[#0C254B] rounded-2xl shadow-xl p-8 sm:p-12 border border-slate-200 dark:border-white/10">
+            <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-200 dark:border-white/10">
+              <div className="w-12 h-12 rounded-xl bg-[#0B2C5C] dark:bg-[#0E3366] text-[#F5A623] dark:text-blue-300 border dark:border-white/20 flex items-center justify-center font-bold">
                 <Shield className="w-6 h-6" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B2C5C]">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B2C5C] dark:text-white">
                   Politique de Confidentialité
                 </h1>
-                <p className="text-xs text-slate-500">Protection des données personnelles · DA-TO GUINEE SA</p>
+                <p className="text-xs text-slate-500 dark:text-blue-200">Protection des données personnelles · DA-TO GUINEE SA</p>
               </div>
             </div>
 
-            <div className="space-y-8 text-slate-700 text-sm leading-relaxed">
+            <div className="space-y-8 text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
               <section className="space-y-3">
-                <h2 className="text-lg font-bold text-[#0B2C5C] flex items-center gap-2">
-                  <Lock className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-lg font-bold text-[#0B2C5C] dark:text-white flex items-center gap-2">
+                  <Lock className="w-5 h-5 text-[#F5A623] dark:text-blue-300" />
                   1. Introduction & Engagement
                 </h2>
                 <p>
@@ -39,8 +39,8 @@ export default function PolitiqueConfidentialitePage() {
               </section>
 
               <section className="space-y-3">
-                <h2 className="text-lg font-bold text-[#0B2C5C] flex items-center gap-2">
-                  <Database className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-lg font-bold text-[#0B2C5C] dark:text-white flex items-center gap-2">
+                  <Database className="w-5 h-5 text-[#F5A623] dark:text-blue-300" />
                   2. Données collectées
                 </h2>
                 <p>
@@ -48,15 +48,15 @@ export default function PolitiqueConfidentialitePage() {
                 </p>
                 <ul className="space-y-2 pl-4">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] shrink-0 mt-1" />
+                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0 mt-1" />
                     <span><strong>Données d'identification :</strong> Nom, prénom, fonction, nom de l'entreprise (le cas échéant).</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] shrink-0 mt-1" />
+                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0 mt-1" />
                     <span><strong>Coordonnées :</strong> Adresse email, numéro de téléphone, adresse postale.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] shrink-0 mt-1" />
+                    <CheckCircle2 className="w-4 h-4 text-[#F5A623] dark:text-blue-300 shrink-0 mt-1" />
                     <span><strong>Données de projet :</strong> Détails concernant vos chantiers BTP, besoins fonciers ou investissements immobiliers.</span>
                   </li>
                 </ul>
