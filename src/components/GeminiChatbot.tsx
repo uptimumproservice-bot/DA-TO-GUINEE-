@@ -74,8 +74,8 @@ export function GeminiChatbot() {
           className="fixed bottom-5 right-5 z-50 bg-[#F5A623] hover:bg-[#e0951a] text-[#0B2C5C] dark:!bg-[#0B2C5C] dark:hover:!bg-[#144382] dark:text-white dark:border dark:border-white/30 p-2 sm:px-3 sm:py-2 rounded-full shadow-2xl flex items-center gap-2.5 font-bold transition-all duration-300 hover:scale-105 border-2 border-white group text-xs cursor-pointer"
           aria-label="Assistant IA DA-TO GUINEE SA"
         >
-          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-black flex items-center justify-center p-1 shrink-0 border border-white/40 overflow-hidden shadow-xs">
-            <ExpertIaEmblem className="w-full h-full text-black" />
+          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white dark:bg-[#071933] flex items-center justify-center p-1 shrink-0 border border-white/40 dark:border-white/30 overflow-hidden shadow-xs">
+            <ExpertIaEmblem className="w-full h-full" />
           </div>
           <span className="hidden sm:inline text-xs font-semibold">Expert IA DA-TO GUINEE SA</span>
         </button>
@@ -87,8 +87,8 @@ export function GeminiChatbot() {
           {/* Header — maintains corporate blue in dark mode with attached emblem */}
           <div className="bg-[#0B2C5C] dark:!bg-[#0B2C5C] text-white p-4 flex items-center justify-between border-b border-blue-900 dark:border-white/15">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white text-black border border-white/40 flex items-center justify-center p-1.5 overflow-hidden shrink-0 shadow-md">
-                <ExpertIaEmblem className="w-full h-full text-black" />
+              <div className="w-10 h-10 rounded-full bg-white dark:bg-[#071933] border border-white/40 dark:border-white/30 flex items-center justify-center p-1.5 overflow-hidden shrink-0 shadow-md">
+                <ExpertIaEmblem className="w-full h-full" />
               </div>
               <div>
                 <h3 className="font-bold text-sm leading-tight text-white">Assistant Expert DA-TO GUINEE SA</h3>
@@ -115,8 +115,8 @@ export function GeminiChatbot() {
                 className={`flex gap-2.5 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {m.role === 'assistant' && (
-                  <div className="w-7 h-7 rounded-full bg-white text-black border border-white/30 flex items-center justify-center p-1 shrink-0 mt-1 shadow-xs overflow-hidden">
-                    <ExpertIaEmblem className="w-full h-full text-black" />
+                  <div className="w-7 h-7 rounded-full bg-white dark:bg-[#071933] border border-white/30 flex items-center justify-center p-1 shrink-0 mt-1 shadow-xs overflow-hidden">
+                    <ExpertIaEmblem className="w-full h-full" />
                   </div>
                 )}
                 <div
@@ -137,8 +137,8 @@ export function GeminiChatbot() {
             ))}
             {loading && (
               <div className="flex gap-2.5 justify-start">
-                <div className="w-7 h-7 rounded-full bg-white text-black border border-white/30 flex items-center justify-center p-1 shrink-0 mt-1 overflow-hidden">
-                  <ExpertIaEmblem className="w-full h-full text-black" />
+                <div className="w-7 h-7 rounded-full bg-white dark:bg-[#071933] border border-white/30 flex items-center justify-center p-1 shrink-0 mt-1 overflow-hidden">
+                  <ExpertIaEmblem className="w-full h-full" />
                 </div>
                 <div className="bg-white dark:bg-[#0C254B] text-slate-500 dark:text-blue-100 border border-slate-200 dark:border-white/15 rounded-2xl rounded-bl-none px-4 py-3 text-sm flex items-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin text-[#0B2C5C] dark:text-white" />
