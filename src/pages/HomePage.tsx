@@ -102,12 +102,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
                   
-                  {/* Subtle badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded bg-[#0B2C5C]/90 text-white text-xs font-semibold backdrop-blur-sm border border-white/20">
-                      Pôle 0{index + 1}
-                    </span>
-                  </div>
+
 
                   {/* Title overlay at the bottom of image */}
                   <div className="absolute bottom-4 left-4 right-4">

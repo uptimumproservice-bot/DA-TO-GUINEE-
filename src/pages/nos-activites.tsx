@@ -67,13 +67,69 @@ export default function NosActivitesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' as const }}
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: 'hsl(var(--accent))' }}>
-                <span>{activites.banner.sousTitre}</span>
-              </p>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                 <span>{activites.banner.titre}</span>
               </h1>
+              <div
+                className="w-16 h-1 mt-4 rounded-full"
+                style={{ background: 'hsl(var(--accent, 35 92% 55%))' }}
+              />
             </motion.div>
+          </div>
+        </section>
+
+        {/* ── INTRODUCTION NOS ACTIVITÉS ────────────────────────────────────── */}
+        <section className="py-16 md:py-20 bg-[#F8F9FA] dark:bg-[#071933]/60 border-b border-slate-200/80 dark:border-white/10 transition-colors">
+          <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
+            <FadeIn className="text-center">
+              <div
+                className="w-12 h-1 mx-auto mb-6 rounded-full"
+                style={{ background: 'hsl(var(--accent, 35 92% 55%))' }}
+              />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B2C5C] dark:text-white mb-6 tracking-tight">
+                Trois pôles d’activité. Une même exigence de réalisation.
+              </h2>
+              <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-3xl mx-auto font-normal">
+                <strong className="text-[#0B2C5C] dark:text-white font-bold">DA-TO GUINÉE SA</strong> développe ses activités autour de trois domaines complémentaires : le BTP et les infrastructures, le développement foncier et l’aménagement, ainsi que l’immobilier et la valorisation. Cette organisation permet d’aborder les projets selon leur nature, leurs contraintes et leurs objectifs.
+              </p>
+
+              {/* Raccourcis visuels vers les 3 pôles */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+                <a
+                  href="#btp"
+                  className="p-5 rounded-xl bg-white dark:bg-[#0C254B] border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-md hover:border-[#F5A623] transition-all text-left group"
+                >
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#F5A623] block mb-1">
+                    Pôle 01
+                  </span>
+                  <span className="text-base font-bold text-[#0B2C5C] dark:text-white group-hover:text-[#F5A623] transition-colors block">
+                    BTP & Infrastructures →
+                  </span>
+                </a>
+                <a
+                  href="#foncier"
+                  className="p-5 rounded-xl bg-white dark:bg-[#0C254B] border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-md hover:border-[#F5A623] transition-all text-left group"
+                >
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#F5A623] block mb-1">
+                    Pôle 02
+                  </span>
+                  <span className="text-base font-bold text-[#0B2C5C] dark:text-white group-hover:text-[#F5A623] transition-colors block">
+                    Développement Foncier & Aménagement →
+                  </span>
+                </a>
+                <a
+                  href="#immobilier"
+                  className="p-5 rounded-xl bg-white dark:bg-[#0C254B] border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-md hover:border-[#F5A623] transition-all text-left group"
+                >
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#F5A623] block mb-1">
+                    Pôle 03
+                  </span>
+                  <span className="text-base font-bold text-[#0B2C5C] dark:text-white group-hover:text-[#F5A623] transition-colors block">
+                    Immobilier & Valorisation →
+                  </span>
+                </a>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
@@ -93,15 +149,6 @@ export default function NosActivitesPage() {
                       loading="lazy"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                      <span className="text-xs font-bold uppercase tracking-wider bg-[#0B2C5C]/90 backdrop-blur-xs px-3 py-1 rounded-md border border-white/20">
-                        BTP & Bâtiments
-                      </span>
-                      <span className="text-[11px] text-white/90 font-medium">
-                        Génie Civil & Gros Œuvre
-                      </span>
-                    </div>
                   </div>
 
                   {/* Image 2: Infrastructures & VRD */}
@@ -113,15 +160,6 @@ export default function NosActivitesPage() {
                       loading="lazy"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                      <span className="text-xs font-bold uppercase tracking-wider bg-[#F5A623] text-[#0B2C5C] px-3 py-1 rounded-md font-bold">
-                        Infrastructures & VRD
-                      </span>
-                      <span className="text-[11px] text-white/90 font-medium">
-                        Routes, Ponts & Réseaux
-                      </span>
-                    </div>
                   </div>
                 </div>
               </FadeIn>

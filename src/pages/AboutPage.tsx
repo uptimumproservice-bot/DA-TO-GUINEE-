@@ -80,7 +80,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   Notre Vision
                 </h2>
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-                  Devenir l’acteur de référence incontournable en République de Guinée et dans la sous-région ouest-africaine pour l'aménagement foncier sécurisé, la réalisation d'infrastructures de génie civil durables et la promotion immobilière d'excellence.
+                  Contribuer à la transformation durable de la Guinée en participant au développement d’infrastructures, d’espaces aménagés et de solutions immobilières adaptés aux besoins du territoire et à son évolution.
                 </p>
               </div>
               
@@ -103,7 +103,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   Notre Mission
                 </h2>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  Transformer le potentiel foncier guinéen en cadres de vie ordonnés, sécurisés et viabilisés. Nous apportons des solutions techniques complètes aux particuliers, aux entreprises et à l'État en combinant rigueur juridique, génie civil de pointe et respect strict des plannings.
+                  Étudier, structurer, aménager, construire et valoriser des projets, en recherchant un équilibre entre exigences techniques, viabilité économique et utilité à long terme.
                 </p>
               </div>
 

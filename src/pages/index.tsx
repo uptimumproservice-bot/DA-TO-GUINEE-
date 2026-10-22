@@ -14,7 +14,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { home } from 'virtual:content';
-import { PartnersMarquee } from '@/components/PartnersMarquee';
+import { StatsPorteo } from '@/components/StatsPorteo';
 
 // ─── Fade-in wrapper with smooth ease ──────────────────────────────────────
 function FadeIn({
@@ -132,20 +132,6 @@ export default function HomePage() {
           <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl animate-ambient-glow pointer-events-none" />
           <div className="absolute bottom-1/3 -right-20 w-96 h-96 rounded-full bg-[#F5A623]/20 blur-3xl animate-float-reverse pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[100px] animate-breathe pointer-events-none" />
-
-          {/* Ambient Floating badges (Desktop — Site animé & dynamique) */}
-          <div className="hidden lg:flex absolute top-28 left-8 xl:left-16 flex-col gap-3 pointer-events-none z-20">
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0B2C5C]/60 dark:bg-[#071933]/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-continuous">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Normes & Sécurité HSE ISO</span>
-            </div>
-          </div>
-          <div className="hidden lg:flex absolute bottom-28 right-8 xl:right-16 flex-col gap-3 pointer-events-none z-20">
-            <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0B2C5C]/60 dark:bg-[#071933]/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-lg animate-float-gentle-alt">
-              <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-pulse" />
-              <span>Flotte d'Engins Modernes</span>
-            </div>
-          </div>
 
           <div className="relative z-10 container mx-auto px-4 lg:px-8 flex flex-col items-center text-center gap-8 py-16">
             <motion.div
@@ -411,6 +397,9 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── CHIFFRES CLÉS & IMPACT (Excellence opérationnelle) ───────────── */}
+        <StatsPorteo />
+
         {/* Dynamic Glowing Divider Line (Site en mouvement permanent) */}
         <div className="w-full h-[2px] glow-line-animated" />
 
@@ -508,8 +497,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── PARTNERS MARQUEE (Défilement fluide continu) ── */}
-        <PartnersMarquee />
 
         {/* ── 7. CTA CONTACT (Structure Airo) ──────────────────────────────── */}
         <section className="py-20 bg-white dark:bg-[#071933] transition-colors">

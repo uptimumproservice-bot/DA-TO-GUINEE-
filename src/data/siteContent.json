@@ -3,15 +3,15 @@
     "about": {
       "banner": {
         "titre": "À Propos",
-        "sousTitre": "Qui sommes-nous ?"
+        "sousTitre": "Le territoire comme potentiel. Le projet comme engagement."
       },
       "vision": {
         "eyebrow": "Notre Vision",
-        "texte": "Nous voulons participer à la construction d'une Guinée où les infrastructures, les espaces urbains et les projets immobiliers sont pensés pour répondre aux besoins réels des populations et de l'économie. Un projet réussi ne se limite pas à ce qui est construit. Il se mesure à la valeur qu'il crée et à sa capacité à durer."
+        "texte": "Contribuer à la transformation durable de la Guinée en participant au développement d’infrastructures, d’espaces aménagés et de solutions immobilières adaptés aux besoins du territoire et à son évolution."
       },
       "mission": {
         "eyebrow": "Notre Mission",
-        "texte": "Concevoir, aménager, construire et valoriser des projets et infrastructures adaptés aux besoins de nos clients et aux réalités de leur environnement."
+        "texte": "Étudier, structurer, aménager, construire et valoriser des projets, en recherchant un équilibre entre exigences techniques, viabilité économique et utilité à long terme."
       },
       "domaines": {
         "eyebrow": "Nos Domaines d'Intervention",
@@ -110,7 +110,7 @@
     "activites": {
       "banner": {
         "titre": "Nos Activités",
-        "sousTitre": "Trois pôles d'expertise au service de vos projets"
+        "sousTitre": "Trois pôles d’activité. Une même exigence de réalisation."
       },
       "btp": {
         "eyebrow": "Pôle 1",
@@ -632,11 +632,11 @@
     },
     "vision": {
       "eyebrow": "Notre Vision",
-      "texte": "Nous voulons participer à la construction d'une Guinée où les infrastructures, les espaces urbains et les projets immobiliers sont pensés pour répondre aux besoins réels des populations et de l'économie. Un projet réussi ne se limite pas à ce qui est construit. Il se mesure à la valeur qu'il crée et à sa capacité à durer."
+      "texte": "Contribuer à la transformation durable de la Guinée en participant au développement d’infrastructures, d’espaces aménagés et de solutions immobilières adaptés aux besoins du territoire et à son évolution."
     },
     "mission": {
       "eyebrow": "Notre Mission",
-      "texte": "Concevoir, aménager, construire et valoriser des projets et infrastructures adaptés aux besoins de nos clients et aux réalités de leur environnement."
+      "texte": "Étudier, structurer, aménager, construire et valoriser des projets, en recherchant un équilibre entre exigences techniques, viabilité économique et utilité à long terme."
     },
     "domaines": {
       "eyebrow": "Nos Domaines d'Intervention",
@@ -735,7 +735,7 @@
   "activites": {
     "banner": {
       "titre": "Nos Activités",
-      "sousTitre": "Trois pôles d'expertise au service de vos projets"
+      "sousTitre": "Trois pôles d’activité. Une même exigence de réalisation."
     },
     "btp": {
       "eyebrow": "Pôle 1",

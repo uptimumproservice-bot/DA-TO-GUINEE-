@@ -221,20 +221,25 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10">
           <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/50 text-center md:text-left">
-              © 2026 DA-TO GUINEE SA. Tous droits réservés.
-            </p>
+            <div className="text-center md:text-left space-y-1">
+              <p className="text-xs text-white/70 font-medium">
+                © 2026 DA-TO GUINEE SA · Société Anonyme à Conseil d'Administration. Tous droits réservés.
+              </p>
+              <p className="text-[11px] text-white/45">
+                Siège social : Lambanyi, Carrefour TMI, Commune de Ratoma, Conakry, République de Guinée
+              </p>
+            </div>
 
             <div className="flex gap-5 text-center">
               <Link
                 to="/mentions-legales"
-                className="text-xs text-white/50 hover:text-white transition-colors"
+                className="text-xs text-white/60 hover:text-white transition-colors"
               >
                 Mentions légales
               </Link>
               <Link
                 to="/politique-confidentialite"
-                className="text-xs text-white/50 hover:text-white transition-colors"
+                className="text-xs text-white/60 hover:text-white transition-colors"
               >
                 Politique de confidentialité
               </Link>
