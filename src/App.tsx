@@ -15,6 +15,7 @@ import NotreMethodePage from './pages/notre-methode';
 import EngagementsHSEPage from './pages/engagements-hse';
 import ActualitesPage from './pages/actualites';
 import ContactPage from './pages/contact';
+import CataloguesPage from './pages/catalogues';
 import MentionsLegalesPage from './pages/MentionsLegalesPage';
 import PolitiqueConfidentialitePage from './pages/PolitiqueConfidentialitePage';
 
@@ -80,6 +81,7 @@ function AnimatedRoutes() {
           <Route path="/engagements-hse" element={<EngagementsHSEPage />} />
           <Route path="/actualites" element={<ActualitesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/catalogues" element={<CataloguesPage />} />
           <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
           <Route path="/politique-confidentialite" element={<PolitiqueConfidentialitePage />} />
           {/* Catch-all */}

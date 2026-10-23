@@ -16,17 +16,17 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     id: 'exp',
-    value: 15,
-    suffix: '+',
+    value: 5,
+    suffix: '',
     label: "Années d'Expertise",
     subtext: 'Au service du développement des infrastructures en Guinée',
     icon: Award,
   },
   {
     id: 'projects',
-    value: 50,
+    value: 20,
     suffix: '+',
-    label: 'Projets & Chantiers',
+    label: 'Projets et Chantiers',
     subtext: 'Bâtiments, voiries, VRD et lotissements sécurisés',
     icon: Building2,
   },
@@ -34,15 +34,15 @@ const stats: StatItem[] = [
     id: 'hse',
     value: 100,
     suffix: '%',
-    label: 'Conformité HSE & Qualité',
+    label: 'Conformités HSE & Qualité',
     subtext: 'Sécurité rigoureuse et matériaux conformes aux normes',
     icon: HardHat,
   },
   {
     id: 'jobs',
-    value: 250,
+    value: 100,
     suffix: '+',
-    label: 'Emplois Locaux Créés',
+    label: 'Emplois Locaux',
     subtext: 'Valorisation des talents et compétences guinéennes',
     icon: Users,
   },
@@ -85,14 +85,14 @@ export const StatsPorteo: React.FC = () => {
                 className="relative group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#F5A623]/50 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#F5A623]/15 text-[#F5A623] flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-[#F5A623]/15 text-[#F5A623] flex items-center justify-center transition-transform group-hover:scale-110 duration-300 shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-mono text-white/30">0{idx + 1}</span>
                 </div>
 
                 <div>
-                  <div className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-2 font-display">
+                  <div className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-2 font-display inline-block">
                     <AnimatedCounter
                       value={s.value}
                       prefix={s.prefix}
@@ -108,8 +108,8 @@ export const StatsPorteo: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Bottom accent glow */}
-                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-[#F5A623]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Elegant subtle gold line on hover */}
+                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-[#F5A623] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             );
           })}

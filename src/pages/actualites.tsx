@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'mo
 import { Calendar, ArrowRight } from 'lucide-react';
 import { actualites } from 'virtual:content';
 import { formatBrandText } from '@/components/BrandText';
+import { DownloadCenterSection } from '@/components/DownloadCenterSection';
 
 function FadeIn({
   children,
@@ -130,6 +131,9 @@ export default function ActualitesPage() {
             </div>
           </div>
         </section>
+
+        {/* ── ESPACE TÉLÉCHARGEMENTS & CATALOGUES OFFICIELS ───────────────── */}
+        <DownloadCenterSection />
 
         {/* ── INSCRIPTION NEWSLETTER ───────────────────────────────────────── */}
         <section className="py-20 bg-primary text-white">

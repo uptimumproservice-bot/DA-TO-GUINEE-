@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'mo
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { about } from 'virtual:content';
 import { formatBrandText } from '@/components/BrandText';
+import { DownloadCenterSection } from '@/components/DownloadCenterSection';
 
 function FadeIn({
   children,
@@ -295,6 +296,8 @@ export default function AProposPage() {
             </FadeIn>
           </div>
         </section>
+
+
 
         {/* ── ENGAGEMENT & PROJET ─────────────────────────────────────────── */}
         <section className="relative py-28 overflow-hidden">

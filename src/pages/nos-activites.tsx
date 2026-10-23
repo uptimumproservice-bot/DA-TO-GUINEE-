@@ -161,6 +161,17 @@ export default function NosActivitesPage() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
+
+                  {/* Image 3: Pont en construction & Ouvrages d'art */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
+                    <img
+                      src="/assets/images/pont_en_construction.jpg"
+                      alt="Construction de pont et ouvrages d'art - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 </div>
               </FadeIn>
               {/* Content */}
@@ -225,15 +236,27 @@ export default function NosActivitesPage() {
                   <span>{activites.foncier.conclusion}</span>
                 </p>
               </FadeIn>
-              {/* Image */}
-              <FadeIn delay={0.1}>
-                <div className="rounded-2xl overflow-hidden shadow-xl h-96 sticky top-24">
-                  <img
-                    src="/airo-assets/images/pages/activites/pole-foncier.jpg"
-                    alt="Développement Foncier & Aménagement"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+              {/* Images Foncier & Aménagement */}
+              <FadeIn>
+                <div className="flex flex-col gap-6 sticky top-24">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
+                    <img
+                      src="/airo-assets/images/pages/activites/pole-foncier.jpg"
+                      alt="Développement Foncier & Aménagement - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
+                    <img
+                      src="/assets/images/amenagement_foncier.jpg"
+                      alt="Aménagement foncier, lotissement et topographie - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 </div>
               </FadeIn>
             </div>
@@ -244,15 +267,27 @@ export default function NosActivitesPage() {
         <section id="immobilier" className="py-20 bg-white scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-              {/* Image */}
+              {/* Images Immobilier & Valorisation */}
               <FadeIn>
-                <div className="rounded-2xl overflow-hidden shadow-xl h-96 sticky top-24">
-                  <img
-                    src="/airo-assets/images/pages/activites/pole-immobilier.jpg"
-                    alt="Immobilier & Valorisation"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                <div className="flex flex-col gap-6 sticky top-24">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
+                    <img
+                      src="/airo-assets/images/pages/activites/pole-immobilier.jpg"
+                      alt="Immobilier & Valorisation - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 group border border-slate-100">
+                    <img
+                      src="/airo-assets/images/pages/home/carousel-immobilier.jpg"
+                      alt="Promotion et valorisation immobilière - DA-TO GUINEE SA"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 </div>
               </FadeIn>
               {/* Content */}

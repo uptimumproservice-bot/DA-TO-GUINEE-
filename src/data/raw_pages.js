@@ -114,28 +114,33 @@ export const pages = {
   "btp": {
     "eyebrow": "Pôle 1",
     "titre": "BTP & Infrastructures",
-    "intro": "Le BTP constitue l'un des principaux domaines d'intervention de DA-TO GUINEE SA. Nous développons et réalisons des projets de construction et d'infrastructures en recherchant un équilibre entre qualité, fonctionnalité, coût, délai et durabilité.",
-    "objectif": "Faire de chaque chantier un projet maîtrisé, depuis sa préparation jusqu'à sa livraison.",
+    "intro": "Construire des ouvrages fonctionnels, durables et adaptés à leur usage.\n\nNous intervenons dans les travaux de construction, d’aménagement et de réhabilitation, en tenant compte des exigences techniques, des contraintes du chantier et de la destination des ouvrages.",
+    "objectif": "Notre approche privilégie une préparation rigoureuse, une exécution maîtrisée et une attention constante à la qualité des ouvrages.",
     "services": [
       {
         "id": "btp1",
         "titre": "Construction de bâtiments",
-        "desc": "Résidentiels, commerciaux, administratifs, professionnels, ouvrages et infrastructures diverses."
+        "desc": "Projets résidentiels, commerciaux, administratifs et professionnels."
       },
       {
         "id": "btp2",
-        "titre": "Travaux publics",
-        "desc": "Terrassement, préparation et aménagement des sites, voiries, réseaux divers, ouvrages d'assainissement, aménagements extérieurs, infrastructures associées aux projets."
+        "titre": "Travaux de terrain",
+        "desc": "Terrassement, préparation des sites et aménagement des emprises."
       },
       {
         "id": "btp3",
-        "titre": "Rénovation et réhabilitation",
-        "desc": "Remise en état, modernisation, transformation, réhabilitation de bâtiments et ouvrages existants."
+        "titre": "Voirie et réseaux divers (VRD)",
+        "desc": "Voirie, drainage, réseaux et aménagements extérieurs."
       },
       {
         "id": "btp4",
-        "titre": "Gestion de projets de construction",
-        "desc": "Planification, coordination des intervenants, suivi des travaux, contrôle de la qualité, suivi des coûts, suivi des délais, réception des ouvrages."
+        "titre": "Réhabilitation et rénovation",
+        "desc": "Remise en état et adaptation d’ouvrages existants."
+      },
+      {
+        "id": "btp5",
+        "titre": "Suivi des travaux",
+        "desc": "Planification, coordination, contrôle de la qualité et suivi de l’avancement, selon la mission confiée."
       }
     ]
   },
@@ -183,7 +188,7 @@ export const pages = {
     "eyebrow": "Pôle 3",
     "titre": "Immobilier & Valorisation",
     "intro": "DA-TO GUINEE SA développe également des activités liées à la promotion, à la commercialisation et à la gestion immobilière.",
-    "conclusion": "Notre approche vise à établir une cohérence entre emplacement, conception, qualité, fonctionnalité, coût et potentiel de valorisation.",
+    "conclusion": "Notre objectif est de favoriser une cohérence entre l’emplacement, l’usage, la qualité, le coût et le potentiel de valorisation de chaque actif.",
     "services": [
       {
         "id": "i1",
@@ -572,56 +577,64 @@ export const pages = {
   "methode": (schemas.pages?.methode ?? schemas.methode ?? identity).parse({
   "banner": {
     "titre": "Notre Méthode",
-    "sousTitre": "Un processus rigoureux, du besoin à la livraison"
+    "sousTitre": "De l’analyse à la livraison, chaque étape compte."
   },
   "intro": {
     "eyebrow": "Notre Approche",
-    "texte": "Chaque projet que nous réalisons suit une méthodologie structurée qui garantit la qualité, la maîtrise des délais et la satisfaction de nos clients."
+    "texte": "La réussite d’un projet repose autant sur la qualité de son exécution que sur la préparation, la coordination et le suivi des opérations. DA-TO GUINÉE SA privilégie une démarche structurée, adaptée aux caractéristiques de chaque projet, à ses contraintes et aux objectifs fixés."
   },
   "etapes": [
     {
       "id": "m1",
       "num": "01",
       "titre": "Comprendre",
-      "desc": "Nous analysons le besoin, le contexte, les contraintes et les objectifs du projet."
+      "subtitle": "Définir le besoin et les objectifs.",
+      "desc": "Nous identifions les attentes du client, la finalité du projet, les contraintes principales et les résultats recherchés."
     },
     {
       "id": "m2",
       "num": "02",
       "titre": "Étudier",
-      "desc": "Nous examinons les caractéristiques du terrain, les contraintes techniques, les exigences réglementaires et les différentes options envisageables."
+      "subtitle": "Évaluer les conditions de réalisation.",
+      "desc": "Nous examinons les caractéristiques du site, les contraintes techniques et réglementaires ainsi que les principales options envisageables."
     },
     {
       "id": "m3",
       "num": "03",
       "titre": "Concevoir",
-      "desc": "Nous recherchons des solutions adaptées à la destination du projet, à son environnement et aux moyens disponibles."
+      "subtitle": "Déterminer une solution adaptée.",
+      "desc": "Nous recherchons une réponse cohérente avec l’usage prévu, les exigences du projet, les ressources disponibles et les réalités du terrain."
     },
     {
       "id": "m4",
       "num": "04",
       "titre": "Planifier",
-      "desc": "Nous définissons les différentes étapes du projet, les ressources nécessaires, les délais et les modalités de suivi."
+      "subtitle": "Organiser les moyens et les étapes.",
+      "desc": "Nous définissons les principales phases d’intervention, les ressources à mobiliser, les échéances et les modalités de suivi."
     },
     {
       "id": "m5",
       "num": "05",
       "titre": "Exécuter",
-      "desc": "Nous coordonnons la réalisation des travaux dans le respect des exigences définies."
+      "subtitle": "Mettre en œuvre avec rigueur.",
+      "desc": "Les opérations sont conduites selon le périmètre retenu, avec une attention portée à la coordination des intervenants et au respect des exigences définies."
     },
     {
       "id": "m6",
       "num": "06",
       "titre": "Contrôler",
-      "desc": "Nous suivons l'avancement, la qualité, les coûts, les délais et les éventuelles difficultés rencontrées."
+      "subtitle": "Suivre l’avancement et les écarts.",
+      "desc": "Nous suivons l’évolution des travaux, la qualité d’exécution, les coûts et les délais afin d’identifier les difficultés et de prendre les mesures appropriées."
     },
     {
       "id": "m7",
       "num": "07",
       "titre": "Livrer",
-      "desc": "Nous veillons à ce que le résultat final corresponde aux exigences convenues et aux objectifs du projet."
+      "subtitle": "Vérifier la conformité du résultat attendu.",
+      "desc": "La phase de livraison permet d’examiner les ouvrages réalisés, de relever les éventuelles réserves et de vérifier leur conformité aux exigences convenues."
     }
-  ]
+  ],
+  "conclusion": "Tous les projets ne présentent pas les mêmes enjeux. Notre méthode s’ajuste donc à leur nature, à leur complexité et à l’étendue de notre mission, tout en conservant un principe essentiel : préparer avec discernement, suivre avec rigueur et agir avec responsabilité."
 }),
 };
 export const about = pages.about;

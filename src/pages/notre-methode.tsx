@@ -113,9 +113,14 @@ export default function NotreMethodePage() {
                       </div>
                       {/* Content block */}
                       <div className="flex-1 bg-white p-8 lg:p-12 flex flex-col justify-center">
-                        <h3 className="text-2xl font-extrabold text-primary mb-3">
+                        <h3 className="text-2xl font-extrabold text-primary mb-1">
                           <span>{etape.titre}</span>
                         </h3>
+                        {etape.subtitle && (
+                          <p className="text-base sm:text-lg font-bold mb-3" style={{ color: 'hsl(var(--accent))' }}>
+                            <span>{etape.subtitle}</span>
+                          </p>
+                        )}
                         <p className="text-base text-muted-foreground leading-relaxed max-w-xl">
                           <span>{etape.desc}</span>
                         </p>
@@ -127,6 +132,21 @@ export default function NotreMethodePage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ── UNE DÉMARCHE ADAPTÉE ─────────────────────────────────────────── */}
+        <section className="py-20 bg-white dark:bg-[#071933] transition-colors">
+          <div className="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
+            <FadeIn>
+              <div className="w-12 h-1 mx-auto mb-6 rounded-full" style={{ background: 'hsl(var(--accent))' }} />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B2C5C] dark:text-white mb-6 tracking-tight">
+                Une démarche adaptée à chaque projet
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                <span>{methode.conclusion}</span>
+              </p>
+            </FadeIn>
           </div>
         </section>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { PageId } from '../types';
 import { LogoPlaceholder } from './LogoPlaceholder';
 import { CONTACT_COORDINATES } from '../data/siteData';
