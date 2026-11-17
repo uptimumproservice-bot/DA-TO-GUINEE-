@@ -9,11 +9,12 @@ import {
   TrendingUp,
   ChevronRight,
   ArrowRight,
+  MapPin,
 } from 'lucide-react';
-import { home } from 'virtual:content';
+import { useSiteContent } from '@/contexts/SiteContentContext';
 import { StatsPorteo } from '@/components/StatsPorteo';
+import { CustomSectionsRenderer } from '@/components/CustomSectionsRenderer';
 
-// ─── Fade-in wrapper with smooth ease ──────────────────────────────────────
 function FadeIn({
   children,
   delay = 0,
@@ -38,37 +39,41 @@ function FadeIn({
   );
 }
 
-// ─── Pole image slots ────────────────────────────────────────────────────────
-const poleImages = [
+const defaultPoleImages = [
   '/airo-assets/images/pages/home/pole-btp.jpg',
   '/airo-assets/images/pages/home/pole-foncier.png',
   '/airo-assets/images/pages/home/pole-immobilier.jpg',
 ];
 
-const poleHrefs = [
+const defaultPoleHrefs = [
   '/nos-activites#btp',
   '/nos-activites#foncier',
   '/nos-activites#immobilier',
 ];
 
-// ─── Atout icons ─────────────────────────────────────────────────────────────
 const atoutIcons = [Star, Leaf, Settings2, TrendingUp];
 
 export default function HomePage() {
+  const { getPageContent, settings, publishedProjects } = useSiteContent();
+  const home = getPageContent('accueil');
+
+  const heroPoster = home.hero?.posterImage || '/airo-assets/images/pages/home/hero-poster.jpg';
+
   return (
     <>
       <Helmet>
-        <title>DA-TO GUINEE SA — BTP • Développement Foncier • Immobilier</title>
+        <title>{settings.seoTitle || 'DA-TO GUINEE SA — BTP • Développement Foncier • Immobilier'}</title>
         <meta
           name="description"
-          content="DA-TO GUINEE SA est une entreprise guinéenne spécialisée dans le BTP, le développement foncier et l'immobilier. Réalisations durables et créatrices de valeur en Guinée."
+          content={
+            settings.seoDescription ||
+            "DA-TO GUINEE SA est une entreprise guinéenne spécialisée dans le BTP, le développement foncier et l'immobilier. Réalisations durables et créatrices de valeur en Guinée."
+          }
         />
+        {settings.seoKeywords && <meta name="keywords" content={settings.seoKeywords} />}
         <link rel="canonical" href="https://datoguinee.com/" />
-        <meta property="og:title" content="DA-TO GUINEE SA — BTP • Développement Foncier • Immobilier" />
-        <meta
-          property="og:description"
-          content="Entreprise guinéenne spécialisée dans le BTP, le développement foncier et l'immobilier."
-        />
+        <meta property="og:title" content={settings.seoTitle || 'DA-TO GUINEE SA'} />
+        <meta property="og:description" content={settings.seoDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://datoguinee.com/" />
       </Helmet>
@@ -76,25 +81,23 @@ export default function HomePage() {
       <main className="bg-slate-50 dark:bg-[#071933] transition-colors">
         {/* ── 1. HERO BANNER ─────────────────────────────────────────────────── */}
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-          {/* Background video & high-def poster */}
           <div className="absolute inset-0 overflow-hidden">
             <video
               autoPlay
               loop
               muted
               playsInline
-              poster="/airo-assets/images/pages/home/hero-poster.jpg"
+              poster={heroPoster}
               className="absolute inset-0 w-full h-full object-cover scale-105"
             >
               <source src="/airo-assets/images/pages/home/hero.mp4" type="video/mp4" />
             </video>
             <div
               className="absolute inset-0 bg-cover bg-center -z-10"
-              style={{ backgroundImage: 'url(/airo-assets/images/pages/home/hero-poster.jpg)' }}
+              style={{ backgroundImage: `url(${heroPoster})` }}
             />
           </div>
 
-          {/* Deep corporate gradient overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -103,7 +106,6 @@ export default function HomePage() {
             }}
           />
 
-          {/* Ambient luminous moving orbs */}
           <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl animate-ambient-glow pointer-events-none" />
           <div className="absolute bottom-1/3 -right-20 w-96 h-96 rounded-full bg-[#F5A623]/20 blur-3xl animate-float-reverse pointer-events-none" />
 
@@ -133,7 +135,7 @@ export default function HomePage() {
               className="flex flex-wrap items-center justify-center gap-4 mt-2"
             >
               <Link
-                to="/nos-activites"
+                to={home.hero?.ctaHref || '/nos-activites'}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-bold text-white shadow-xl transition-all duration-300 hover:brightness-110 hover:scale-105 select-none"
                 style={{ background: 'hsl(var(--accent))' }}
               >
@@ -141,10 +143,10 @@ export default function HomePage() {
                 <ArrowRight size={18} />
               </Link>
               <Link
-                to="/contact"
+                to={home.hero?.secondaryCtaHref || '/contact'}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white border border-white/30 hover:bg-white/10 transition-all select-none"
               >
-                <span>Contactez-nous</span>
+                <span>{home.hero?.secondaryCtaLabel || 'Contactez-nous'}</span>
               </Link>
             </motion.div>
           </div>
@@ -209,15 +211,15 @@ export default function HomePage() {
             </FadeIn>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {home.poles.items.map((pole: any, i: number) => (
+              {(home.poles?.items || []).map((pole: any, i: number) => (
                 <FadeIn key={pole.id} delay={i * 0.1}>
                   <Link
-                    to={poleHrefs[i]}
+                    to={pole.href || defaultPoleHrefs[i] || '/nos-activites'}
                     className="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 bg-white dark:bg-[#0C254B] border border-slate-200 dark:border-white/10 hover:border-[#F5A623]"
                   >
                     <div className="relative h-56 overflow-hidden">
                       <img
-                        src={poleImages[i]}
+                        src={pole.image || defaultPoleImages[i]}
                         alt={pole.titre}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
@@ -240,10 +242,62 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── PROJETS PUBLIÉS (uniquement si publiés dans l'admin) ─────────── */}
+        {publishedProjects.length > 0 && (
+          <section className="py-16 bg-white dark:bg-[#071933] border-b border-slate-100 dark:border-white/10">
+            <div className="container mx-auto px-4 lg:px-8">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 max-w-6xl mx-auto">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#F5A623] mb-2">
+                    Portefeuille officiel
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B2C5C] dark:text-white">
+                    Nos Projets Réalisés &amp; En Cours
+                  </h2>
+                </div>
+                <Link
+                  to="/nos-projets"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#0B2C5C] dark:text-blue-200 hover:text-[#F5A623]"
+                >
+                  <span>Voir tous les projets</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {publishedProjects.slice(0, 3).map((proj) => (
+                  <Link
+                    key={proj.id}
+                    to="/nos-projets"
+                    className="group bg-slate-50 dark:bg-[#0C254B] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-[#F5A623] transition-all"
+                  >
+                    {proj.mainImageUrl && (
+                      <div className="h-48 overflow-hidden">
+                        <img
+                          src={proj.mainImageUrl}
+                          alt={proj.mainImageAlt || proj.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <p className="text-xs font-semibold text-[#F5A623] flex items-center gap-1 mb-1">
+                        <MapPin size={12} /> {proj.location}
+                      </p>
+                      <h3 className="text-base font-bold text-[#0B2C5C] dark:text-white line-clamp-2">
+                        {proj.title}
+                      </h3>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── 5. CHIFFRES CLÉS & COMPTEUR ANIMÉ CONTINU ────────────────────── */}
         <StatsPorteo />
 
-        {/* Dynamic Glowing Divider Line */}
         <div className="w-full h-[2px] glow-line-animated" />
 
         {/* ── 6. ENGAGEMENTS ET ATOUTS ──────────────────────────────────────── */}
@@ -262,8 +316,8 @@ export default function HomePage() {
             </FadeIn>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {home.atouts.items.map((atout: any, i: number) => {
-                const Icon = atoutIcons[i];
+              {(home.atouts?.items || []).map((atout: any, i: number) => {
+                const Icon = atoutIcons[i % atoutIcons.length];
                 return (
                   <FadeIn key={atout.id} delay={i * 0.1}>
                     <div className="flex flex-col items-center text-center gap-3 p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-[#F5A623]/50 transition-all duration-300 group">
@@ -287,6 +341,9 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Sections personnalisées ajoutées par l'administrateur */}
+        <CustomSectionsRenderer sections={home.customSections} />
+
         {/* ── 7. CTA CONTACT ────────────────────────────────────────────────── */}
         <section className="py-16 bg-white dark:bg-[#071933] transition-colors">
           <div className="container mx-auto px-4 lg:px-8">
@@ -304,7 +361,7 @@ export default function HomePage() {
                   </p>
                   <div className="mt-2">
                     <Link
-                      to="/contact"
+                      to={home.ctaContact?.ctaHref || '/contact'}
                       className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-bold text-[#0B2C5C] bg-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                     >
                       <span>{home.ctaContact.cta}</span> <ArrowRight size={16} />

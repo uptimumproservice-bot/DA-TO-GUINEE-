@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useSiteContent } from '@/contexts/SiteContentContext';
 
 interface HeaderProps {
   darkMode?: boolean;
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
   const location = useLocation();
+  const { settings } = useSiteContent();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,6 +38,7 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
     { href: '/', label: 'Accueil' },
     { href: '/a-propos', label: 'À propos' },
     { href: '/nos-activites', label: 'Nos Activités' },
+    { href: '/nos-projets', label: 'Nos Projets' },
     { href: '/notre-methode', label: 'Notre Méthode' },
     { href: '/engagements-hse', label: 'Engagements & HSE' },
     { href: '/actualites', label: 'Actualités' },
@@ -70,15 +73,15 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
             className="flex-shrink-0 flex items-center bg-transparent rounded-lg transition-opacity duration-200 hover:opacity-95"
           >
             <img
-              src="/logo.png"
-              alt="DA-TO GUINEE SA"
+              src={settings.logoLightUrl || '/logo.png'}
+              alt={settings.companyName || 'DA-TO GUINEE SA'}
               className={`dark:hidden block w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none transition-all duration-300 ${
                 isScrolled ? 'h-[40px] sm:h-[48px] md:h-[54px]' : 'h-[44px] sm:h-[54px] md:h-[60px]'
               }`}
             />
             <img
-              src="/logo-dark.png"
-              alt="DA-TO GUINEE SA"
+              src={settings.logoDarkUrl || '/logo-dark.png'}
+              alt={settings.companyName || 'DA-TO GUINEE SA'}
               className={`hidden dark:block w-auto max-w-[160px] sm:max-w-[220px] md:max-w-[260px] object-contain select-none transition-all duration-300 ${
                 isScrolled ? 'h-[40px] sm:h-[48px] md:h-[54px]' : 'h-[44px] sm:h-[54px] md:h-[60px]'
               }`}
@@ -86,14 +89,14 @@ export default function Header({ darkMode = false, setDarkMode }: HeaderProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1.5" data-no-anim="true">
+          <nav className="hidden xl:flex items-center gap-1" data-no-anim="true">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm px-3.5 py-2 rounded-lg whitespace-nowrap cursor-pointer relative transition-colors duration-200 select-none ${
+                  className={`text-sm px-3 py-2 rounded-lg whitespace-nowrap cursor-pointer relative transition-colors duration-200 select-none ${
                     isActive
                       ? 'text-[#F5A623] dark:text-[#F5A623] font-bold after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:bg-[#F5A623] after:rounded-full'
                       : 'text-[#0B2C5C] dark:text-white/90 font-medium no-underline hover:text-[#F5A623] dark:hover:text-[#F5A623] dark:hover:bg-white/5'

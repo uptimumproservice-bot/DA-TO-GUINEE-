@@ -2,9 +2,10 @@ import { useRef } from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { actualites } from 'virtual:content';
+import { useSiteContent } from '@/contexts/SiteContentContext';
 import { formatBrandText } from '@/components/BrandText';
 import { DownloadCenterSection } from '@/components/DownloadCenterSection';
+import { CustomSectionsRenderer } from '@/components/CustomSectionsRenderer';
 
 function FadeIn({
   children,
@@ -30,13 +31,16 @@ function FadeIn({
   );
 }
 
-const articleImages = [
+const defaultArticleImages = [
   '/airo-assets/images/pages/actualites/article-immobilier.jpg',
   '/airo-assets/images/pages/actualites/article-viabilisation.jpg',
   '/airo-assets/images/pages/actualites/article-partenariat.jpg',
 ];
 
 export default function ActualitesPage() {
+  const { getPageContent, settings } = useSiteContent();
+  const actualites = getPageContent('actualites');
+
   const { scrollY } = useScroll();
   const prefersReducedMotion = useReducedMotion();
   const parallaxY = useTransform(scrollY, (value) => (prefersReducedMotion ? 0 : value * 0.3));
@@ -44,11 +48,11 @@ export default function ActualitesPage() {
   return (
     <>
       <Helmet>
-        <title>Actualités — DA-TO GUINEE SA</title>
-        <meta name="description" content="Suivez les dernières actualités du DA-TO GUINEE SA : projets en cours, réalisations, partenariats et annonces en Guinée." />
+        <title>Actualités — {settings.companyName}</title>
+        <meta name="description" content={`Suivez les dernières actualités de ${settings.companyName} : projets en cours, réalisations, partenariats et annonces en Guinée.`} />
         <link rel="canonical" href="https://groupe-dato.com/actualites" />
-        <meta property="og:title" content="Actualités — DA-TO GUINEE SA" />
-        <meta property="og:description" content="Projets, réalisations et annonces du DA-TO GUINEE SA en Guinée." />
+        <meta property="og:title" content={`Actualités — ${settings.companyName}`} />
+        <meta property="og:description" content={`Projets, réalisations et annonces de ${settings.companyName} en Guinée.`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://groupe-dato.com/actualites" />
       </Helmet>
@@ -58,8 +62,8 @@ export default function ActualitesPage() {
         <section className="relative h-[420px] md:h-[520px] flex items-center overflow-hidden">
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
-            style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/actualites/banner.jpg)',
+            style={{
+              backgroundImage: `url(${actualites.banner?.image || '/airo-assets/images/pages/actualites/banner.jpg'})`,
               y: parallaxY,
             }}
           />
@@ -88,12 +92,12 @@ export default function ActualitesPage() {
         <section className="py-20 bg-muted">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {actualites.articles.map((article, i) => (
+              {(actualites.articles || []).map((article: any, i: number) => (
                 <FadeIn key={article.id} delay={i * 0.1}>
                   <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
                     <div className="relative h-52 overflow-hidden">
                       <img
-                        src={articleImages[i]}
+                        src={article.image || defaultArticleImages[i % defaultArticleImages.length]}
                         alt={article.titre}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         loading="lazy"
@@ -135,14 +139,18 @@ export default function ActualitesPage() {
         {/* ── ESPACE TÉLÉCHARGEMENTS & CATALOGUES OFFICIELS ───────────────── */}
         <DownloadCenterSection />
 
+        <CustomSectionsRenderer sections={actualites.customSections} />
+
         {/* ── INSCRIPTION NEWSLETTER ───────────────────────────────────────── */}
         <section className="py-20 bg-primary text-white">
           <div className="container mx-auto px-4 lg:px-8 max-w-2xl text-center">
             <FadeIn>
               <div className="w-12 h-1 mx-auto mb-6 rounded-full" style={{ background: 'hsl(var(--accent))' }} />
-              <h2 className="text-3xl font-extrabold text-white mb-4">Restez informé</h2>
+              <h2 className="text-3xl font-extrabold text-white mb-4">
+                {actualites.newsletter?.titre || 'Restez informé'}
+              </h2>
               <p className="text-base text-white/70 leading-relaxed">
-                Suivez nos actualités, projets et réalisations. Contactez-nous pour en savoir plus sur nos activités en Guinée.
+                {actualites.newsletter?.texte}
               </p>
             </FadeIn>
           </div>

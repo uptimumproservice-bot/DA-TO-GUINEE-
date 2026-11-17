@@ -867,5 +867,18 @@ button[aria-label*="Fermer" i]:active {
   }
 }
 
+/* Isolation stricte du Back-Office /admin par rapport aux animations et cartes publiques */
+.admin-portal .grid > div:hover,
+.admin-portal .card-hover:hover,
+.admin-portal article:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.admin-portal .grid > div img,
+.admin-portal .grid > div:hover img {
+  transform: none !important;
+}
+
 
 

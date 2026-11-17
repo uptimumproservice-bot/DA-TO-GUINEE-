@@ -23,6 +23,9 @@
       ],
       "virtual:content": [
         "./src/data/content.ts"
+      ],
+      "lucide-react": [
+        "./src/lib/icons.tsx"
       ]
     },
     "allowImportingTsExtensions": true,

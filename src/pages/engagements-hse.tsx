@@ -3,7 +3,8 @@ import { Link } from 'react-router';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { ShieldCheck, CheckCircle2, Cpu, ArrowRight } from 'lucide-react';
-import { engagements } from 'virtual:content';
+import { useSiteContent } from '@/contexts/SiteContentContext';
+import { CustomSectionsRenderer } from '@/components/CustomSectionsRenderer';
 
 function FadeIn({
   children,
@@ -32,6 +33,9 @@ function FadeIn({
 const engIcons = [ShieldCheck, ShieldCheck, ShieldCheck, ShieldCheck, ShieldCheck, ShieldCheck, ShieldCheck];
 
 export default function EngagementsHSEPage() {
+  const { getPageContent, settings } = useSiteContent();
+  const engagements = getPageContent('nos-engagements');
+
   const { scrollY } = useScroll();
   const prefersReducedMotion = useReducedMotion();
   const parallaxY = useTransform(scrollY, (value) => (prefersReducedMotion ? 0 : value * 0.3));
@@ -39,11 +43,11 @@ export default function EngagementsHSEPage() {
   return (
     <>
       <Helmet>
-        <title>Engagements & HSE — DA-TO GUINEE SA</title>
-        <meta name="description" content="Découvrez les engagements du DA-TO GUINEE SA : qualité, durabilité, sécurité, transparence et responsabilité sur chaque projet en Guinée." />
+        <title>Engagements &amp; HSE — {settings.companyName}</title>
+        <meta name="description" content={`Découvrez les engagements de ${settings.companyName} : qualité, durabilité, sécurité, transparence et responsabilité sur chaque projet en Guinée.`} />
         <link rel="canonical" href="https://groupe-dato.com/engagements-hse" />
-        <meta property="og:title" content="Engagements & HSE — DA-TO GUINEE SA" />
-        <meta property="og:description" content="Les 7 engagements fondamentaux et la politique HSE du DA-TO GUINEE SA." />
+        <meta property="og:title" content={`Engagements & HSE — ${settings.companyName}`} />
+        <meta property="og:description" content={`Les 7 engagements fondamentaux et la politique HSE de ${settings.companyName}.`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://groupe-dato.com/engagements-hse" />
       </Helmet>
@@ -53,8 +57,8 @@ export default function EngagementsHSEPage() {
         <section className="relative h-[420px] md:h-[520px] flex items-center overflow-hidden">
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
-            style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/engagements/banner.jpg)',
+            style={{
+              backgroundImage: `url(${engagements.banner?.image || '/airo-assets/images/pages/engagements/banner.jpg'})`,
               y: parallaxY,
             }}
           />
@@ -92,7 +96,7 @@ export default function EngagementsHSEPage() {
             </FadeIn>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {engagements.engagements.items.map((item, i) => {
+              {(engagements.engagements.items || []).map((item: any, i: number) => {
                 const Icon = engIcons[i % engIcons.length];
                 return (
                   <FadeIn key={item.id} delay={i * 0.07}>
@@ -130,7 +134,7 @@ export default function EngagementsHSEPage() {
                   <span>{engagements.hse.titre}</span>
                 </h2>
                 <div className="flex flex-col gap-3 mb-8">
-                  {engagements.hse.pratiques.map((p) => (
+                  {(engagements.hse.pratiques || []).map((p: any) => (
                     <div key={p.id} className="flex items-center gap-3">
                       <CheckCircle2 size={16} className="flex-shrink-0" style={{ color: 'hsl(var(--accent))' }} />
                       <p className="text-sm text-white/80">
@@ -150,8 +154,8 @@ export default function EngagementsHSEPage() {
               <FadeIn delay={0.15}>
                 <div className="rounded-2xl overflow-hidden shadow-2xl h-[480px] sm:h-[540px] lg:h-[580px] w-full border border-white/15">
                   <img
-                    src="/assets/images/professional_site_inspector_ppe_1791409620212.jpg"
-                    alt="Ingénieur de chantier et agent HSE avec EPI complet et harnais - DA-TO GUINEE SA"
+                    src={engagements.hse?.image || '/assets/images/professional_site_inspector_ppe_1791409620212.jpg'}
+                    alt={engagements.hse?.imageAlt || 'Ingénieur de chantier et agent HSE avec EPI complet et harnais - DA-TO GUINEE SA'}
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
                     referrerPolicy="no-referrer"
@@ -169,8 +173,8 @@ export default function EngagementsHSEPage() {
               <FadeIn>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-80">
                   <img
-                    src="/assets/images/african_engineers_office_digital_1791410135615.jpg"
-                    alt="Ingénieurs africains au bureau travaillant sur les solutions numériques - DA-TO GUINEE SA"
+                    src={engagements.technologie?.image || '/assets/images/african_engineers_office_digital_1791410135615.jpg'}
+                    alt={engagements.technologie?.imageAlt || 'Ingénieurs africains au bureau travaillant sur les solutions numériques - DA-TO GUINEE SA'}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     referrerPolicy="no-referrer"
@@ -186,7 +190,7 @@ export default function EngagementsHSEPage() {
                   <span>{engagements.technologie.titre}</span>
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {engagements.technologie.domaines.map((d) => (
+                  {(engagements.technologie.domaines || []).map((d: any) => (
                     <div key={d.id} className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
                       <Cpu size={15} className="flex-shrink-0" style={{ color: 'hsl(var(--accent))' }} />
                       <p className="text-sm font-medium text-foreground">
@@ -200,20 +204,24 @@ export default function EngagementsHSEPage() {
           </div>
         </section>
 
+        <CustomSectionsRenderer sections={engagements.customSections} />
+
         {/* ── CTA ──────────────────────────────────────────────────────────── */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 lg:px-8 text-center max-w-2xl">
             <FadeIn>
-              <h2 className="text-3xl font-extrabold text-primary mb-4">Un projet qui respecte ces engagements ?</h2>
+              <h2 className="text-3xl font-extrabold text-primary mb-4">
+                {engagements.cta?.titre || 'Un projet qui respecte ces engagements ?'}
+              </h2>
               <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-                Contactez-nous pour discuter de votre projet et découvrir comment DA-TO GUINEE SA peut vous accompagner.
+                {engagements.cta?.texte}
               </p>
               <Link
-                to="/contact"
+                to={engagements.cta?.ctaHref || '/contact'}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded text-base font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{ background: 'hsl(var(--accent))' }}
               >
-                Contactez-nous <ArrowRight size={18} />
+                {engagements.cta?.ctaLabel || 'Contactez-nous'} <ArrowRight size={18} />
               </Link>
             </FadeIn>
           </div>

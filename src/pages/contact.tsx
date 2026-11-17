@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from 'motion/react';
-import { MapPin, Phone, Mail, Clock, CheckCircle2, Send, Sparkles } from 'lucide-react';
-import { contact } from 'virtual:content';
+import { MapPin, Phone, Mail, Clock, CheckCircle2, Send, AlertCircle } from 'lucide-react';
+import { useSiteContent } from '@/contexts/SiteContentContext';
+import { submitContactMessage } from '@/services/cmsService';
+import { CustomSectionsRenderer } from '@/components/CustomSectionsRenderer';
 import { MapsGroundingWidget } from '../components/MapsGroundingWidget';
 
 const SUJETS: string[] = [
@@ -37,56 +39,75 @@ function FadeIn({
 }
 
 export default function ContactPage() {
+  const { getPageContent, settings } = useSiteContent();
+  const contact = getPageContent('contact');
+
   const { scrollY } = useScroll();
   const prefersReducedMotion = useReducedMotion();
   const parallaxY = useTransform(scrollY, (value) => (prefersReducedMotion ? 0 : value * 0.3));
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setErrorMsg('');
     setLoading(true);
     const form = e.currentTarget;
+
+    // Anti-spam honeypot
+    const trap = (form.elements.namedItem('company_website') as HTMLInputElement)?.value?.trim();
+    if (trap) {
+      setLoading(false);
+      setSubmitted(true);
+      return;
+    }
+
     const nomVal = (form.elements.namedItem('nom') as HTMLInputElement)?.value?.trim();
     const telVal = (form.elements.namedItem('telephone') as HTMLInputElement)?.value?.trim();
     const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value?.trim();
     const sujetVal = (form.elements.namedItem('sujet') as HTMLSelectElement)?.value?.trim();
     const msgVal = (form.elements.namedItem('message') as HTMLTextAreaElement)?.value?.trim();
 
-    if (!nomVal || !telVal || !emailVal || !msgVal) {
+    if (!nomVal || nomVal.length < 2 || !telVal || telVal.length < 6 || !emailVal || !sujetVal || !msgVal || msgVal.length < 5) {
+      setErrorMsg('Veuillez renseigner tous les champs obligatoires avec des informations valides.');
       setLoading(false);
       return;
     }
 
-    const data = {
-      nom: nomVal,
-      email: emailVal,
-      telephone: telVal,
-      sujet: sujetVal,
-      message: msgVal,
-    };
     try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+      await submitContactMessage({
+        nom: nomVal,
+        email: emailVal,
+        telephone: telVal,
+        sujet: sujetVal,
+        message: msgVal,
       });
+      setSubmitted(true);
     } catch {
-      // silent
+      setErrorMsg("Une erreur est survenue lors de l'enregistrement de votre message. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
-    setSubmitted(true);
   }
+
+  const displayAddress = contact.coordonnees?.adresse || settings.address;
+  const displayPhone = contact.coordonnees?.telephone || settings.phone;
+  const displayEmail = contact.coordonnees?.email || settings.email;
+  const displayHours = contact.coordonnees?.horaires || settings.hours;
 
   return (
     <>
       <Helmet>
-        <title>Contact — DA-TO GUINEE SA</title>
-        <meta name="description" content="Contactez le DA-TO GUINEE SA pour vos projets de BTP, développement foncier et immobilier en Guinée. Formulaire de contact, coordonnées et localisation." />
+        <title>Contact — {settings.companyName}</title>
+        <meta
+          name="description"
+          content={`Contactez ${settings.companyName} pour vos projets de BTP, développement foncier et immobilier en Guinée. Formulaire de contact, coordonnées et localisation.`}
+        />
         <link rel="canonical" href="https://groupe-dato.com/contact" />
-        <meta property="og:title" content="Contact — DA-TO GUINEE SA" />
-        <meta property="og:description" content="Parlons de votre projet. Contactez le DA-TO GUINEE SA en Guinée." />
+        <meta property="og:title" content={`Contact — ${settings.companyName}`} />
+        <meta property="og:description" content={`Parlons de votre projet. Contactez ${settings.companyName} en Guinée.`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://groupe-dato.com/contact" />
       </Helmet>
@@ -96,8 +117,8 @@ export default function ContactPage() {
         <section className="relative h-[420px] md:h-[520px] flex items-center overflow-hidden">
           <motion.div
             className="absolute -top-[15%] left-0 right-0 h-[130%] bg-cover bg-center will-change-transform"
-            style={{ 
-              backgroundImage: 'url(/airo-assets/images/pages/contact/banner.jpg)',
+            style={{
+              backgroundImage: `url(${contact.banner?.image || '/airo-assets/images/pages/contact/banner.jpg'})`,
               y: parallaxY,
             }}
           />
@@ -129,16 +150,43 @@ export default function ContactPage() {
               {/* Formulaire */}
               <FadeIn>
                 <div className="w-12 h-1 mb-6 rounded-full bg-[#F5A623] dark:bg-white" />
-                <h2 className="text-3xl font-extrabold text-primary dark:text-white mb-8">Envoyez-nous un message</h2>
+                <h2 className="text-3xl font-extrabold text-primary dark:text-white mb-8">
+                  {contact.formulaire?.titre || 'Envoyez-nous un message'}
+                </h2>
 
                 {submitted ? (
-                  <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+                  <div className="flex flex-col items-center justify-center gap-4 py-16 text-center bg-slate-50 dark:bg-[#0C254B] rounded-2xl p-8 border border-slate-200 dark:border-white/10">
                     <CheckCircle2 size={48} className="text-[#F5A623] dark:text-blue-300" />
-                    <h3 className="text-xl font-bold text-primary dark:text-white">Message envoyé !</h3>
-                    <p className="text-muted-foreground dark:text-blue-100">Nous vous répondrons dans les meilleurs délais.</p>
+                    <h3 className="text-xl font-bold text-primary dark:text-white">
+                      {contact.formulaire?.messageSuccesTitre || 'Message envoyé !'}
+                    </h3>
+                    <p className="text-muted-foreground dark:text-blue-100">
+                      {contact.formulaire?.messageSuccesTexte || 'Nous vous répondrons dans les meilleurs délais.'}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="mt-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-[#0B2C5C] text-white hover:bg-[#143468] cursor-pointer"
+                    >
+                      Envoyer un autre message
+                    </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                    <input
+                      type="text"
+                      name="company_website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="hidden"
+                      aria-hidden="true"
+                    />
+                    {errorMsg && (
+                      <div className="flex items-center gap-2.5 p-3.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                        <AlertCircle size={16} className="flex-shrink-0" />
+                        <span>{errorMsg}</span>
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="flex flex-col gap-1.5">
                         <label htmlFor="nom" className="text-sm font-semibold text-foreground dark:text-white flex items-center gap-1">
@@ -149,6 +197,7 @@ export default function ContactPage() {
                           name="nom"
                           type="text"
                           required
+                          maxLength={120}
                           placeholder="Votre nom complet"
                           className="px-4 py-3 rounded-lg border border-border dark:border-white/20 bg-muted dark:bg-[#0B254E] text-slate-800 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0B2C5C] dark:focus:ring-white transition-all"
                         />
@@ -162,6 +211,7 @@ export default function ContactPage() {
                           name="email"
                           type="email"
                           required
+                          maxLength={160}
                           placeholder="votre@email.com"
                           className="px-4 py-3 rounded-lg border border-border dark:border-white/20 bg-muted dark:bg-[#0B254E] text-slate-800 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0B2C5C] dark:focus:ring-white transition-all"
                         />
@@ -177,6 +227,7 @@ export default function ContactPage() {
                           name="telephone"
                           type="tel"
                           required
+                          maxLength={40}
                           placeholder="+224 6XX XX XX XX"
                           className="px-4 py-3 rounded-lg border border-border dark:border-white/20 bg-muted dark:bg-[#0B254E] text-slate-800 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0B2C5C] dark:focus:ring-white transition-all"
                         />
@@ -206,6 +257,8 @@ export default function ContactPage() {
                         id="message"
                         name="message"
                         required
+                        minLength={5}
+                        maxLength={4000}
                         rows={5}
                         placeholder="Décrivez votre projet ou votre demande..."
                         className="px-4 py-3 rounded-lg border border-border dark:border-white/20 bg-muted dark:bg-[#0B254E] text-slate-800 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0B2C5C] dark:focus:ring-white transition-all resize-none"
@@ -216,7 +269,7 @@ export default function ContactPage() {
                       disabled={loading}
                       className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded text-base font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed bg-[#F5A623] hover:bg-[#e0951a] dark:bg-[#0E3E7E] dark:hover:bg-[#1455a8] dark:border dark:border-white/30 cursor-pointer"
                     >
-                      {loading ? 'Envoi en cours…' : (<><Send size={16} /> Envoyer le message</>)}
+                      {loading ? 'Envoi en cours…' : (<><Send size={16} /> {contact.formulaire?.boutonLabel || 'Envoyer le message'}</>)}
                     </button>
                   </form>
                 )}
@@ -233,7 +286,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-primary dark:text-white mb-0.5">Adresse</p>
-                      <p className="text-sm text-muted-foreground dark:text-blue-100"><span>{contact.coordonnees.adresse}</span></p>
+                      <p className="text-sm text-muted-foreground dark:text-blue-100"><span>{displayAddress}</span></p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -243,8 +296,8 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm font-bold text-primary dark:text-white mb-0.5">Téléphone</p>
                       <p className="text-sm text-muted-foreground dark:text-blue-100">
-                        <a href="tel:+224628883030" className="hover:underline transition-colors hover:text-primary dark:hover:text-white">
-                          <span>{contact.coordonnees.telephone}</span>
+                        <a href={`tel:${displayPhone.replace(/\s+/g, '')}`} className="hover:underline transition-colors hover:text-primary dark:hover:text-white">
+                          <span>{displayPhone}</span>
                         </a>
                       </p>
                     </div>
@@ -256,8 +309,8 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm font-bold text-primary dark:text-white mb-0.5">Email</p>
                       <p className="text-sm text-muted-foreground dark:text-blue-100">
-                        <a href={`mailto:${contact.coordonnees.email}`} className="hover:underline transition-colors hover:text-primary dark:hover:text-white">
-                          <span>{contact.coordonnees.email}</span>
+                        <a href={`mailto:${displayEmail}`} className="hover:underline transition-colors hover:text-primary dark:hover:text-white">
+                          <span>{displayEmail}</span>
                         </a>
                       </p>
                     </div>
@@ -268,16 +321,15 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-primary dark:text-white mb-0.5">Horaires</p>
-                      <p className="text-sm text-muted-foreground dark:text-blue-100"><span>{contact.coordonnees.horaires}</span></p>
+                      <p className="text-sm text-muted-foreground dark:text-blue-100"><span>{displayHours}</span></p>
                     </div>
                   </div>
                 </div>
 
-                {/* Image Conakry */}
                 <div className="rounded-2xl overflow-hidden shadow-xl h-56 border border-slate-200 dark:border-white/15">
                   <img
-                    src="/assets/images/contact_office_team_1791410764644.jpg"
-                    alt="Équipe professionnelle DA-TO GUINEE SA à Conakry"
+                    src={contact.formulaire?.imageBureau || '/assets/images/contact_office_team_1791410764644.jpg'}
+                    alt={contact.formulaire?.imageBureauAlt || `Équipe professionnelle ${settings.companyName} à Conakry`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     referrerPolicy="no-referrer"
@@ -301,7 +353,6 @@ export default function ContactPage() {
               </h2>
             </FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Clients */}
               <FadeIn>
                 <div className="bg-white dark:bg-[#0C254B] rounded-2xl p-8 shadow-sm h-full border border-slate-200 dark:border-white/10">
                   <h3 className="text-lg font-bold text-primary dark:text-white mb-6 flex items-center gap-2">
@@ -309,7 +360,7 @@ export default function ContactPage() {
                     <span>{contact.clients.clients.label}</span>
                   </h3>
                   <div className="flex flex-col gap-3">
-                    {contact.clients.clients.items.map((item) => (
+                    {contact.clients.clients.items.map((item: any) => (
                       <div key={item.id} className="flex items-center gap-3">
                         <CheckCircle2 size={15} className="flex-shrink-0 text-[#F5A623] dark:text-blue-300" />
                         <p className="text-sm text-foreground dark:text-slate-100"><span>{item.texte}</span></p>
@@ -318,7 +369,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </FadeIn>
-              {/* Partenaires */}
               <FadeIn delay={0.1}>
                 <div className="bg-white dark:bg-[#0C254B] rounded-2xl p-8 shadow-sm h-full border border-slate-200 dark:border-white/10">
                   <h3 className="text-lg font-bold text-primary dark:text-white mb-6 flex items-center gap-2">
@@ -326,7 +376,7 @@ export default function ContactPage() {
                     <span>{contact.clients.partenaires.label}</span>
                   </h3>
                   <div className="flex flex-col gap-3">
-                    {contact.clients.partenaires.items.map((item) => (
+                    {contact.clients.partenaires.items.map((item: any) => (
                       <div key={item.id} className="flex items-center gap-3">
                         <CheckCircle2 size={15} className="flex-shrink-0 text-[#F5A623] dark:text-blue-300" />
                         <p className="text-sm text-foreground dark:text-slate-100"><span>{item.texte}</span></p>
@@ -343,7 +393,7 @@ export default function ContactPage() {
         <section className="relative py-28 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/airo-assets/images/pages/contact/conakry.jpg)' }}
+            style={{ backgroundImage: `url(${contact.contribution?.backgroundImage || '/airo-assets/images/pages/contact/conakry.jpg'})` }}
           />
           <div
             className="absolute inset-0 pointer-events-none"
@@ -357,7 +407,7 @@ export default function ContactPage() {
               </p>
             </FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {contact.contribution.items.map((item, i) => (
+              {contact.contribution.items.map((item: any, i: number) => (
                 <FadeIn key={item.id} delay={i * 0.07}>
                   <div
                     className="rounded-xl p-5 text-center"
@@ -372,6 +422,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <CustomSectionsRenderer sections={contact.customSections} />
 
         {/* ── MAPS GROUNDING WIDGET ─────────────────────────────────────────── */}
         <MapsGroundingWidget />

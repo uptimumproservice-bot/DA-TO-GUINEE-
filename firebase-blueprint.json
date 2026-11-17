@@ -1,0 +1,198 @@
+{
+  "entities": {
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Compte administrateur et rôle d'accès (Super administrateur ou Éditeur) pour le back-office DA-TO GUINÉE.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "email": { "type": "string", "format": "email", "minLength": 5, "maxLength": 160 },
+        "username": { "type": "string", "minLength": 2, "maxLength": 60 },
+        "displayName": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "role": { "type": "string", "enum": ["super_admin", "editor"] },
+        "active": { "type": "boolean" },
+        "inviteId": { "type": "string", "maxLength": 128 },
+        "createdBy": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "displayName", "role", "active", "createdAt", "updatedAt"]
+    },
+    "AdminInvite": {
+      "title": "AdminInvite",
+      "description": "Invitation sécurisée permettant à un administrateur invité de réclamer son rôle dès sa première connexion vérifiée.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email", "minLength": 5, "maxLength": 160 },
+        "username": { "type": "string", "maxLength": 60 },
+        "displayName": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "role": { "type": "string", "enum": ["super_admin", "editor"] },
+        "active": { "type": "boolean" },
+        "invitedBy": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "displayName", "role", "active", "invitedBy", "createdAt", "updatedAt"]
+    },
+    "SitePage": {
+      "title": "SitePage",
+      "description": "Contenu dynamique d'une page du site DA-TO GUINÉE avec séparation brouillon, en attente et publié.",
+      "type": "object",
+      "properties": {
+        "pageId": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "slug": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "status": { "type": "string", "enum": ["published", "draft", "pending_publish"] },
+        "hasUnpublishedChanges": { "type": "boolean" },
+        "publishedContent": { "type": "object" },
+        "draftContent": { "type": "object" },
+        "lastEditedBy": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "lastEditedByName": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["pageId", "title", "slug", "status", "hasUnpublishedChanges", "publishedContent", "draftContent", "lastEditedBy", "createdAt", "updatedAt"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Projet du portefeuille DA-TO GUINÉE affiché dans la rubrique Nos projets lorsqu'il est publié.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "slug": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "category": { "type": "string", "enum": ["btp", "foncier", "immobilier"] },
+        "categoryLabel": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "location": { "type": "string", "minLength": 2, "maxLength": 140 },
+        "description": { "type": "string", "minLength": 10, "maxLength": 6000 },
+        "executionStatus": { "type": "string", "enum": ["en_cours", "acheve", "a_venir"] },
+        "publicationStatus": { "type": "string", "enum": ["draft", "pending_publish", "published"] },
+        "mainImageUrl": { "type": "string", "maxLength": 500 },
+        "mainImageAlt": { "type": "string", "maxLength": 250 },
+        "gallery": { "type": "array" },
+        "client": { "type": "string", "maxLength": 160 },
+        "startDate": { "type": "string", "maxLength": 40 },
+        "completionDate": { "type": "string", "maxLength": 40 },
+        "authorId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "category", "categoryLabel", "location", "description", "executionStatus", "publicationStatus", "authorId", "createdAt", "updatedAt"]
+    },
+    "MediaItem": {
+      "title": "MediaItem",
+      "description": "Fichier image optimisé géré dans la bibliothèque multimédia avec description alternative ALT.",
+      "type": "object",
+      "properties": {
+        "fileName": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "url": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "alt": { "type": "string", "minLength": 1, "maxLength": 250 },
+        "folder": { "type": "string", "enum": ["general", "accueil", "a-propos", "activites", "projets", "engagements", "actualites", "branding"] },
+        "mimeType": { "type": "string", "maxLength": 60 },
+        "sizeBytes": { "type": "number" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "uploadedBy": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "uploadedByName": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fileName", "url", "alt", "folder", "mimeType", "sizeBytes", "uploadedBy", "createdAt", "updatedAt"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "Message reçu via le formulaire de contact du site public.",
+      "type": "object",
+      "properties": {
+        "nom": { "type": "string", "minLength": 2, "maxLength": 120 },
+        "email": { "type": "string", "format": "email", "minLength": 5, "maxLength": 160 },
+        "telephone": { "type": "string", "minLength": 6, "maxLength": 40 },
+        "sujet": { "type": "string", "minLength": 2, "maxLength": 120 },
+        "message": { "type": "string", "minLength": 5, "maxLength": 4000 },
+        "status": { "type": "string", "enum": ["unread", "read", "handled"] },
+        "adminNotes": { "type": "string", "maxLength": 2000 },
+        "handledBy": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["nom", "email", "telephone", "sujet", "message", "status", "createdAt", "updatedAt"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Paramètres généraux de l'entreprise, coordonnées, réseaux sociaux, pied de page et SEO.",
+      "type": "object",
+      "properties": {
+        "companyName": { "type": "string", "minLength": 2, "maxLength": 120 },
+        "legalName": { "type": "string", "maxLength": 200 },
+        "slogan": { "type": "string", "maxLength": 200 },
+        "logoLightUrl": { "type": "string", "maxLength": 500 },
+        "logoDarkUrl": { "type": "string", "maxLength": 500 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 160 },
+        "address": { "type": "string", "maxLength": 250 },
+        "headquarters": { "type": "string", "maxLength": 300 },
+        "hours": { "type": "string", "maxLength": 160 },
+        "footerCopyright": { "type": "string", "maxLength": 250 },
+        "socialLinks": { "type": "object" },
+        "seoTitle": { "type": "string", "maxLength": 140 },
+        "seoDescription": { "type": "string", "maxLength": 320 },
+        "seoKeywords": { "type": "string", "maxLength": 300 },
+        "updatedBy": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["companyName", "slogan", "phone", "email", "address", "seoTitle", "seoDescription", "updatedBy", "updatedAt"]
+    },
+    "ActivityLog": {
+      "title": "ActivityLog",
+      "description": "Journal immuable des opérations administratives effectuées dans le back-office.",
+      "type": "object",
+      "properties": {
+        "actorUid": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "actorEmail": { "type": "string", "maxLength": 160 },
+        "actorName": { "type": "string", "maxLength": 100 },
+        "actorRole": { "type": "string", "enum": ["super_admin", "editor"] },
+        "action": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "targetType": { "type": "string", "enum": ["page", "project", "media", "message", "settings", "admin", "auth"] },
+        "targetId": { "type": "string", "maxLength": 128 },
+        "details": { "type": "string", "minLength": 2, "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["actorUid", "actorEmail", "actorName", "actorRole", "action", "targetType", "targetId", "details", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminUser" },
+      "description": "Profils administrateurs et attributions de rôles RBAC (super_admin, editor)."
+    },
+    "/adminInvites/{inviteId}": {
+      "schema": { "$ref": "#/entities/AdminInvite" },
+      "description": "Invitations administrateurs en attente de première connexion."
+    },
+    "/pages/{pageId}": {
+      "schema": { "$ref": "#/entities/SitePage" },
+      "description": "Contenus éditoriaux des pages du site avec gestion brouillon, prévisualisation et publication."
+    },
+    "/projects/{projectId}": {
+      "schema": { "$ref": "#/entities/Project" },
+      "description": "Portefeuille des projets DA-TO GUINÉE avec statut de réalisation et de publication."
+    },
+    "/media/{mediaId}": {
+      "schema": { "$ref": "#/entities/MediaItem" },
+      "description": "Catalogue des médias optimisés et de leurs balises ALT."
+    },
+    "/messages/{messageId}": {
+      "schema": { "$ref": "#/entities/ContactMessage" },
+      "description": "Soumissions du formulaire de contact public."
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/SiteSettings" },
+      "description": "Paramètres généraux de l'entreprise, coordonnées, pied de page et SEO."
+    },
+    "/activityLogs/{logId}": {
+      "schema": { "$ref": "#/entities/ActivityLog" },
+      "description": "Journal d'audit administratif immuable."
+    }
+  }
+}

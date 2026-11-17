@@ -11,7 +11,11 @@ export default defineConfig(() => {
       alias: {
         '@': path.resolve(import.meta.dirname, './src'),
         'virtual:content': path.resolve(import.meta.dirname, './src/data/content.ts'),
+        'lucide-react': path.resolve(import.meta.dirname, './src/lib/icons.tsx'),
       },
+    },
+    build: {
+      sourcemap: false,
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.

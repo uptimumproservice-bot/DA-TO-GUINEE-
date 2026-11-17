@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { MapPin, Phone, Mail, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { useSiteContent } from '@/contexts/SiteContentContext';
 
 // Official TikTok SVG Icon
 function TikTokIcon({ className = 'w-4 h-4' }: { className?: string }) {
@@ -17,12 +18,13 @@ function TikTokIcon({ className = 'w-4 h-4' }: { className?: string }) {
 }
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const { settings } = useSiteContent();
 
   const liensRapides = [
     { href: '/', label: 'Accueil' },
     { href: '/a-propos', label: 'À propos' },
     { href: '/nos-activites', label: 'Nos Activités' },
+    { href: '/nos-projets', label: 'Nos Projets' },
     { href: '/notre-methode', label: 'Notre Méthode' },
     { href: '/engagements-hse', label: 'Engagements & HSE' },
     { href: '/actualites', label: 'Actualités' },
@@ -38,29 +40,31 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'Facebook',
-      url: 'https://facebook.com',
+      url: settings.socialLinks?.facebook || 'https://facebook.com',
       icon: Facebook,
-      label: 'Suivez DA-TO GUINEE SA sur Facebook',
+      label: `Suivez ${settings.companyName} sur Facebook`,
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: settings.socialLinks?.linkedin || 'https://linkedin.com',
       icon: Linkedin,
-      label: 'Suivez DA-TO GUINEE SA sur LinkedIn',
+      label: `Suivez ${settings.companyName} sur LinkedIn`,
     },
     {
       name: 'TikTok',
-      url: 'https://tiktok.com',
+      url: settings.socialLinks?.tiktok || 'https://tiktok.com',
       icon: TikTokIcon,
-      label: 'Suivez DA-TO GUINEE SA sur TikTok',
+      label: `Suivez ${settings.companyName} sur TikTok`,
     },
     {
       name: 'YouTube',
-      url: 'https://youtube.com',
+      url: settings.socialLinks?.youtube || 'https://youtube.com',
       icon: Youtube,
-      label: 'Chaîne YouTube de DA-TO GUINEE SA',
+      label: `Chaîne YouTube de ${settings.companyName}`,
     },
-  ];
+  ].filter((s) => Boolean(s.url));
+
+  const cleanPhoneHref = (settings.phone || '+224628883030').replace(/\s+/g, '');
 
   return (
     <footer className="relative">
@@ -79,18 +83,18 @@ export default function Footer() {
             className="inline-block bg-transparent rounded-lg"
           >
             <img
-              src="/logo.png"
-              alt="DA-TO GUINEE SA"
+              src={settings.logoLightUrl || '/logo.png'}
+              alt={settings.companyName || 'DA-TO GUINEE SA'}
               className="dark:hidden block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
             />
             <img
-              src="/logo-dark.png"
-              alt="DA-TO GUINEE SA"
+              src={settings.logoDarkUrl || '/logo-dark.png'}
+              alt={settings.companyName || 'DA-TO GUINEE SA'}
               className="hidden dark:block h-20 sm:h-28 w-auto max-w-[340px] object-contain select-none"
             />
           </Link>
           <p className="text-sm font-medium text-muted-foreground dark:text-blue-100 italic text-center sm:text-right">
-            "Construire durablement. Créer de la valeur."
+            &quot;{settings.slogan}&quot;
           </p>
         </div>
       </div>
@@ -158,7 +162,7 @@ export default function Footer() {
                     style={{ color: 'hsl(var(--accent))' }}
                   />
                   <span className="text-sm text-white/75">
-                    Conakry, Lambanyi, Carrefour TMI
+                    {settings.address}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -167,10 +171,10 @@ export default function Footer() {
                     style={{ color: 'hsl(var(--accent))' }}
                   />
                   <a
-                    href="tel:+224628883030"
+                    href={`tel:${cleanPhoneHref}`}
                     className="text-sm text-white/75 hover:text-white transition-colors"
                   >
-                    +224 628 88 30 30
+                    {settings.phone}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
@@ -179,10 +183,10 @@ export default function Footer() {
                     style={{ color: 'hsl(var(--accent))' }}
                   />
                   <a
-                    href="mailto:contact@datoguinee.com"
+                    href={`mailto:${settings.email}`}
                     className="text-sm text-white/75 hover:text-white transition-colors"
                   >
-                    contact@datoguinee.com
+                    {settings.email}
                   </a>
                 </li>
               </ul>
@@ -223,10 +227,10 @@ export default function Footer() {
           <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left space-y-1">
               <p className="text-xs text-white/70 font-medium">
-                © 2026 DA-TO GUINEE SA · Société Anonyme à Conseil d'Administration. Tous droits réservés.
+                {settings.footerCopyright}
               </p>
               <p className="text-[11px] text-white/45">
-                Siège social : Lambanyi, Carrefour TMI, Commune de Ratoma, Conakry, République de Guinée
+                Siège social : {settings.headquarters}
               </p>
             </div>
 
